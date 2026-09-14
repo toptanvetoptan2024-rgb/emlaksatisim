@@ -6,15 +6,12 @@
 
 <title>EmlakSatışım.com | Emlakta Doğru Adres</title>
 
-<meta name="description" content="Gayrimenkulünüzü doğru alıcılarla buluşturun. EmlakSatışım.com ile ücretsiz ilan başvurunuzu yapın.">
+<meta name="description" content="Gayrimenkulünüzü satmak için EmlakSatışım.com üzerinden ücretsiz ilan başvurusu yapın.">
 
 <style>
-
-/* =========================
-   GENEL
-========================= */
-
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
@@ -23,20 +20,10 @@ html{
 }
 
 body{
-    margin:0;
-    padding:0;
-    background:#f4f8fb;
     font-family:Arial,Helvetica,sans-serif;
-    color:#102d50;
-    overflow-x:hidden;
+    background:#fff;
+    color:#172d50;
 }
-
-img{
-    display:block;
-    width:100%;
-    height:auto;
-}
-
 
 /* =========================
    ANA GÖRSEL
@@ -45,188 +32,174 @@ img{
 .hero{
     position:relative;
     width:100%;
-    background:#fff;
-    line-height:0;
+    overflow:hidden;
 }
 
+.hero picture{
+    display:block;
+    width:100%;
+}
 
-/* =========================
-   TIKLAMA ALANLARI
-========================= */
+.hero img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+/* Görsel üzerindeki tıklanabilir alanlar */
 
 .hero-link{
     position:absolute;
     display:block;
-    z-index:50;
-    cursor:pointer;
+    z-index:20;
 }
 
+/* =========================
+   MASAÜSTÜ
+========================= */
 
-/* MASAÜSTÜ WHATSAPP */
-
-.whatsapp-link{
-    left:31%;
-    top:51%;
-    width:38%;
-    height:9%;
-}
-
-
-/* MASAÜSTÜ İLAN */
-
+/* ÜCRETSİZ İLAN VER */
 .ilan-link{
-    left:31%;
-    top:62%;
-    width:38%;
-    height:9%;
+    left:7%;
+    top:20%;
+    width:86%;
+    height:8%;
+}
+
+/* WHATSAPP */
+.whatsapp-link{
+    left:20%;
+    top:52%;
+    width:60%;
+    height:10%;
 }
 
 
 /* =========================
-   FORM
+   BAŞVURU FORMU
 ========================= */
 
+#basvuru{
+    scroll-margin-top:20px;
+}
+
 .form-section{
-    padding:50px 15px 70px;
-    background:#f4f8fb;
+    background:#f4f7fb;
+    padding:60px 20px;
 }
 
 .form-container{
-    width:min(1150px,100%);
+    width:100%;
+    max-width:1050px;
     margin:auto;
-    padding:38px;
     background:#fff;
-    border-radius:24px;
-    box-shadow:0 12px 40px rgba(16,45,80,.12);
+    padding:40px;
+    border-radius:22px;
+    box-shadow:0 8px 35px rgba(0,0,0,.10);
 }
 
-.form-header{
-    margin-bottom:30px;
-}
-
-.form-header h2{
-    margin:0 0 10px;
-    color:#102d50;
-    font-size:32px;
+.form-title{
+    text-align:center;
+    font-size:34px;
     font-weight:900;
+    color:#172d50;
+    margin-bottom:10px;
 }
 
-.form-header p{
-    margin:0;
-    color:#667587;
+.form-subtitle{
+    text-align:center;
+    color:#666;
     font-size:16px;
     line-height:1.5;
+    margin-bottom:35px;
 }
 
 .form-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:1fr 1fr;
     gap:20px;
 }
 
-.field{
+.form-group{
     display:flex;
     flex-direction:column;
-    gap:7px;
 }
 
-.field label{
-    color:#173755;
-    font-size:14px;
-    font-weight:800;
-}
-
-.field input,
-.field select,
-.field textarea{
-    width:100%;
-    border:1px solid #d4dce5;
-    border-radius:9px;
-    background:#fff;
-    color:#173755;
-    padding:13px 14px;
-    font-family:Arial,Helvetica,sans-serif;
-    font-size:15px;
-    outline:none;
-}
-
-.field input,
-.field select{
-    height:48px;
-}
-
-.field textarea{
-    min-height:120px;
-    resize:vertical;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-    border-color:#ff7200;
-    box-shadow:0 0 0 3px rgba(255,114,0,.10);
-}
-
-.full{
+.form-group.full{
     grid-column:1 / -1;
 }
 
-
-/* =========================
-   FOTOĞRAF
-========================= */
-
-.photo-box{
-    padding:25px;
-    border:2px dashed #c8d2dd;
-    border-radius:12px;
-    background:#fafcff;
-    text-align:center;
-}
-
-.photo-title{
-    margin-bottom:7px;
-    color:#173755;
-    font-size:16px;
+.form-group label{
+    font-size:14px;
     font-weight:800;
+    color:#222;
+    margin-bottom:8px;
 }
 
-.photo-description{
-    margin-bottom:15px;
-    color:#788695;
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:14px;
+    font-size:15px;
+    outline:none;
+    background:#fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#f57c00;
+}
+
+.form-group textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.file-box{
+    border:2px dashed #ddd;
+    border-radius:12px;
+    padding:20px;
+    background:#fafafa;
+}
+
+.file-box input{
+    border:0;
+    padding:0;
+}
+
+.file-info{
+    margin-top:8px;
     font-size:13px;
+    color:#777;
 }
-
-.photo-box input{
-    max-width:100%;
-}
-
-
-/* =========================
-   GÖNDER
-========================= */
 
 .submit-button{
+    grid-column:1 / -1;
     width:100%;
-    height:60px;
     border:0;
-    border-radius:10px;
-    background:#ff7200;
+    border-radius:12px;
+    padding:18px;
+    background:#f57c00;
     color:#fff;
-    font-size:19px;
+    font-size:18px;
     font-weight:900;
     cursor:pointer;
 }
 
 .submit-button:hover{
-    background:#e96500;
+    background:#df6d00;
 }
 
 .form-note{
-    margin-top:12px;
-    color:#718092;
-    font-size:12px;
+    grid-column:1 / -1;
     text-align:center;
+    font-size:13px;
+    color:#777;
+    line-height:1.5;
 }
 
 
@@ -235,44 +208,41 @@ img{
 ========================= */
 
 .footer{
-    padding:28px 15px;
-    background:#102d50;
+    background:#111;
     color:#fff;
     text-align:center;
+    padding:35px 20px;
 }
 
 .footer-logo{
-    font-size:23px;
+    font-size:24px;
     font-weight:900;
 }
 
-.footer-logo span{
-    color:#ff7200;
-}
-
 .footer-slogan{
-    margin-top:5px;
-    font-size:11px;
-    letter-spacing:2px;
+    margin-top:7px;
+    color:#bbb;
+    font-size:13px;
 }
 
-.footer-copy{
-    margin-top:12px;
-    font-size:12px;
-    opacity:.65;
+.footer-whatsapp{
+    display:inline-flex;
+    margin-top:20px;
+    padding:13px 25px;
+    background:#16c957;
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:900;
 }
 
 
 /* =========================
-   TABLET
+   MOBİL SABİT WHATSAPP
 ========================= */
 
-@media(max-width:900px){
-
-    .form-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
+.mobile-whatsapp{
+    display:none;
 }
 
 
@@ -282,26 +252,52 @@ img{
 
 @media(max-width:600px){
 
+    body{
+        padding-bottom:64px;
+    }
+
+    .hero img{
+        width:100%;
+        height:auto;
+    }
+
+    /* MOBİL ÜCRETSİZ İLAN VER */
+    .ilan-link{
+        left:8%;
+        top:11%;
+        width:84%;
+        height:7%;
+        z-index:40;
+    }
+
+    /* MOBİL GÖRSEL WHATSAPP */
+    .whatsapp-link{
+        left:14%;
+        top:48%;
+        width:72%;
+        height:9%;
+        z-index:30;
+    }
+
+    /* FORM */
+
     .form-section{
-        padding:25px 10px 45px;
+        padding:35px 12px;
     }
 
     .form-container{
-        padding:22px 15px;
-        border-radius:18px;
+        padding:22px 16px;
+        border-radius:16px;
     }
 
-    .form-header{
-        margin-bottom:22px;
-    }
-
-    .form-header h2{
-        font-size:23px;
+    .form-title{
+        font-size:25px;
         line-height:1.2;
     }
 
-    .form-header p{
-        font-size:13px;
+    .form-subtitle{
+        font-size:14px;
+        margin-bottom:25px;
     }
 
     .form-grid{
@@ -309,63 +305,89 @@ img{
         gap:15px;
     }
 
-    .full{
+    .form-group.full{
         grid-column:auto;
     }
 
     .submit-button{
-        height:56px;
+        grid-column:auto;
+        font-size:16px;
+    }
+
+    .form-note{
+        grid-column:auto;
+    }
+
+
+    /* =========================
+       SABİT WHATSAPP
+    ========================= */
+
+    .mobile-whatsapp{
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:0;
+
+        height:64px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:9px;
+
+        background:#16c957;
+        color:#fff;
+
+        text-decoration:none;
+
+        font-size:16px;
+        font-weight:900;
+
+        z-index:99999;
+
+        box-shadow:0 -3px 15px rgba(0,0,0,.20);
+    }
+
+    .mobile-whatsapp-icon{
+        width:32px;
+        height:32px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        border:2px solid #fff;
+        border-radius:50%;
+
         font-size:17px;
     }
 
-
-    /* =====================================
-       MOBİL GÖRSEL TIKLAMA KONUMU
-
-       design-mobile.png
-    ===================================== */
-
-    .whatsapp-link{
-        left:14%;
-        top:57%;
-        width:72%;
-        height:8%;
-        z-index:60;
+    .mobile-whatsapp-arrow{
+        font-size:23px;
     }
 
-    .ilan-link{
-        left:14%;
-        top:66%;
-        width:72%;
-        height:8%;
-        z-index:70;
+    .footer{
+        padding-bottom:90px;
     }
-
 }
 
 
-/* =========================
-   KÜÇÜK TELEFON
-========================= */
+/* KÜÇÜK TELEFON */
 
 @media(max-width:380px){
 
-    .form-container{
-        padding:18px 12px;
-    }
-
-    .form-header h2{
-        font-size:21px;
-    }
-
-    .field input,
-    .field select,
-    .field textarea{
+    .mobile-whatsapp{
         font-size:14px;
     }
 
-}
+    .mobile-whatsapp-icon{
+        width:29px;
+        height:29px;
+        font-size:15px;
+    }
 
+}
 </style>
 </head>
 
@@ -387,7 +409,7 @@ img{
             srcset="design-mobile.png"
         >
 
-        <!-- BİLGİSAYAR -->
+        <!-- MASAÜSTÜ -->
         <img
             src="design.png"
             alt="EmlakSatışım.com - Emlakta Doğru Adres"
@@ -396,27 +418,28 @@ img{
     </picture>
 
 
-    <!-- ==================================================
-         WHATSAPP
-    ================================================== -->
+    <!-- =============================================
+         ÜCRETSİZ İLAN VER
+         FORM'A GİDER
+    ============================================== -->
 
     <a
-        class="hero-link whatsapp-link"
-        href="https://wa.me/905300316127?text=Merhaba%2C%20gayrimenkulümü%20satmak%20istiyorum."
-        target="_blank"
-        rel="noopener"
-        aria-label="WhatsApp ile iletişime geç"
+        href="#basvuru"
+        class="hero-link ilan-link"
+        aria-label="Ücretsiz ilan ver"
     ></a>
 
 
-    <!-- ==================================================
-         ÜCRETSİZ İLAN VER
-    ================================================== -->
+    <!-- =============================================
+         WHATSAPP
+    ============================================== -->
 
     <a
-        class="hero-link ilan-link"
-        href="#basvuru"
-        aria-label="Ücretsiz ilan ver"
+        href="https://wa.me/905300316127?text=Merhaba%2C%20gayrimenkulümü%20satmak%20istiyorum."
+        target="_blank"
+        rel="noopener"
+        class="hero-link whatsapp-link"
+        aria-label="WhatsApp ile iletişime geç"
     ></a>
 
 </section>
@@ -427,26 +450,18 @@ img{
      BAŞVURU FORMU
 ================================================== -->
 
-<section
-    class="form-section"
-    id="basvuru"
->
+<section id="basvuru" class="form-section">
 
     <div class="form-container">
 
+        <h1 class="form-title">
+            Ücretsiz İlan Ver Başvuru Formu
+        </h1>
 
-        <div class="form-header">
-
-            <h2>
-                Ücretsiz İlan Ver Başvuru Formu
-            </h2>
-
-            <p>
-                Gayrimenkulünüzün bilgilerini bırakın.
-                En kısa sürede sizinle iletişime geçelim.
-            </p>
-
-        </div>
+        <p class="form-subtitle">
+            Gayrimenkulünüzü satmak için bilgilerinizi bırakın.
+            Ekibimiz sizinle iletişime geçsin.
+        </p>
 
 
         <form id="ilanForm">
@@ -454,16 +469,15 @@ img{
             <div class="form-grid">
 
 
-                <!-- AD SOYAD -->
+                <div class="form-group">
 
-                <div class="field">
-
-                    <label>
+                    <label for="ad_soyad">
                         Ad Soyad *
                     </label>
 
                     <input
                         type="text"
+                        id="ad_soyad"
                         name="ad_soyad"
                         placeholder="Adınız ve soyadınız"
                         required
@@ -472,16 +486,15 @@ img{
                 </div>
 
 
-                <!-- TELEFON -->
+                <div class="form-group">
 
-                <div class="field">
-
-                    <label>
+                    <label for="telefon">
                         Telefon *
                     </label>
 
                     <input
                         type="tel"
+                        id="telefon"
                         name="telefon"
                         placeholder="05XX XXX XX XX"
                         required
@@ -490,32 +503,30 @@ img{
                 </div>
 
 
-                <!-- E-POSTA -->
+                <div class="form-group">
 
-                <div class="field">
-
-                    <label>
+                    <label for="email">
                         E-posta
                     </label>
 
                     <input
                         type="email"
+                        id="email"
                         name="email"
-                        placeholder="ornek@mail.com"
+                        placeholder="ornek@email.com"
                     >
 
                 </div>
 
 
-                <!-- GAYRİMENKUL -->
+                <div class="form-group">
 
-                <div class="field">
-
-                    <label>
+                    <label for="ilan_turu">
                         Gayrimenkul Türü *
                     </label>
 
                     <select
+                        id="ilan_turu"
                         name="ilan_turu"
                         required
                     >
@@ -557,15 +568,14 @@ img{
                 </div>
 
 
-                <!-- İŞLEM -->
+                <div class="form-group">
 
-                <div class="field">
-
-                    <label>
+                    <label for="islem_turu">
                         İşlem Türü *
                     </label>
 
                     <select
+                        id="islem_turu"
                         name="islem_turu"
                         required
                     >
@@ -587,22 +597,17 @@ img{
                 </div>
 
 
-                <!-- İL -->
+                <div class="form-group">
 
-                <div class="field">
-
-                    <label>
+                    <label for="il">
                         İl *
                     </label>
 
                     <select
+                        id="il"
                         name="il"
                         required
                     >
-
-                        <option value="">
-                            Seçiniz
-                        </option>
 
                         <option value="İstanbul">
                             İstanbul
@@ -613,21 +618,20 @@ img{
                 </div>
 
 
-                <!-- İLÇE -->
+                <div class="form-group">
 
-                <div class="field">
-
-                    <label>
+                    <label for="ilce">
                         İlçe *
                     </label>
 
                     <select
+                        id="ilce"
                         name="ilce"
                         required
                     >
 
                         <option value="">
-                            Seçiniz
+                            İlçe Seçiniz
                         </option>
 
                         <option value="Sultangazi">
@@ -655,16 +659,15 @@ img{
                 </div>
 
 
-                <!-- MAHALLE -->
+                <div class="form-group">
 
-                <div class="field">
-
-                    <label>
+                    <label for="mahalle">
                         Mahalle
                     </label>
 
                     <input
                         type="text"
+                        id="mahalle"
                         name="mahalle"
                         placeholder="Mahalle adı"
                     >
@@ -672,49 +675,48 @@ img{
                 </div>
 
 
-                <!-- FİYAT -->
+                <div class="form-group">
 
-                <div class="field">
-
-                    <label>
-                        Satış Fiyatı (TL)
+                    <label for="fiyat">
+                        İstenen Fiyat
                     </label>
 
                     <input
                         type="number"
+                        id="fiyat"
                         name="fiyat"
-                        placeholder="Örn: 2500000"
+                        placeholder="Örn. 5000000"
+                        min="0"
                     >
 
                 </div>
 
 
-                <!-- METREKARE -->
+                <div class="form-group">
 
-                <div class="field">
-
-                    <label>
+                    <label for="metrekare">
                         Metrekare
                     </label>
 
                     <input
                         type="number"
+                        id="metrekare"
                         name="metrekare"
-                        placeholder="Örn: 120"
+                        placeholder="Örn. 120"
+                        min="0"
                     >
 
                 </div>
 
 
-                <!-- ODA -->
+                <div class="form-group">
 
-                <div class="field">
-
-                    <label>
+                    <label for="oda_sayisi">
                         Oda Sayısı
                     </label>
 
                     <select
+                        id="oda_sayisi"
                         name="oda_sayisi"
                     >
 
@@ -722,98 +724,73 @@ img{
                             Seçiniz
                         </option>
 
-                        <option value="1+0">
-                            1+0
-                        </option>
-
-                        <option value="1+1">
-                            1+1
-                        </option>
-
-                        <option value="2+1">
-                            2+1
-                        </option>
-
-                        <option value="3+1">
-                            3+1
-                        </option>
-
-                        <option value="4+1">
-                            4+1
-                        </option>
-
-                        <option value="5+1">
-                            5+1
-                        </option>
+                        <option value="1+0">1+0</option>
+                        <option value="1+1">1+1</option>
+                        <option value="2+1">2+1</option>
+                        <option value="3+1">3+1</option>
+                        <option value="4+1">4+1</option>
+                        <option value="5+1">5+1</option>
+                        <option value="Diğer">Diğer</option>
 
                     </select>
 
                 </div>
 
 
-                <!-- AÇIKLAMA -->
+                <div class="form-group full">
 
-                <div class="field full">
-
-                    <label>
-                        Gayrimenkul Açıklaması
+                    <label for="aciklama">
+                        Gayrimenkul Hakkında Bilgi
                     </label>
 
                     <textarea
+                        id="aciklama"
                         name="aciklama"
-                        placeholder="Gayrimenkulünüz hakkında bilgi verin..."
+                        placeholder="Gayrimenkulünüz hakkında eklemek istediğiniz bilgileri yazabilirsiniz."
                     ></textarea>
 
                 </div>
 
 
-                <!-- FOTOĞRAFLAR -->
+                <div class="form-group full">
 
-                <div class="field full">
-
-                    <label>
+                    <label for="fotograflar">
                         Gayrimenkul Fotoğrafları
                     </label>
 
-                    <div class="photo-box">
-
-                        <div class="photo-title">
-                            📷 Fotoğraflarınızı Ekleyin
-                        </div>
-
-                        <div class="photo-description">
-                            Birden fazla fotoğraf seçebilirsiniz.
-                        </div>
+                    <div class="file-box">
 
                         <input
                             type="file"
+                            id="fotograflar"
                             name="fotograflar"
-                            accept="image/jpeg,image/png,image/webp"
+                            accept="image/*"
                             multiple
                         >
 
+                        <div class="file-info">
+                            Birden fazla fotoğraf seçebilirsiniz.
+                        </div>
+
                     </div>
 
                 </div>
 
 
-                <!-- GÖNDER -->
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    ÜCRETSİZ İLAN BAŞVURUMU GÖNDER →
+                </button>
 
-                <div class="field full">
 
-                    <button
-                        type="submit"
-                        class="submit-button"
-                    >
-                        ÜCRETSİZ İLAN BAŞVURUMU GÖNDER →
-                    </button>
+                <div class="form-note">
 
-                    <div class="form-note">
-                        🔒 Bilgileriniz güvenli şekilde saklanır.
-                    </div>
+                    Başvurunuz alındıktan sonra ekibimiz sizinle
+                    iletişime geçecektir.
 
                 </div>
-
 
             </div>
 
@@ -832,60 +809,61 @@ img{
 <footer class="footer">
 
     <div class="footer-logo">
-        Emlak<span>Satışım</span>.com
+        EmlakSatışım.com
     </div>
 
     <div class="footer-slogan">
         EMLAKTA DOĞRU ADRES
     </div>
 
-    <div class="footer-copy">
-        © 2026 EmlakSatışım.com
-    </div>
+    <a
+        href="https://wa.me/905300316127?text=Merhaba%2C%20gayrimenkulümü%20satmak%20istiyorum."
+        target="_blank"
+        rel="noopener"
+        class="footer-whatsapp"
+    >
+        WhatsApp'tan İletişime Geç
+    </a>
 
 </footer>
 
 
 
+<!-- ==================================================
+     MOBİL SABİT WHATSAPP
+================================================== -->
+
+<a
+    href="https://wa.me/905300316127?text=Merhaba%2C%20gayrimenkulümü%20satmak%20istiyorum."
+    target="_blank"
+    rel="noopener"
+    class="mobile-whatsapp"
+>
+
+    <span class="mobile-whatsapp-icon">
+        ☎
+    </span>
+
+    <span>
+        WhatsApp'tan Hemen İletişime Geç
+    </span>
+
+    <span class="mobile-whatsapp-arrow">
+        →
+    </span>
+
+</a>
+
+
+
 <script>
 
-/* =====================================================
-   FORM
-===================================================== */
+document.getElementById("ilanForm").addEventListener("submit", function(e){
 
-document
-.getElementById("ilanForm")
-.addEventListener("submit", function(event){
-
-    event.preventDefault();
-
-    const ad =
-        document
-        .querySelector('[name="ad_soyad"]')
-        .value
-        .trim();
-
-    const telefon =
-        document
-        .querySelector('[name="telefon"]')
-        .value
-        .trim();
-
-
-    if(!ad || !telefon){
-
-        alert(
-            "Lütfen Ad Soyad ve Telefon alanlarını doldurun."
-        );
-
-        return;
-
-    }
-
+    e.preventDefault();
 
     alert(
-        "Başvurunuz alındı.\n\n" +
-        "En kısa sürede sizinle iletişime geçeceğiz."
+        "Başvurunuz alındı. EmlakSatışım.com ekibimiz en kısa sürede sizinle iletişime geçecektir."
     );
 
 });
