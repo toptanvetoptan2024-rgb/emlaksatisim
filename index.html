@@ -6,7 +6,7 @@
 
 <title>EmlakSatışım.com | Emlakta Doğru Adres</title>
 
-<meta name="description" content="Gayrimenkulünüzü satmak için ücretsiz ilan verin. EmlakSatışım.com ile gayrimenkulünüzü doğru alıcılarla buluşturun.">
+<meta name="description" content="Gayrimenkulünüzü satmak için ücretsiz ilan verin. EmlakSatışım.com">
 
 <style>
 *{
@@ -20,19 +20,15 @@ html{
 }
 
 body{
-    margin:0;
     font-family:Arial,Helvetica,sans-serif;
-    background:#fff;
+    background:#f4f7fb;
     color:#172d50;
-}
-
-img{
-    max-width:100%;
+    padding:0;
 }
 
 
 /* =====================================================
-   HERO
+   ANA GÖRSEL
 ===================================================== */
 
 .hero{
@@ -46,7 +42,7 @@ img{
     width:100%;
 }
 
-.hero picture img{
+.hero img{
     display:block;
     width:100%;
     height:auto;
@@ -54,46 +50,77 @@ img{
 
 
 /* =====================================================
-   GÖRSEL ÜZERİNDEKİ LİNKLER
+   ÜCRETSİZ İLAN VER - GÖRSEL ÜZERİNDEN FORMA
 ===================================================== */
 
-.hero-link{
+.hero-ilan{
     position:absolute;
     display:block;
-    z-index:100;
-    text-decoration:none;
-    background:transparent;
+    z-index:1000;
     cursor:pointer;
-    -webkit-tap-highlight-color:transparent;
+    background:transparent;
+    text-decoration:none;
+}
+
+
+/* MASAÜSTÜ */
+@media(min-width:601px){
+
+    .hero-ilan{
+        left:6%;
+        top:20%;
+        width:88%;
+        height:9%;
+    }
+
+}
+
+
+/* MOBİL */
+@media(max-width:600px){
+
+    .hero-ilan{
+        left:5%;
+        top:9%;
+        width:90%;
+        height:9%;
+    }
+
 }
 
 
 /* =====================================================
-   MASAÜSTÜ BUTONLAR
+   MOBİL GÖRSELDEKİ ESKİ WHATSAPP'I KAPAT
 ===================================================== */
 
-/*
-   ÜCRETSİZ İLAN VER
-   Görselin üst bölümündeki turuncu buton
-*/
-
-.desktop-ilan{
-    left:32%;
-    top:26%;
-    width:36%;
-    height:9%;
+.mobile-image-whatsapp-cover{
+    display:none;
 }
 
+@media(max-width:600px){
 
-/*
-   WHATSAPP
-*/
+    /*
+       Görselin içinde bulunan eski WhatsApp alanı
+       burada kapatılıyor.
 
-.desktop-whatsapp{
-    left:30%;
-    top:53%;
-    width:40%;
-    height:10%;
+       Böylece sadece aşağıdaki sabit WhatsApp
+       butonu görünecek.
+    */
+
+    .mobile-image-whatsapp-cover{
+        display:block;
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+
+        height:10.5%;
+
+        background:#f4f7fb;
+
+        z-index:50;
+    }
+
 }
 
 
@@ -114,33 +141,48 @@ img{
 .form-container{
     width:100%;
     max-width:1050px;
-    margin:0 auto;
+    margin:auto;
+
     background:#fff;
+
     padding:40px;
+
     border-radius:22px;
-    box-shadow:0 8px 35px rgba(0,0,0,.10);
+
+    box-shadow:
+        0 8px 35px rgba(0,0,0,.10);
 }
 
 .form-title{
     text-align:center;
+
     font-size:34px;
     line-height:1.2;
+
     font-weight:900;
+
     color:#172d50;
+
     margin-bottom:12px;
 }
 
 .form-subtitle{
     text-align:center;
-    color:#666;
+
     font-size:16px;
     line-height:1.5;
+
+    color:#666;
+
     margin-bottom:35px;
 }
 
 .form-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:20px;
 }
 
@@ -155,8 +197,11 @@ img{
 
 .form-group label{
     margin-bottom:8px;
+
     font-size:14px;
+
     font-weight:800;
+
     color:#222;
 }
 
@@ -164,13 +209,20 @@ img{
 .form-group select,
 .form-group textarea{
     width:100%;
-    border:1px solid #ddd;
-    border-radius:10px;
+
     padding:14px 15px;
-    font-size:15px;
-    font-family:inherit;
-    outline:none;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
     background:#fff;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    outline:none;
 }
 
 .form-group input:focus,
@@ -181,37 +233,53 @@ img{
 
 .form-group textarea{
     min-height:140px;
+
     resize:vertical;
 }
 
 .file-box{
-    border:2px dashed #ddd;
-    border-radius:12px;
     padding:20px;
+
+    border:2px dashed #ddd;
+
+    border-radius:12px;
+
     background:#fafafa;
 }
 
 .file-box input{
     border:0;
+
     padding:0;
 }
 
 .file-info{
     margin-top:8px;
-    color:#777;
+
     font-size:13px;
+
+    color:#777;
 }
 
 .submit-button{
     grid-column:1 / -1;
+
     width:100%;
-    border:0;
-    border-radius:12px;
+
     padding:18px;
+
+    border:0;
+
+    border-radius:12px;
+
     background:#f57c00;
+
     color:#fff;
+
     font-size:18px;
+
     font-weight:900;
+
     cursor:pointer;
 }
 
@@ -221,10 +289,14 @@ img{
 
 .form-note{
     grid-column:1 / -1;
+
     text-align:center;
-    color:#777;
+
     font-size:13px;
+
     line-height:1.5;
+
+    color:#777;
 }
 
 
@@ -234,30 +306,43 @@ img{
 
 .footer{
     background:#111;
+
     color:#fff;
+
     text-align:center;
-    padding:35px 20px;
+
+    padding:35px 20px 90px;
 }
 
 .footer-logo{
     font-size:24px;
+
     font-weight:900;
 }
 
 .footer-slogan{
     margin-top:7px;
+
     color:#bbb;
+
     font-size:13px;
 }
 
 .footer-whatsapp{
     display:inline-flex;
+
     margin-top:20px;
+
     padding:13px 25px;
+
     border-radius:30px;
+
     background:#16c957;
+
     color:#fff;
+
     text-decoration:none;
+
     font-weight:900;
 }
 
@@ -270,138 +355,59 @@ img{
     display:none;
 }
 
-
-/* =====================================================
-   MOBİL
-===================================================== */
-
 @media(max-width:600px){
 
     body{
         padding-bottom:65px;
     }
 
-    .hero{
-        width:100%;
-    }
-
-    .hero picture img{
-        width:100%;
-        height:auto;
-    }
-
-
-    /*
-       MOBİLDE ÜCRETSİZ İLAN VER
-
-       Görselin üst tarafındaki
-       turuncu buton.
-    */
-
-    .mobile-ilan{
-        left:7%;
-        top:10%;
-        width:86%;
-        height:8%;
-        z-index:1000;
-    }
-
-
-    /*
-       MOBİLDE GÖRSELİN İÇİNDEKİ WHATSAPP
-    */
-
-    .mobile-whatsapp-button{
-        left:10%;
-        top:47%;
-        width:80%;
-        height:10%;
-        z-index:999;
-    }
-
-
-    /* =================================================
-       FORM
-    ================================================= */
-
-    .form-section{
-        padding:35px 12px;
-    }
-
-    .form-container{
-        padding:22px 16px;
-        border-radius:16px;
-    }
-
-    .form-title{
-        font-size:25px;
-    }
-
-    .form-subtitle{
-        font-size:14px;
-        margin-bottom:25px;
-    }
-
-    .form-grid{
-        grid-template-columns:1fr;
-        gap:15px;
-    }
-
-    .form-group.full{
-        grid-column:auto;
-    }
-
-    .submit-button{
-        grid-column:auto;
-        font-size:16px;
-    }
-
-    .form-note{
-        grid-column:auto;
-    }
-
-
-    /* =================================================
-       SABİT WHATSAPP
-    ================================================= */
-
     .mobile-whatsapp{
+
         position:fixed;
+
         left:0;
         right:0;
         bottom:0;
 
         width:100%;
+
         height:65px;
 
         display:flex;
+
         align-items:center;
         justify-content:center;
 
         gap:9px;
 
         background:#16c957;
+
         color:#fff;
 
         text-decoration:none;
 
         font-size:16px;
+
         font-weight:900;
 
         z-index:999999;
 
-        box-shadow:0 -4px 18px rgba(0,0,0,.20);
+        box-shadow:
+            0 -4px 18px rgba(0,0,0,.20);
     }
 
     .mobile-whatsapp-icon{
+
         width:32px;
         height:32px;
 
         display:flex;
+
         align-items:center;
         justify-content:center;
 
         border:2px solid #fff;
+
         border-radius:50%;
 
         font-size:17px;
@@ -411,9 +417,55 @@ img{
         font-size:23px;
     }
 
-    .footer{
-        padding-bottom:90px;
+}
+
+
+/* =====================================================
+   MOBİL FORM
+===================================================== */
+
+@media(max-width:600px){
+
+    .form-section{
+        padding:35px 12px;
     }
+
+    .form-container{
+        padding:22px 16px;
+
+        border-radius:16px;
+    }
+
+    .form-title{
+        font-size:25px;
+    }
+
+    .form-subtitle{
+        font-size:14px;
+
+        margin-bottom:25px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+
+        gap:15px;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .submit-button{
+        grid-column:auto;
+
+        font-size:16px;
+    }
+
+    .form-note{
+        grid-column:auto;
+    }
+
 }
 
 
@@ -430,14 +482,15 @@ img{
     .mobile-whatsapp-icon{
         width:29px;
         height:29px;
+
         font-size:15px;
     }
 
     .mobile-whatsapp-arrow{
         font-size:20px;
     }
-}
 
+}
 </style>
 </head>
 
@@ -453,69 +506,38 @@ img{
 
     <picture>
 
-        <!-- MOBİL GÖRSEL -->
+        <!-- MOBİL -->
         <source
             media="(max-width:600px)"
             srcset="design-mobile.png"
         >
 
-        <!-- MASAÜSTÜ GÖRSEL -->
+        <!-- MASAÜSTÜ -->
         <img
             src="design.png"
-            alt="EmlakSatışım.com - Gayrimenkulünüzü Satmak İçin Ücretsiz İlan Verin"
+            alt="EmlakSatışım.com"
         >
 
     </picture>
 
 
     <!-- =================================================
-         MASAÜSTÜ ÜCRETSİZ İLAN VER
-         FORM'A GİDER
+         SADECE ÜCRETSİZ İLAN VER
+         FORMA GİDER
     ================================================== -->
 
     <a
         href="#basvuru"
-        class="hero-link desktop-ilan"
+        class="hero-ilan"
         aria-label="Ücretsiz ilan ver"
     ></a>
 
 
     <!-- =================================================
-         MASAÜSTÜ WHATSAPP
+         MOBİL GÖRSELDEKİ WHATSAPP'I KAPATAN ALAN
     ================================================== -->
 
-    <a
-        href="https://wa.me/905300316127?text=Merhaba%2C%20gayrimenkulümü%20satmak%20istiyorum."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hero-link desktop-whatsapp"
-        aria-label="WhatsApp ile iletişime geç"
-    ></a>
-
-
-    <!-- =================================================
-         MOBİL ÜCRETSİZ İLAN VER
-         FORM'A GİDER
-    ================================================== -->
-
-    <a
-        href="#basvuru"
-        class="hero-link mobile-ilan"
-        aria-label="Ücretsiz ilan ver"
-    ></a>
-
-
-    <!-- =================================================
-         MOBİL GÖRSEL WHATSAPP
-    ================================================== -->
-
-    <a
-        href="https://wa.me/905300316127?text=Merhaba%2C%20gayrimenkulümü%20satmak%20istiyorum."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hero-link mobile-whatsapp-button"
-        aria-label="WhatsApp ile iletişime geç"
-    ></a>
+    <div class="mobile-image-whatsapp-cover"></div>
 
 </section>
 
@@ -525,7 +547,10 @@ img{
      BAŞVURU FORMU
 ===================================================== -->
 
-<section id="basvuru" class="form-section">
+<section
+    id="basvuru"
+    class="form-section"
+>
 
     <div class="form-container">
 
@@ -582,7 +607,7 @@ img{
                 </div>
 
 
-                <!-- EMAIL -->
+                <!-- E-POSTA -->
 
                 <div class="form-group">
 
@@ -804,7 +829,7 @@ img{
                 </div>
 
 
-                <!-- ODA -->
+                <!-- ODA SAYISI -->
 
                 <div class="form-group">
 
@@ -821,13 +846,33 @@ img{
                             Seçiniz
                         </option>
 
-                        <option value="1+0">1+0</option>
-                        <option value="1+1">1+1</option>
-                        <option value="2+1">2+1</option>
-                        <option value="3+1">3+1</option>
-                        <option value="4+1">4+1</option>
-                        <option value="5+1">5+1</option>
-                        <option value="Diğer">Diğer</option>
+                        <option value="1+0">
+                            1+0
+                        </option>
+
+                        <option value="1+1">
+                            1+1
+                        </option>
+
+                        <option value="2+1">
+                            2+1
+                        </option>
+
+                        <option value="3+1">
+                            3+1
+                        </option>
+
+                        <option value="4+1">
+                            4+1
+                        </option>
+
+                        <option value="5+1">
+                            5+1
+                        </option>
+
+                        <option value="Diğer">
+                            Diğer
+                        </option>
 
                     </select>
 
@@ -851,7 +896,7 @@ img{
                 </div>
 
 
-                <!-- FOTOĞRAF -->
+                <!-- FOTOĞRAFLAR -->
 
                 <div class="form-group full">
 
@@ -933,7 +978,7 @@ img{
 
 
 <!-- =====================================================
-     MOBİL SABİT WHATSAPP
+     MOBİLDE TEK SABİT WHATSAPP
 ===================================================== -->
 
 <a
@@ -962,14 +1007,6 @@ img{
 
 <script>
 
-/*
-=====================================================
-FORM
-=====================================================
-Şimdilik test amaçlıdır.
-D1 bağlantısını sonraki aşamada ekleyeceğiz.
-*/
-
 document
 .getElementById("ilanForm")
 .addEventListener("submit", function(event){
@@ -979,28 +1016,6 @@ document
     alert(
         "Başvurunuz alındı. EmlakSatışım.com ekibimiz en kısa sürede sizinle iletişime geçecektir."
     );
-
-});
-
-
-/*
-=====================================================
-LINK TESTİ
-=====================================================
-*/
-
-document
-.querySelectorAll(".hero-link")
-.forEach(function(link){
-
-    link.addEventListener("click", function(){
-
-        console.log(
-            "Tıklanan bağlantı:",
-            this.getAttribute("href")
-        );
-
-    });
 
 });
 
