@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EmlakSatışım | Ücretsiz İlan Ver</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;font-family:Arial,Helvetica,sans-serif}
+.page{
+  position:relative;
+  width:100%;
+  min-height:150vw;
+  margin:0;
+  background:url("design.png") center top/100% auto no-repeat;
+  overflow:hidden;
+}
+.form-card{
+  position:absolute;
+  left:5.7%;
+  top:36.25%;
+  width:88.6%;
+  height:45.2%;
+  background:rgba(255,255,255,.98);
+  border-radius:22px;
+  box-shadow:0 8px 30px rgba(12,38,65,.10);
+  padding:2.1% 3.5%;
+}
+.form-title{
+  margin:0 0 .35em;
+  color:#102b4a;
+  font-size:clamp(22px,3vw,42px);
+  font-weight:800;
+  line-height:1.1;
+}
+.form-subtitle{
+  margin:0 0 1.5%;
+  color:#596579;
+  font-size:clamp(11px,1.25vw,18px);
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  column-gap:2.8%;
+  row-gap:1.2%;
+}
+.field label{
+  display:block;
+  color:#102b4a;
+  font-size:clamp(10px,1.1vw,16px);
+  margin:0 0 5px;
+  font-weight:500;
+}
+input,select,textarea{
+  width:100%;
+  background:#fff;
+  border:1px solid #d5dde7;
+  border-radius:7px;
+  padding:0 12px;
+  color:#24354b;
+  font-size:clamp(10px,1.15vw,16px);
+  outline:none;
+}
+input,select{height:42px}
+input:focus,select:focus,textarea:focus{border:2px solid #ff7800}
+textarea{
+  height:82px;
+  padding:10px 12px;
+  resize:none;
+}
+.full{grid-column:1/-1}
+.upload{
+  margin-top:1.2%;
+}
+.upload label{
+  display:block;
+  color:#102b4a;
+  font-size:clamp(10px,1.1vw,16px);
+  margin-bottom:5px;
+}
+.upload-box{
+  height:64px;
+  border:1px dashed #bfcbd9;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  color:#102b4a;
+  background:#fbfcfe;
+  cursor:pointer;
+}
+.upload-box strong{font-size:clamp(10px,1.05vw,15px)}
+.upload-box span{font-size:clamp(9px,.9vw,13px);color:#687587}
+.upload input{display:none}
+.submit{
+  margin-top:1.2%;
+  width:100%;
+  height:58px;
+  border:0;
+  border-radius:7px;
+  background:#ff7908;
+  color:#fff;
+  font-size:clamp(13px,1.45vw,20px);
+  font-weight:800;
+  cursor:pointer;
+}
+.submit:hover{filter:brightness(.96)}
+.privacy{
+  text-align:center;
+  color:#24354b;
+  font-size:clamp(9px,.9vw,13px);
+  margin-top:7px;
+}
+.privacy b{font-size:14px}
+.wa{
+  position:absolute;
+  left:24.2%;
+  top:22.9%;
+  width:51.2%;
+  height:5.8%;
+  border-radius:40px;
+  background:transparent;
+  border:0;
+  cursor:pointer;
+}
+.free{
+  position:absolute;
+  left:35%;
+  top:8%;
+  width:30%;
+  height:7%;
+  background:transparent;
+  border:0;
+  cursor:pointer;
+}
+@media(max-width:700px){
+  .form-card{
+    top:36.1%;
+    height:47%;
+    border-radius:14px;
+    padding:3% 3.5%;
+  }
+  .form-subtitle{margin-bottom:2.5%}
+  .grid{row-gap:1.5%;column-gap:2%}
+  input,select{height:34px;padding:0 7px}
+  textarea{height:65px;padding:7px}
+  .upload-box{height:48px}
+  .submit{height:44px}
+}
+@media(max-width:480px){
+  .form-card{
+    top:35.9%;
+    height:49%;
+    padding:3.5%;
+  }
+  .form-title{font-size:18px}
+  .form-subtitle{font-size:9px}
+  .field label{font-size:8px;margin-bottom:3px}
+  input,select{font-size:8px;height:27px;padding:0 5px}
+  textarea{font-size:8px;height:52px}
+  .upload-box{height:40px;gap:6px}
+  .upload-box strong{font-size:8px}
+  .upload-box span{font-size:7px}
+  .submit{height:36px;font-size:10px}
+  .privacy{font-size:7px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<a class="wa"
+href="https://wa.me/905300316127?text=Merhaba%2C%20gayrimenkulümü%20satmak%20istiyorum."
+target="_blank" rel="noopener" aria-label="WhatsApp ile iletişim"></a>
+
+<a class="free" href="#ilan-formu" aria-label="Ücretsiz ilan ver"></a>
+
+<form id="ilan-formu" class="form-card">
+  <h1 class="form-title">Ücretsiz İlan Ver Başvuru Formu</h1>
+  <p class="form-subtitle">Aşağıdaki bilgileri doldurun, ilanınızı bizimle paylaşın. En kısa sürede sizinle iletişime geçeceğiz.</p>
+
+  <div class="grid">
+    <div class="field">
+      <label>Ad Soyad *</label>
+      <input name="ad_soyad" required placeholder="Adınız ve soyadınız">
+    </div>
+    <div class="field">
+      <label>Telefon *</label>
+      <input name="telefon" required inputmode="tel" placeholder="05XX XXX XX XX">
+    </div>
+    <div class="field">
+      <label>E-posta</label>
+      <input name="email" type="email" placeholder="ornek@mail.com">
+    </div>
+
+    <div class="field">
+      <label>Gayrimenkul Türü *</label>
+      <select name="ilan_turu" required>
+        <option value="">Seçiniz</option>
+        <option>Daire</option><option>Villa</option><option>Müstakil Ev</option>
+        <option>Dükkan</option><option>Ofis</option><option>Arsa</option><option>Turistik Tesis</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>İşlem Türü *</label>
+      <select name="islem_turu" required>
+        <option value="">Seçiniz</option><option>Satılık</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>İl *</label>
+      <select name="il" required>
+        <option value="">Seçiniz</option><option>İstanbul</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>İlçe *</label>
+      <select name="ilce" required>
+        <option value="">Seçiniz</option><option>Sultangazi</option><option>Arnavutköy</option>
+        <option>Başakşehir</option><option>Gaziosmanpaşa</option><option>Eyüpsultan</option><option>Diğer</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Mahalle</label>
+      <input name="mahalle" placeholder="Mahalle adı">
+    </div>
+    <div class="field">
+      <label>Fiyat (TL)</label>
+      <input name="fiyat" inputmode="decimal" placeholder="Örnek: 2.500.000">
+    </div>
+
+    <div class="field">
+      <label>m²</label>
+      <input name="metrekare" inputmode="decimal" placeholder="Örnek: 120">
+    </div>
+    <div class="field">
+      <label>Oda Sayısı</label>
+      <select name="oda_sayisi">
+        <option value="">Seçiniz</option><option>1+0</option><option>1+1</option><option>2+1</option>
+        <option>3+1</option><option>4+1</option><option>5+1</option><option>Diğer</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Bina Yaşı</label>
+      <select name="bina_yasi">
+        <option value="">Seçiniz</option><option>0-5</option><option>6-10</option><option>11-20</option><option>21+</option>
+      </select>
+    </div>
+
+    <div class="field full">
+      <label>Açıklama</label>
+      <textarea name="aciklama" placeholder="Emlakınız ile ilgili detayları yazınız..."></textarea>
+    </div>
+  </div>
+
+  <div class="upload">
+    <label>Fotoğraflar <span>(Opsiyonel)</span></label>
+    <label class="upload-box">
+      <input type="file" name="fotograflar" accept="image/jpeg,image/png" multiple>
+      <span style="font-size:26px">📷</span>
+      <div>
+        <strong>Fotoğrafları seçin veya sürükleyip bırakın</strong><br>
+        <span>JPG, PNG formatında, maksimum 20 fotoğraf</span>
+      </div>
+    </label>
+  </div>
+
+  <button class="submit" type="submit">✈️ &nbsp; Ücretsiz İlan Başvurumu Gönder &nbsp; →</button>
+  <div class="privacy">🔒 &nbsp;Kişisel bilgileriniz gizli tutulur, üçüncü kişilerle paylaşılmaz.</div>
+</form>
+</div>
+
+<script>
+document.getElementById('ilan-formu').addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('Başvurunuz alındı. Yönetim paneli bağlantısını bir sonraki aşamada kuracağız.');
+});
+</script>
+</body>
+</html>
