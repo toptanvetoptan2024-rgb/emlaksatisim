@@ -8,13 +8,14 @@
 
 <title>EmlakSatışım.com | Gayrimenkulünüzü Satın</title>
 
-<meta name="description" content="Gayrimenkulünüzü EmlakSatışım.com ile doğru alıcılara ulaştırın. Ücretsiz ilan başvurunuzu hemen yapın.">
+<meta name="description"
+content="Gayrimenkulünüzü EmlakSatışım.com ile doğru alıcılara ulaştırın. Ücretsiz ilan başvurunuzu hemen yapın.">
 
 <style>
 
-/* =====================================================
+/* =========================================================
    GENEL
-===================================================== */
+========================================================= */
 
 *{
     box-sizing:border-box;
@@ -36,65 +37,69 @@ body{
 }
 
 img{
+    display:block;
     max-width:100%;
 }
 
 
-/* =====================================================
-   ANA TASARIM GÖRSELİ
-===================================================== */
+/* =========================================================
+   ANA GÖRSEL
+========================================================= */
 
 .hero{
-    width:100%;
     position:relative;
-    background:#ffffff;
+    width:100%;
+    background:#fff;
     overflow:hidden;
 }
 
-.hero-image{
+.hero picture,
+.hero picture img{
     display:block;
     width:100%;
     height:auto;
 }
 
 
-/* =====================================================
-   GÖRSEL ÜZERİNDE TIKLAMA ALANLARI
+/* =========================================================
+   GÖRSEL ÜZERİ TIKLAMA ALANLARI
+========================================================= */
 
-   Görsel 1664 x 936 oranındadır.
-===================================================== */
-
-.hero-button{
+.hero-link{
     position:absolute;
     display:block;
-    z-index:10;
+    z-index:20;
     cursor:pointer;
 }
 
 
-/* WhatsApp butonu */
+/* =========================================================
+   MASAÜSTÜ TIKLAMA ALANLARI
+========================================================= */
 
-.whatsapp-button{
-    left:31.25%;
-    top:51.4%;
-    width:36.5%;
-    height:8.2%;
+/* WhatsApp */
+
+.whatsapp-link{
+    left:31.2%;
+    top:51.3%;
+    width:37%;
+    height:8.5%;
 }
 
 
-/* Ücretsiz ilan ver butonu */
+/* Ücretsiz ilan */
 
-.ilan-button{
-    left:31.25%;
+.ilan-link{
+    left:31.2%;
     top:62.5%;
-    width:36.5%;
-    height:8.2%;
+    width:37%;
+    height:8.5%;
 }
 
 
-/* =====================================================
-   FORM BÖLÜMÜ
-===================================================== */
+/* =========================================================
+   FORM
+========================================================= */
 
 .form-section{
     background:#f3f7fa;
@@ -104,26 +109,27 @@ img{
 .form-container{
     width:min(1150px,100%);
     margin:0 auto;
-    background:#ffffff;
-    border-radius:24px;
     padding:38px;
-    box-shadow:
-        0 12px 40px rgba(16,45,80,.12);
+    background:#fff;
+    border-radius:24px;
+    box-shadow:0 12px 40px rgba(16,45,80,.12);
 }
 
 
-/* FORM BAŞLIK */
+/* =========================================================
+   FORM BAŞLIK
+========================================================= */
 
 .form-header{
     margin-bottom:30px;
 }
 
 .form-header h2{
+    margin-bottom:9px;
     color:#102d50;
     font-size:32px;
     line-height:1.2;
     font-weight:900;
-    margin-bottom:9px;
 }
 
 .form-header p{
@@ -133,9 +139,9 @@ img{
 }
 
 
-/* =====================================================
+/* =========================================================
    FORM GRID
-===================================================== */
+========================================================= */
 
 .form-grid{
     display:grid;
@@ -161,7 +167,7 @@ img{
     width:100%;
     border:1px solid #d4dce5;
     border-radius:9px;
-    background:#ffffff;
+    background:#fff;
     color:#173755;
     padding:13px 14px;
     outline:none;
@@ -184,8 +190,7 @@ img{
 .field select:focus,
 .field textarea:focus{
     border-color:#ff7200;
-    box-shadow:
-        0 0 0 3px rgba(255,114,0,.10);
+    box-shadow:0 0 0 3px rgba(255,114,0,.10);
 }
 
 .full{
@@ -193,29 +198,29 @@ img{
 }
 
 
-/* =====================================================
-   FOTOĞRAF YÜKLEME
-===================================================== */
+/* =========================================================
+   FOTOĞRAF ALANI
+========================================================= */
 
 .photo-box{
+    padding:25px;
     border:2px dashed #c8d2dd;
     border-radius:12px;
     background:#fafcff;
-    padding:25px;
     text-align:center;
 }
 
 .photo-title{
+    margin-bottom:7px;
     color:#173755;
     font-size:16px;
     font-weight:800;
-    margin-bottom:6px;
 }
 
 .photo-description{
+    margin-bottom:15px;
     color:#788695;
     font-size:13px;
-    margin-bottom:15px;
 }
 
 .photo-box input{
@@ -223,9 +228,9 @@ img{
 }
 
 
-/* =====================================================
+/* =========================================================
    GÖNDER BUTONU
-===================================================== */
+========================================================= */
 
 .submit-button{
     width:100%;
@@ -233,7 +238,7 @@ img{
     border:0;
     border-radius:10px;
     background:#ff7200;
-    color:#ffffff;
+    color:#fff;
     font-size:19px;
     font-weight:900;
     cursor:pointer;
@@ -246,22 +251,22 @@ img{
 }
 
 .form-note{
-    text-align:center;
+    margin-top:12px;
     color:#718092;
     font-size:12px;
-    margin-top:12px;
+    text-align:center;
 }
 
 
-/* =====================================================
-   ALT BÖLÜM
-===================================================== */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .footer{
-    background:#102d50;
-    color:#ffffff;
-    text-align:center;
     padding:28px 15px;
+    background:#102d50;
+    color:#fff;
+    text-align:center;
 }
 
 .footer-logo{
@@ -274,22 +279,22 @@ img{
 }
 
 .footer-slogan{
+    margin-top:5px;
     font-size:11px;
     letter-spacing:2px;
-    margin-top:5px;
     opacity:.85;
 }
 
 .footer-copy{
-    font-size:12px;
     margin-top:12px;
+    font-size:12px;
     opacity:.65;
 }
 
 
-/* =====================================================
+/* =========================================================
    TABLET
-===================================================== */
+========================================================= */
 
 @media(max-width:900px){
 
@@ -300,41 +305,11 @@ img{
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBİL
-===================================================== */
+========================================================= */
 
 @media(max-width:600px){
-
-    .hero{
-        width:100%;
-    }
-
-    .hero-image{
-        width:100%;
-        height:auto;
-    }
-
-
-    /* Görsel üzerindeki buton alanları mobilde
-       görsel ile birlikte küçülür */
-
-    .whatsapp-button{
-        left:31%;
-        top:51.3%;
-        width:37%;
-        height:8.5%;
-    }
-
-    .ilan-button{
-        left:31%;
-        top:62.5%;
-        width:37%;
-        height:8.5%;
-    }
-
-
-    /* FORM */
 
     .form-section{
         padding:25px 10px 45px;
@@ -379,12 +354,33 @@ img{
         font-size:20px;
     }
 
+
+    /* =====================================================
+       MOBİL GÖRSEL BUTONLARI
+
+       design-mobile.png için
+    ===================================================== */
+
+    .whatsapp-link{
+        left:15%;
+        top:57.5%;
+        width:70%;
+        height:7.8%;
+    }
+
+    .ilan-link{
+        left:15%;
+        top:65%;
+        width:70%;
+        height:7.8%;
+    }
+
 }
 
 
-/* =====================================================
-   KÜÇÜK TELEFON
-===================================================== */
+/* =========================================================
+   ÇOK KÜÇÜK TELEFON
+========================================================= */
 
 @media(max-width:380px){
 
@@ -412,48 +408,67 @@ img{
 <body>
 
 
-<!-- =====================================================
-     ANA SAYFA GÖRSELİ
-===================================================== -->
+<!-- =======================================================
+     ANA SAYFA
+======================================================= -->
 
 <section class="hero">
 
-    <img
-        src="design.png"
-        class="hero-image"
-        alt="EmlakSatışım.com - Emlakta Doğru Adres"
-    >
+
+    <!--
+        BİLGİSAYAR:
+        design.png
+
+        TELEFON:
+        design-mobile.png
+    -->
+
+    <picture>
+
+        <source
+            media="(max-width: 600px)"
+            srcset="design-mobile.png"
+        >
+
+        <img
+            src="design.png"
+            alt="EmlakSatışım.com - Emlakta Doğru Adres"
+            class="hero-image"
+        >
+
+    </picture>
 
 
-    <!-- =================================================
-         WHATSAPP TIKLAMA ALANI
-    ================================================== -->
+    <!-- ===================================================
+         WHATSAPP
+    ==================================================== -->
 
     <a
         href="https://wa.me/905300316127?text=Merhaba%2C%20gayrimenkulümü%20satmak%20istiyorum."
         target="_blank"
-        class="hero-button whatsapp-button"
+        class="hero-link whatsapp-link"
         aria-label="WhatsApp ile iletişime geç"
     ></a>
 
 
-    <!-- =================================================
-         ÜCRETSİZ İLAN VER TIKLAMA ALANI
-    ================================================== -->
+    <!-- ===================================================
+         ÜCRETSİZ İLAN VER
+    ==================================================== -->
 
     <a
         href="#basvuru"
-        class="hero-button ilan-button"
+        class="hero-link ilan-link"
         aria-label="Ücretsiz ilan ver"
     ></a>
+
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- =======================================================
      BAŞVURU FORMU
-===================================================== -->
+======================================================= -->
 
 <section
     class="form-section"
@@ -502,7 +517,6 @@ img{
                 </div>
 
 
-
                 <!-- TELEFON -->
 
                 <div class="field">
@@ -519,7 +533,6 @@ img{
                     >
 
                 </div>
-
 
 
                 <!-- E-POSTA -->
@@ -539,8 +552,7 @@ img{
                 </div>
 
 
-
-                <!-- GAYRİMENKUL TÜRÜ -->
+                <!-- GAYRİMENKUL -->
 
                 <div class="field">
 
@@ -590,8 +602,7 @@ img{
                 </div>
 
 
-
-                <!-- İŞLEM TÜRÜ -->
+                <!-- İŞLEM -->
 
                 <div class="field">
 
@@ -621,7 +632,6 @@ img{
                 </div>
 
 
-
                 <!-- İL -->
 
                 <div class="field">
@@ -646,7 +656,6 @@ img{
                     </select>
 
                 </div>
-
 
 
                 <!-- İLÇE -->
@@ -691,7 +700,6 @@ img{
                 </div>
 
 
-
                 <!-- MAHALLE -->
 
                 <div class="field">
@@ -707,7 +715,6 @@ img{
                     >
 
                 </div>
-
 
 
                 <!-- FİYAT -->
@@ -727,7 +734,6 @@ img{
                 </div>
 
 
-
                 <!-- METREKARE -->
 
                 <div class="field">
@@ -743,7 +749,6 @@ img{
                     >
 
                 </div>
-
 
 
                 <!-- ODA -->
@@ -791,7 +796,6 @@ img{
                 </div>
 
 
-
                 <!-- AÇIKLAMA -->
 
                 <div class="field full">
@@ -808,8 +812,7 @@ img{
                 </div>
 
 
-
-                <!-- FOTOĞRAF -->
+                <!-- FOTOĞRAFLAR -->
 
                 <div class="field full">
 
@@ -839,7 +842,6 @@ img{
                 </div>
 
 
-
                 <!-- GÖNDER -->
 
                 <div class="field full">
@@ -862,16 +864,15 @@ img{
 
         </form>
 
-
     </div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- =======================================================
      FOOTER
-===================================================== -->
+======================================================= -->
 
 <footer class="footer">
 
@@ -891,31 +892,41 @@ img{
 
 
 
-<!-- =====================================================
-     FORM JAVASCRIPT
-===================================================== -->
-
 <script>
+
+/* =========================================================
+   FORM
+========================================================= */
 
 document
 .getElementById("ilanForm")
-.addEventListener("submit", function(e){
+.addEventListener("submit", function(event){
 
-    e.preventDefault();
+    event.preventDefault();
 
     const ad =
-        document.querySelector('[name="ad_soyad"]').value.trim();
+        document
+        .querySelector('[name="ad_soyad"]')
+        .value
+        .trim();
 
     const telefon =
-        document.querySelector('[name="telefon"]').value.trim();
+        document
+        .querySelector('[name="telefon"]')
+        .value
+        .trim();
+
 
     if(!ad || !telefon){
 
-        alert("Lütfen Ad Soyad ve Telefon alanlarını doldurun.");
+        alert(
+            "Lütfen Ad Soyad ve Telefon alanlarını doldurun."
+        );
 
         return;
 
     }
+
 
     alert(
         "Başvurunuz alındı.\n\n" +
