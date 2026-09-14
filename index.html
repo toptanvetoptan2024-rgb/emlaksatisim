@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EmlakSatışım.com | Emlakta Doğru Adres</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-<meta name="description" content="Gayrimenkulünüzü satmak için ücretsiz ilan verin. EmlakSatışım.com">
+<title>
+EmlakSatışım.com | Emlakta Doğru Adres
+</title>
+
+<meta
+    name="description"
+    content="Gayrimenkulünüzü satmak için ücretsiz ilan verin. EmlakSatışım.com"
+>
+
 
 <style>
+
+/* =====================================================
+   GENEL
+===================================================== */
+
 *{
     margin:0;
     padding:0;
@@ -20,10 +36,11 @@ html{
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f7fb;
-    color:#172d50;
+    margin:0;
     padding:0;
+    background:#f4f7fb;
+    font-family:Arial,Helvetica,sans-serif;
+    color:#172d50;
 }
 
 
@@ -42,7 +59,7 @@ body{
     width:100%;
 }
 
-.hero img{
+.hero picture img{
     display:block;
     width:100%;
     height:auto;
@@ -50,75 +67,122 @@ body{
 
 
 /* =====================================================
-   ÜCRETSİZ İLAN VER - GÖRSEL ÜZERİNDEN FORMA
+   ÜCRETSİZ İLAN VER
+   SADECE GÖRSELDEKİ BUTONUN ÜZERİ
 ===================================================== */
 
 .hero-ilan{
     position:absolute;
+
     display:block;
-    z-index:1000;
+
+    z-index:9999;
+
     cursor:pointer;
+
     background:transparent;
+
     text-decoration:none;
+
+    -webkit-tap-highlight-color:transparent;
+
+    outline:none;
 }
 
 
-/* MASAÜSTÜ */
+/* =====================================================
+   MASAÜSTÜ
+===================================================== */
+
 @media(min-width:601px){
 
+    /*
+       design.png içindeki
+       ÜCRETSİZ İLAN VER alanı
+    */
+
     .hero-ilan{
+
         left:6%;
+
         top:20%;
+
         width:88%;
-        height:9%;
-    }
 
-}
-
-
-/* MOBİL */
-@media(max-width:600px){
-
-    .hero-ilan{
-        left:5%;
-        top:9%;
-        width:90%;
-        height:9%;
+        height:10%;
     }
 
 }
 
 
 /* =====================================================
-   MOBİL GÖRSELDEKİ ESKİ WHATSAPP'I KAPAT
+   MOBİL
 ===================================================== */
-
-.mobile-image-whatsapp-cover{
-    display:none;
-}
 
 @media(max-width:600px){
 
     /*
-       Görselin içinde bulunan eski WhatsApp alanı
-       burada kapatılıyor.
+       YENİ MOBİL GÖRSELDEKİ
+       TURUNCU ÜCRETSİZ İLAN VER BUTONU
 
-       Böylece sadece aşağıdaki sabit WhatsApp
-       butonu görünecek.
+       Buton:
+       üst bölümde,
+       başlığın hemen altında.
     */
 
-    .mobile-image-whatsapp-cover{
+    .hero-ilan{
+
+        left:5%;
+
+        top:19%;
+
+        width:90%;
+
+        height:9%;
+
+        z-index:99999;
+    }
+
+}
+
+
+/* =====================================================
+   MOBİL GÖRSELİN İÇİNDEKİ WHATSAPP'I GİZLE
+===================================================== */
+
+.mobile-image-whatsapp-hide{
+    display:none;
+}
+
+
+@media(max-width:600px){
+
+    /*
+       Yeni design-mobile.png dosyasının
+       en altındaki yeşil WhatsApp şeridini
+       gizliyoruz.
+
+       Böylece yalnızca HTML'deki
+       SABİT WhatsApp kalıyor.
+    */
+
+    .mobile-image-whatsapp-hide{
+
         display:block;
+
         position:absolute;
+
         left:0;
+
         right:0;
+
         bottom:0;
 
-        height:10.5%;
+        height:9.5%;
 
         background:#f4f7fb;
 
-        z-index:50;
+        z-index:500;
     }
 
 }
@@ -129,23 +193,32 @@ body{
 ===================================================== */
 
 #basvuru{
+
     scroll-margin-top:20px;
 }
 
+
 .form-section{
+
     width:100%;
-    background:#f4f7fb;
+
     padding:60px 20px;
+
+    background:#f4f7fb;
 }
 
-.form-container{
-    width:100%;
-    max-width:1050px;
-    margin:auto;
 
-    background:#fff;
+.form-container{
+
+    width:100%;
+
+    max-width:1050px;
+
+    margin:0 auto;
 
     padding:40px;
+
+    background:#fff;
 
     border-radius:22px;
 
@@ -153,31 +226,39 @@ body{
         0 8px 35px rgba(0,0,0,.10);
 }
 
+
 .form-title{
+
     text-align:center;
 
+    color:#172d50;
+
     font-size:34px;
+
     line-height:1.2;
 
     font-weight:900;
 
-    color:#172d50;
-
     margin-bottom:12px;
 }
 
+
 .form-subtitle{
+
     text-align:center;
 
-    font-size:16px;
-    line-height:1.5;
-
     color:#666;
+
+    font-size:16px;
+
+    line-height:1.5;
 
     margin-bottom:35px;
 }
 
+
 .form-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -186,28 +267,38 @@ body{
     gap:20px;
 }
 
+
 .form-group{
+
     display:flex;
+
     flex-direction:column;
 }
 
+
 .form-group.full{
-    grid-column:1 / -1;
+
+    grid-column:
+        1 / -1;
 }
 
+
 .form-group label{
+
     margin-bottom:8px;
+
+    color:#222;
 
     font-size:14px;
 
     font-weight:800;
-
-    color:#222;
 }
+
 
 .form-group input,
 .form-group select,
 .form-group textarea{
+
     width:100%;
 
     padding:14px 15px;
@@ -225,19 +316,27 @@ body{
     outline:none;
 }
 
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus{
+
     border-color:#f57c00;
 }
 
+
 .form-group textarea{
+
     min-height:140px;
 
     resize:vertical;
 }
 
+
+/* FOTOĞRAF */
+
 .file-box{
+
     padding:20px;
 
     border:2px dashed #ddd;
@@ -247,22 +346,31 @@ body{
     background:#fafafa;
 }
 
+
 .file-box input{
+
     border:0;
 
     padding:0;
 }
 
+
 .file-info{
+
     margin-top:8px;
 
-    font-size:13px;
-
     color:#777;
+
+    font-size:13px;
 }
 
+
+/* GÖNDER */
+
 .submit-button{
-    grid-column:1 / -1;
+
+    grid-column:
+        1 / -1;
 
     width:100%;
 
@@ -283,20 +391,25 @@ body{
     cursor:pointer;
 }
 
+
 .submit-button:hover{
+
     background:#df6d00;
 }
 
+
 .form-note{
-    grid-column:1 / -1;
+
+    grid-column:
+        1 / -1;
 
     text-align:center;
+
+    color:#777;
 
     font-size:13px;
 
     line-height:1.5;
-
-    color:#777;
 }
 
 
@@ -305,22 +418,27 @@ body{
 ===================================================== */
 
 .footer{
+
+    padding:35px 20px 40px;
+
     background:#111;
 
     color:#fff;
 
     text-align:center;
-
-    padding:35px 20px 90px;
 }
 
+
 .footer-logo{
+
     font-size:24px;
 
     font-weight:900;
 }
 
+
 .footer-slogan{
+
     margin-top:7px;
 
     color:#bbb;
@@ -328,7 +446,9 @@ body{
     font-size:13px;
 }
 
+
 .footer-whatsapp{
+
     display:inline-flex;
 
     margin-top:20px;
@@ -352,21 +472,27 @@ body{
 ===================================================== */
 
 .mobile-whatsapp{
+
     display:none;
 }
+
 
 @media(max-width:600px){
 
     body{
+
         padding-bottom:65px;
     }
+
 
     .mobile-whatsapp{
 
         position:fixed;
 
         left:0;
+
         right:0;
+
         bottom:0;
 
         width:100%;
@@ -376,6 +502,7 @@ body{
         display:flex;
 
         align-items:center;
+
         justify-content:center;
 
         gap:9px;
@@ -396,14 +523,17 @@ body{
             0 -4px 18px rgba(0,0,0,.20);
     }
 
+
     .mobile-whatsapp-icon{
 
         width:32px;
+
         height:32px;
 
         display:flex;
 
         align-items:center;
+
         justify-content:center;
 
         border:2px solid #fff;
@@ -413,7 +543,9 @@ body{
         font-size:17px;
     }
 
+
     .mobile-whatsapp-arrow{
+
         font-size:23px;
     }
 
@@ -427,42 +559,57 @@ body{
 @media(max-width:600px){
 
     .form-section{
+
         padding:35px 12px;
     }
 
+
     .form-container{
+
         padding:22px 16px;
 
         border-radius:16px;
     }
 
+
     .form-title{
+
         font-size:25px;
     }
 
+
     .form-subtitle{
+
         font-size:14px;
 
         margin-bottom:25px;
     }
 
+
     .form-grid{
+
         grid-template-columns:1fr;
 
         gap:15px;
     }
 
+
     .form-group.full{
+
         grid-column:auto;
     }
 
+
     .submit-button{
+
         grid-column:auto;
 
         font-size:16px;
     }
 
+
     .form-note{
+
         grid-column:auto;
     }
 
@@ -470,28 +617,36 @@ body{
 
 
 /* =====================================================
-   ÇOK KÜÇÜK TELEFON
+   KÜÇÜK TELEFON
 ===================================================== */
 
 @media(max-width:380px){
 
     .mobile-whatsapp{
+
         font-size:14px;
     }
 
+
     .mobile-whatsapp-icon{
+
         width:29px;
+
         height:29px;
 
         font-size:15px;
     }
 
+
     .mobile-whatsapp-arrow{
+
         font-size:20px;
     }
 
 }
+
 </style>
+
 </head>
 
 
@@ -504,26 +659,37 @@ body{
 
 <section class="hero">
 
+
     <picture>
 
-        <!-- MOBİL -->
+
+        <!-- =============================================
+             MOBİL GÖRSEL
+        ============================================== -->
+
         <source
             media="(max-width:600px)"
             srcset="design-mobile.png"
         >
 
-        <!-- MASAÜSTÜ -->
+
+        <!-- =============================================
+             MASAÜSTÜ GÖRSEL
+        ============================================== -->
+
         <img
             src="design.png"
-            alt="EmlakSatışım.com"
+            alt="EmlakSatışım.com - Emlakta Doğru Adres"
         >
+
 
     </picture>
 
 
     <!-- =================================================
-         SADECE ÜCRETSİZ İLAN VER
-         FORMA GİDER
+         ÜCRETSİZ İLAN VER
+
+         TIKLANINCA FORM'A GİDER
     ================================================== -->
 
     <a
@@ -534,10 +700,14 @@ body{
 
 
     <!-- =================================================
-         MOBİL GÖRSELDEKİ WHATSAPP'I KAPATAN ALAN
+         MOBİL GÖRSELDEKİ İKİNCİ WHATSAPP'I GİZLE
     ================================================== -->
 
-    <div class="mobile-image-whatsapp-cover"></div>
+    <div
+        class="mobile-image-whatsapp-hide"
+        aria-hidden="true"
+    ></div>
+
 
 </section>
 
@@ -552,11 +722,14 @@ body{
     class="form-section"
 >
 
+
     <div class="form-container">
+
 
         <h1 class="form-title">
             Ücretsiz İlan Ver Başvuru Formu
         </h1>
+
 
         <p class="form-subtitle">
             Gayrimenkulünüzü satmak için bilgilerinizi bırakın.
@@ -565,6 +738,7 @@ body{
 
 
         <form id="ilanForm">
+
 
             <div class="form-grid">
 
@@ -940,9 +1114,11 @@ body{
 
                 </div>
 
+
             </div>
 
         </form>
+
 
     </div>
 
@@ -1006,6 +1182,10 @@ body{
 
 
 <script>
+
+/* =====================================================
+   FORM TESTİ
+===================================================== */
 
 document
 .getElementById("ilanForm")
