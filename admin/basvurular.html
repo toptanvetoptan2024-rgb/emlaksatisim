@@ -1,35 +1,877 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İlan Başvuruları - EmlakSatışım.com</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EmlakSatışım.com - İlan Başvuruları</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#14263d;
+}
+
+.header{
+    background:#0b2746;
+    color:#fff;
+    padding:20px 30px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.header h1{
+    margin:0;
+    font-size:24px;
+}
+
+.header a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.container{
+    width:min(1400px,94%);
+    margin:30px auto;
+}
+
+.top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.top h2{
+    margin:0;
+    color:#0b2746;
+}
+
+.yenile{
+    border:0;
+    background:#ff7800;
+    color:#fff;
+    padding:11px 18px;
+    border-radius:8px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.stat{
+    background:#fff;
+    padding:22px;
+    border-radius:14px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.stat span{
+    display:block;
+    color:#66758a;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.stat strong{
+    font-size:30px;
+    color:#0b2746;
+}
+
+.table-box{
+    background:#fff;
+    border-radius:16px;
+    overflow:auto;
+    box-shadow:0 5px 25px rgba(0,0,0,.07);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:1100px;
+}
+
+th{
+    background:#0b2746;
+    color:#fff;
+    text-align:left;
+    padding:14px;
+    font-size:13px;
+}
+
+td{
+    padding:14px;
+    border-bottom:1px solid #edf1f5;
+    font-size:13px;
+}
+
+tr:hover td{
+    background:#fafbfd;
+}
+
+.durum{
+    display:inline-block;
+    padding:6px 10px;
+    border-radius:20px;
+    background:#fff3df;
+    color:#d86b00;
+    font-weight:800;
+    font-size:11px;
+}
+
+.detay{
+    border:0;
+    background:#0b2746;
+    color:#fff;
+    padding:7px 11px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.bos{
+    padding:50px;
+    text-align:center;
+    color:#66758a;
+}
+
+.hata{
+    padding:30px;
+    text-align:center;
+    color:#c62828;
+    font-weight:700;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:9999;
+    padding:30px;
+    overflow:auto;
+}
+
+.modal-box{
+    width:min(800px,100%);
+    margin:30px auto;
+    background:#fff;
+    border-radius:18px;
+    padding:30px;
+}
+
+.modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.modal-head h3{
+    margin:0;
+    color:#0b2746;
+}
+
+.kapat{
+    border:0;
+    background:#eee;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.detay-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.detay-item{
+    padding:14px;
+    background:#f6f8fb;
+    border-radius:9px;
+}
+
+.detay-item small{
+    display:block;
+    color:#66758a;
+    margin-bottom:5px;
+}
+
+.detay-item strong{
+    color:#0b2746;
+}
+
+.detay-aciklama{
+    margin-top:15px;
+    padding:15px;
+    background:#f6f8fb;
+    border-radius:9px;
+    line-height:1.6;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:16px;
+    }
+
+    .header h1{
+        font-size:19px;
+    }
+
+    .container{
+        width:94%;
+        margin:20px auto;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .top{
+        gap:15px;
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .detay-grid{
+        grid-template-columns:1fr;
+    }
+
+    .modal{
+        padding:10px;
+    }
+
+    .modal-box{
+        margin:10px auto;
+        padding:20px;
+    }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
+
+<div class="header">
+
     <h1>EmlakSatışım.com</h1>
+
+    <a href="dashboard.html">
+        ← Yönetim Paneline Dön
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<div class="top">
 
     <h2>İlan Başvuruları</h2>
 
-    <p>Burada web sitesindeki başvuru formundan gelen ilanlar görünecek.</p>
+    <button
+        class="yenile"
+        onclick="basvurulariGetir()"
+    >
+        ↻ Yenile
+    </button>
 
-    <h3>İlan Durumları</h3>
+</div>
 
-    <ul>
-        <li>Onay Bekliyor</li>
-        <li>Yayında</li>
-        <li>Satıldı</li>
-        <li>İptal Edildi</li>
-    </ul>
 
-    <h3>Başvurular</h3>
+<div class="stats">
 
-    <p>Henüz başvuru bulunmuyor.</p>
+    <div class="stat">
 
-    <br>
+        <span>Toplam Başvuru</span>
 
-    <a href="dashboard.html">Panele Dön</a>
+        <strong id="toplam">
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="stat">
+
+        <span>Onay Bekliyor</span>
+
+        <strong id="bekleyen">
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="stat">
+
+        <span>Son Başvuru</span>
+
+        <strong
+            id="sonBasvuru"
+            style="font-size:18px"
+        >
+            -
+        </strong>
+
+    </div>
+
+</div>
+
+
+<div class="table-box">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Ad Soyad</th>
+
+<th>Telefon</th>
+
+<th>Gayrimenkul</th>
+
+<th>İlçe</th>
+
+<th>Fiyat</th>
+
+<th>Durum</th>
+
+<th>Tarih</th>
+
+<th>İşlem</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="basvuruListesi">
+
+<tr>
+
+<td
+    colspan="9"
+    class="bos"
+>
+    Başvurular yükleniyor...
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+
+<!-- DETAY PENCERESİ -->
+
+<div
+    id="modal"
+    class="modal"
+>
+
+<div class="modal-box">
+
+
+<div class="modal-head">
+
+<h3>
+Başvuru Detayı
+</h3>
+
+<button
+    class="kapat"
+    onclick="modalKapat()"
+>
+×
+</button>
+
+</div>
+
+
+<div
+    id="detayIcerik"
+>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+let basvurular = [];
+
+
+async function basvurulariGetir(){
+
+    const liste =
+        document.getElementById(
+            "basvuruListesi"
+        );
+
+    liste.innerHTML = `
+        <tr>
+            <td colspan="9" class="bos">
+                Başvurular yükleniyor...
+            </td>
+        </tr>
+    `;
+
+
+    try{
+
+        const cevap =
+            await fetch(
+                "/api/ilanlar"
+            );
+
+
+        const sonuc =
+            await cevap.json();
+
+
+        if(
+            !cevap.ok ||
+            !sonuc.basarili
+        ){
+
+            throw new Error(
+                sonuc.hata ||
+                "Başvurular alınamadı."
+            );
+
+        }
+
+
+        basvurular =
+            sonuc.ilanlar || [];
+
+
+        document.getElementById(
+            "toplam"
+        ).textContent =
+            basvurular.length;
+
+
+        const bekleyen =
+            basvurular.filter(
+                function(ilan){
+
+                    return ilan.durum ===
+                        "beklemede";
+
+                }
+            ).length;
+
+
+        document.getElementById(
+            "bekleyen"
+        ).textContent =
+            bekleyen;
+
+
+        if(
+            basvurular.length > 0
+        ){
+
+            document.getElementById(
+                "sonBasvuru"
+            ).textContent =
+                basvurular[0].olusturma_tarihi || "-";
+
+        }
+        else{
+
+            document.getElementById(
+                "sonBasvuru"
+            ).textContent =
+                "-";
+
+        }
+
+
+        tabloyuOlustur();
+
+
+    }
+    catch(hata){
+
+        liste.innerHTML = `
+            <tr>
+                <td colspan="9" class="hata">
+                    Başvurular alınamadı:
+                    ${hata.message}
+                </td>
+            </tr>
+        `;
+
+    }
+
+}
+
+
+
+function tabloyuOlustur(){
+
+    const liste =
+        document.getElementById(
+            "basvuruListesi"
+        );
+
+
+    if(
+        basvurular.length === 0
+    ){
+
+        liste.innerHTML = `
+            <tr>
+                <td colspan="9" class="bos">
+                    Henüz başvuru bulunmuyor.
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+
+    liste.innerHTML =
+        basvurular.map(
+            function(ilan){
+
+                return `
+
+                <tr>
+
+                    <td>
+                        #${ilan.id}
+                    </td>
+
+                    <td>
+                        <strong>
+                            ${guvenli(
+                                ilan.ad_soyad
+                            )}
+                        </strong>
+                    </td>
+
+                    <td>
+                        ${guvenli(
+                            ilan.telefon
+                        )}
+                    </td>
+
+                    <td>
+                        ${guvenli(
+                            ilan.ilan_turu
+                        )}
+                    </td>
+
+                    <td>
+                        ${guvenli(
+                            ilan.ilce
+                        )}
+                    </td>
+
+                    <td>
+                        ${formatFiyat(
+                            ilan.fiyat
+                        )}
+                    </td>
+
+                    <td>
+                        <span class="durum">
+                            ${guvenli(
+                                ilan.durum ||
+                                "beklemede"
+                            )}
+                        </span>
+                    </td>
+
+                    <td>
+                        ${guvenli(
+                            ilan.olusturma_tarihi
+                        )}
+                    </td>
+
+                    <td>
+
+                        <button
+                            class="detay"
+                            onclick="detayGoster(${ilan.id})"
+                        >
+                            Detay
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                `;
+
+            }
+        ).join("");
+
+}
+
+
+
+function detayGoster(id){
+
+    const ilan =
+        basvurular.find(
+            function(item){
+                return item.id === id;
+            }
+        );
+
+
+    if(!ilan){
+        return;
+    }
+
+
+    document.getElementById(
+        "detayIcerik"
+    ).innerHTML = `
+
+        <div class="detay-grid">
+
+            <div class="detay-item">
+                <small>Ad Soyad</small>
+                <strong>
+                    ${guvenli(ilan.ad_soyad)}
+                </strong>
+            </div>
+
+            <div class="detay-item">
+                <small>Telefon</small>
+                <strong>
+                    ${guvenli(ilan.telefon)}
+                </strong>
+            </div>
+
+            <div class="detay-item">
+                <small>E-posta</small>
+                <strong>
+                    ${guvenli(ilan.email || "-")}
+                </strong>
+            </div>
+
+            <div class="detay-item">
+                <small>Gayrimenkul Türü</small>
+                <strong>
+                    ${guvenli(ilan.ilan_turu)}
+                </strong>
+            </div>
+
+            <div class="detay-item">
+                <small>İşlem Türü</small>
+                <strong>
+                    ${guvenli(ilan.islem_turu)}
+                </strong>
+            </div>
+
+            <div class="detay-item">
+                <small>İl</small>
+                <strong>
+                    ${guvenli(ilan.il || "-")}
+                </strong>
+            </div>
+
+            <div class="detay-item">
+                <small>İlçe</small>
+                <strong>
+                    ${guvenli(ilan.ilce || "-")}
+                </strong>
+            </div>
+
+            <div class="detay-item">
+                <small>Mahalle</small>
+                <strong>
+                    ${guvenli(ilan.mahalle || "-")}
+                </strong>
+            </div>
+
+            <div class="detay-item">
+                <small>Fiyat</small>
+                <strong>
+                    ${formatFiyat(ilan.fiyat)}
+                </strong>
+            </div>
+
+            <div class="detay-item">
+                <small>m²</small>
+                <strong>
+                    ${guvenli(ilan.metrekare || "-")}
+                </strong>
+            </div>
+
+            <div class="detay-item">
+                <small>Oda Sayısı</small>
+                <strong>
+                    ${guvenli(ilan.oda_sayisi || "-")}
+                </strong>
+            </div>
+
+            <div class="detay-item">
+                <small>Bina Yaşı</small>
+                <strong>
+                    ${guvenli(ilan.bina_yasi || "-")}
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="detay-aciklama">
+
+            <strong>
+                Açıklama
+            </strong>
+
+            <br><br>
+
+            ${guvenli(
+                ilan.aciklama ||
+                "Açıklama girilmemiş."
+            )}
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "modal"
+    ).style.display =
+        "block";
+
+}
+
+
+
+function modalKapat(){
+
+    document.getElementById(
+        "modal"
+    ).style.display =
+        "none";
+
+}
+
+
+
+function formatFiyat(fiyat){
+
+    if(
+        fiyat === null ||
+        fiyat === undefined ||
+        fiyat === ""
+    ){
+
+        return "-";
+
+    }
+
+    return Number(fiyat)
+        .toLocaleString(
+            "tr-TR"
+        ) + " TL";
+
+}
+
+
+
+function guvenli(deger){
+
+    if(
+        deger === null ||
+        deger === undefined
+    ){
+
+        return "";
+
+    }
+
+
+    return String(deger)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+
+window.addEventListener(
+    "click",
+    function(event){
+
+        const modal =
+            document.getElementById(
+                "modal"
+            );
+
+        if(
+            event.target === modal
+        ){
+
+            modalKapat();
+
+        }
+
+    }
+);
+
+
+basvurulariGetir();
+
+</script>
+
 
 </body>
+
 </html>
