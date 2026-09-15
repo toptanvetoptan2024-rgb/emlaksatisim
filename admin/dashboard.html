@@ -1,69 +1,1464 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EmlakSatışım.com - Yönetim Paneli</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yönetim Paneli | EmlakSatisim</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f6f9;
+    color:#172033;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    width:250px;
+    background:#111827;
+    color:white;
+    padding:25px 16px;
+    z-index:100;
+    overflow-y:auto;
+}
+
+.logo{
+    padding:5px 12px 28px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    margin-bottom:20px;
+}
+
+.logo-mark{
+    width:45px;
+    height:45px;
+    background:linear-gradient(135deg,#e5ad4c,#b87918);
+    color:#111;
+    border-radius:11px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    font-weight:900;
+    margin-bottom:12px;
+}
+
+.logo-name{
+    font-size:20px;
+    font-weight:900;
+}
+
+.logo-name span{
+    color:#d89b32;
+}
+
+.logo-sub{
+    color:#7d8797;
+    font-size:10px;
+    letter-spacing:1.5px;
+    margin-top:5px;
+}
+
+/* MENU */
+
+.menu-title{
+    color:#667085;
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:1.2px;
+    padding:0 12px;
+    margin:20px 0 8px;
+}
+
+.menu a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#aeb6c3;
+    text-decoration:none;
+    padding:11px 12px;
+    border-radius:8px;
+    margin-bottom:3px;
+    font-size:14px;
+    transition:.2s;
+}
+
+.menu a:hover{
+    background:rgba(255,255,255,.06);
+    color:white;
+}
+
+.menu a.active{
+    background:linear-gradient(
+        135deg,
+        #dca646,
+        #b97b20
+    );
+    color:#111;
+    font-weight:800;
+}
+
+.menu-icon{
+    width:22px;
+    text-align:center;
+    font-size:16px;
+}
+
+.submenu{
+    margin-left:33px;
+}
+
+.submenu a{
+    font-size:13px;
+    padding:8px 10px;
+}
+
+/* SIDEBAR ALT */
+
+.sidebar-bottom{
+    position:absolute;
+    left:16px;
+    right:16px;
+    bottom:18px;
+}
+
+.logout{
+    width:100%;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.03);
+    color:#aeb6c3;
+    padding:11px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.logout:hover{
+    color:white;
+    background:rgba(255,255,255,.07);
+}
+
+/* MAIN */
+
+.main{
+    margin-left:250px;
+    min-height:100vh;
+}
+
+/* TOPBAR */
+
+.topbar{
+    height:75px;
+    background:white;
+    border-bottom:1px solid #e6e9ee;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 32px;
+    position:sticky;
+    top:0;
+    z-index:50;
+}
+
+.page-title{
+    font-size:22px;
+    font-weight:800;
+}
+
+.page-subtitle{
+    color:#8a94a4;
+    font-size:12px;
+    margin-top:4px;
+}
+
+.top-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.search{
+    width:260px;
+    height:40px;
+    border:1px solid #e2e6eb;
+    border-radius:8px;
+    padding:0 14px;
+    outline:none;
+    font-size:13px;
+}
+
+.search:focus{
+    border-color:#d89b32;
+}
+
+.admin-user{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.admin-avatar{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#111827;
+    color:#dca646;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+}
+
+.admin-name{
+    font-size:13px;
+    font-weight:800;
+}
+
+.admin-role{
+    font-size:11px;
+    color:#8a94a4;
+    margin-top:2px;
+}
+
+/* CONTENT */
+
+.content{
+    padding:30px 32px;
+}
+
+/* STAT CARDS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:16px;
+    margin-bottom:25px;
+}
+
+.stat-card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    border:1px solid #edf0f3;
+    box-shadow:0 3px 12px rgba(0,0,0,.03);
+}
+
+.stat-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.stat-icon{
+    width:40px;
+    height:40px;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    background:#f5f6f8;
+}
+
+.stat-label{
+    color:#7b8492;
+    font-size:12px;
+    margin-top:15px;
+}
+
+.stat-number{
+    font-size:27px;
+    font-weight:900;
+    margin-top:5px;
+}
+
+/* GRID */
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:22px;
+}
+
+/* PANEL */
+
+.panel{
+    background:white;
+    border:1px solid #edf0f3;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.03);
+    overflow:hidden;
+}
+
+.panel-header{
+    padding:20px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #edf0f3;
+}
+
+.panel-title{
+    font-size:16px;
+    font-weight:800;
+}
+
+.panel-link{
+    color:#b47a1d;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* TABLE */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#fafbfc;
+    color:#8992a0;
+    text-align:left;
+    font-size:11px;
+    padding:12px 18px;
+    white-space:nowrap;
+}
+
+td{
+    padding:14px 18px;
+    border-top:1px solid #f0f2f5;
+    font-size:12px;
+    white-space:nowrap;
+}
+
+.person{
+    font-weight:800;
+}
+
+.muted{
+    color:#8b94a2;
+}
+
+.status{
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:15px;
+    font-size:10px;
+    font-weight:800;
+}
+
+.status-beklemede{
+    background:#fff3cd;
+    color:#956500;
+}
+
+.status-yayinda{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.status-satildi{
+    background:#dbeafe;
+    color:#1d4ed8;
+}
+
+.status-iptal{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.detail-btn{
+    border:0;
+    background:#111827;
+    color:white;
+    padding:7px 11px;
+    border-radius:6px;
+    font-size:11px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* QUICK ACTIONS */
+
+.quick-actions{
+    display:grid;
+    gap:10px;
+    padding:20px;
+}
+
+.quick-action{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    padding:14px;
+    border:1px solid #edf0f3;
+    border-radius:9px;
+    text-decoration:none;
+    color:#172033;
+    transition:.2s;
+}
+
+.quick-action:hover{
+    border-color:#d89b32;
+    background:#fffbf4;
+}
+
+.quick-icon{
+    width:38px;
+    height:38px;
+    border-radius:8px;
+    background:#f5f6f8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:17px;
+}
+
+.quick-title{
+    font-size:13px;
+    font-weight:800;
+}
+
+.quick-text{
+    font-size:11px;
+    color:#8992a0;
+    margin-top:3px;
+}
+
+/* EMPTY */
+
+.empty{
+    text-align:center;
+    padding:40px 20px;
+    color:#8992a0;
+    font-size:13px;
+}
+
+/* MOBİL MENU BUTTON */
+
+.mobile-menu{
+    display:none;
+    border:0;
+    background:#111827;
+    color:white;
+    width:40px;
+    height:40px;
+    border-radius:8px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+/* MOBİL */
+
+@media(max-width:1200px){
+
+    .stats{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:900px){
+
+    .sidebar{
+        transform:translateX(-100%);
+        transition:.25s;
+    }
+
+    .sidebar.open{
+        transform:translateX(0);
+    }
+
+    .main{
+        margin-left:0;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .topbar{
+        padding:0 18px;
+    }
+
+    .search{
+        display:none;
+    }
+
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .topbar{
+        height:65px;
+    }
+
+    .page-title{
+        font-size:18px;
+    }
+
+    .content{
+        padding:20px 14px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .stat-card{
+        padding:15px;
+    }
+
+    .stat-number{
+        font-size:23px;
+    }
+
+    .admin-name,
+    .admin-role{
+        display:none;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-    <h1>EmlakSatışım.com</h1>
-    <h2>Yönetim Paneli</h2>
 
-    <h3>İlan Durumları</h3>
+<!-- SIDEBAR -->
 
-    <ul>
-        <li>
-            <a href="basvurular.html">Onay Bekleyen İlanlar</a>
-        </li>
+<aside class="sidebar" id="sidebar">
 
-        <li>
-            <a href="ilanlar.html">Yayındaki İlanlar</a>
-        </li>
+    <div class="logo">
 
-        <li>
-            <a href="ilanlar.html">Satılan İlanlar</a>
-        </li>
+        <div class="logo-mark">
+            E
+        </div>
 
-        <li>
-            <a href="ilanlar.html">İptal Edilen İlanlar</a>
-        </li>
-    </ul>
+        <div class="logo-name">
+            Emlak<span>Satisim</span>
+        </div>
 
-    <h3>Yönetim</h3>
+        <div class="logo-sub">
+            EMLAKTA DOĞRU ADRES
+        </div>
 
-    <ul>
-        <li>
-            <a href="basvurular.html">İlan Başvuruları</a>
-        </li>
+    </div>
 
-        <li>
-            <a href="ilanlar.html">İlan Yönetimi</a>
-        </li>
 
-        <li>
-            <a href="fotograflar.html">Fotoğraf Yönetimi</a>
-        </li>
+    <div class="menu">
 
-        <li>
-            <a href="musteriler.html">Müşteriler</a>
-        </li>
+        <div class="menu-title">
+            ANA MENÜ
+        </div>
 
-        <li>
-            <a href="ayarlar.html">Ayarlar</a>
-        </li>
-    </ul>
 
-    <br>
+        <a
+            href="dashboard.html"
+            class="active"
+        >
+            <span class="menu-icon">⌂</span>
+            Ana Sayfa
+        </a>
 
-    <button onclick="cikisYap()">Çıkış Yap</button>
 
-    <script>
-        function cikisYap() {
-            window.location.href = "index.html";
+        <div class="menu-title">
+            İLAN YÖNETİMİ
+        </div>
+
+
+        <a href="ilanlar.html">
+            <span class="menu-icon">🏠</span>
+            İlanlar
+        </a>
+
+
+        <div class="submenu">
+
+            <a href="ilanlar.html">
+                Tüm İlanlar
+            </a>
+
+            <a href="ilanlar.html?durum=beklemede">
+                Onay Bekleyen
+            </a>
+
+            <a href="ilanlar.html?durum=yayinda">
+                Yayında
+            </a>
+
+            <a href="ilanlar.html?durum=satildi">
+                Satıldı
+            </a>
+
+            <a href="ilanlar.html?durum=iptal">
+                İptal Edildi
+            </a>
+
+        </div>
+
+
+        <a href="basvurular.html">
+            <span class="menu-icon">📋</span>
+            Başvurular
+        </a>
+
+
+        <a href="fotograflar.html">
+            <span class="menu-icon">▧</span>
+            Fotoğraflar
+        </a>
+
+
+        <div class="menu-title">
+            YÖNETİM
+        </div>
+
+
+        <a href="musteriler.html">
+            <span class="menu-icon">♙</span>
+            Müşteriler
+        </a>
+
+
+        <a href="#">
+            <span class="menu-icon">✉</span>
+            Mesajlar
+        </a>
+
+
+        <a href="#">
+            <span class="menu-icon">◔</span>
+            İstatistikler
+        </a>
+
+
+        <a href="ayarlar.html">
+            <span class="menu-icon">⚙</span>
+            Ayarlar
+        </a>
+
+    </div>
+
+
+    <div class="sidebar-bottom">
+
+        <button
+            class="logout"
+            onclick="cikisYap()"
+        >
+            ⇥ &nbsp; Çıkış Yap
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div style="display:flex;align-items:center;gap:12px;">
+
+            <button
+                class="mobile-menu"
+                onclick="menuAc()"
+            >
+                ☰
+            </button>
+
+            <div>
+
+                <div class="page-title">
+                    Genel Bakış
+                </div>
+
+                <div class="page-subtitle">
+                    EmlakSatisim yönetim paneline hoş geldiniz.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="top-right">
+
+
+            <input
+                class="search"
+                type="text"
+                placeholder="İlan veya müşteri ara..."
+            >
+
+
+            <div class="admin-user">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <div class="admin-name">
+                        Admin
+                    </div>
+
+                    <div class="admin-role">
+                        Yönetici
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- CONTENT -->
+
+    <section class="content">
+
+
+        <!-- İSTATİSTİKLER -->
+
+        <div class="stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-label">
+                        ONAY BEKLİYOR
+                    </div>
+
+                    <div class="stat-icon">
+                        ⏳
+                    </div>
+
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="beklemede"
+                >
+                    0
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-label">
+                        YAYINDA
+                    </div>
+
+                    <div class="stat-icon">
+                        ✓
+                    </div>
+
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="yayinda"
+                >
+                    0
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-label">
+                        SATILDI
+                    </div>
+
+                    <div class="stat-icon">
+                        ₺
+                    </div>
+
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="satildi"
+                >
+                    0
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-label">
+                        İPTAL EDİLDİ
+                    </div>
+
+                    <div class="stat-icon">
+                        ×
+                    </div>
+
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="iptal"
+                >
+                    0
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-label">
+                        TOPLAM İLAN
+                    </div>
+
+                    <div class="stat-icon">
+                        🏠
+                    </div>
+
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="toplam"
+                >
+                    0
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ALT BÖLÜM -->
+
+        <div class="dashboard-grid">
+
+
+            <!-- SON BAŞVURULAR -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div class="panel-title">
+                        Son Başvurular
+                    </div>
+
+                    <a
+                        href="basvurular.html"
+                        class="panel-link"
+                    >
+                        Tümünü Gör →
+                    </a>
+
+                </div>
+
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    BAŞVURU
+                                </th>
+
+                                <th>
+                                    GAYRİMENKUL
+                                </th>
+
+                                <th>
+                                    İLÇE
+                                </th>
+
+                                <th>
+                                    FİYAT
+                                </th>
+
+                                <th>
+                                    DURUM
+                                </th>
+
+                                <th>
+                                    İŞLEM
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="sonBasvurular"
+                        >
+
+                            <tr>
+
+                                <td
+                                    colspan="6"
+                                    class="empty"
+                                >
+                                    Başvurular yükleniyor...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HIZLI İŞLEMLER -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div class="panel-title">
+                        Hızlı İşlemler
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+
+                    <a
+                        href="basvurular.html"
+                        class="quick-action"
+                    >
+
+                        <div class="quick-icon">
+                            📋
+                        </div>
+
+                        <div>
+
+                            <div class="quick-title">
+                                Başvuruları Gör
+                            </div>
+
+                            <div class="quick-text">
+                                Gelen gayrimenkul başvuruları
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <a
+                        href="ilanlar.html"
+                        class="quick-action"
+                    >
+
+                        <div class="quick-icon">
+                            🏠
+                        </div>
+
+                        <div>
+
+                            <div class="quick-title">
+                                İlanları Yönet
+                            </div>
+
+                            <div class="quick-text">
+                                Yayındaki ilanları yönet
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <a
+                        href="musteriler.html"
+                        class="quick-action"
+                    >
+
+                        <div class="quick-icon">
+                            ♙
+                        </div>
+
+                        <div>
+
+                            <div class="quick-title">
+                                Müşteriler
+                            </div>
+
+                            <div class="quick-text">
+                                Müşteri bilgilerini görüntüle
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <a
+                        href="ayarlar.html"
+                        class="quick-action"
+                    >
+
+                        <div class="quick-icon">
+                            ⚙
+                        </div>
+
+                        <div>
+
+                            <div class="quick-title">
+                                Ayarlar
+                            </div>
+
+                            <div class="quick-text">
+                                Panel ayarlarını yönet
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<script>
+
+
+/* OTURUM KONTROLÜ */
+
+if(
+    sessionStorage.getItem(
+        "adminGiris"
+    ) !== "true"
+){
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+/* ÇIKIŞ */
+
+function cikisYap(){
+
+    sessionStorage.removeItem(
+        "adminGiris"
+    );
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+/* MOBİL MENÜ */
+
+function menuAc(){
+
+    document
+        .getElementById("sidebar")
+        .classList
+        .toggle("open");
+
+}
+
+
+/* DURUM YAZISI */
+
+function durumMetni(durum){
+
+    const durumlar = {
+
+        beklemede:
+            "Onay Bekliyor",
+
+        yayinda:
+            "Yayında",
+
+        satildi:
+            "Satıldı",
+
+        iptal:
+            "İptal Edildi"
+
+    };
+
+    return durumlar[durum] || durum;
+
+}
+
+
+/* GÜVENLİ METİN */
+
+function guvenliMetin(metin){
+
+    if(
+        metin === null ||
+        metin === undefined
+    ){
+
+        return "-";
+
+    }
+
+    return String(metin)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* D1 VERİLERİNİ GETİR */
+
+async function dashboardVerileriniGetir(){
+
+    try{
+
+        const cevap =
+            await fetch(
+                "/api/ilanlar"
+            );
+
+
+        const sonuc =
+            await cevap.json();
+
+
+        if(
+            !cevap.ok ||
+            !sonuc.basarili
+        ){
+
+            throw new Error(
+                sonuc.hata ||
+                "Veriler alınamadı."
+            );
+
         }
-    </script>
+
+
+        const ilanlar =
+            sonuc.ilanlar || [];
+
+
+        /* SAYILAR */
+
+        const beklemede =
+            ilanlar.filter(function(ilan){
+
+                return (
+                    !ilan.durum ||
+                    ilan.durum === "beklemede"
+                );
+
+            }).length;
+
+
+        const yayinda =
+            ilanlar.filter(function(ilan){
+
+                return ilan.durum === "yayinda";
+
+            }).length;
+
+
+        const satildi =
+            ilanlar.filter(function(ilan){
+
+                return ilan.durum === "satildi";
+
+            }).length;
+
+
+        const iptal =
+            ilanlar.filter(function(ilan){
+
+                return ilan.durum === "iptal";
+
+            }).length;
+
+
+        document.getElementById(
+            "beklemede"
+        ).textContent =
+            beklemede;
+
+
+        document.getElementById(
+            "yayinda"
+        ).textContent =
+            yayinda;
+
+
+        document.getElementById(
+            "satildi"
+        ).textContent =
+            satildi;
+
+
+        document.getElementById(
+            "iptal"
+        ).textContent =
+            iptal;
+
+
+        document.getElementById(
+            "toplam"
+        ).textContent =
+            ilanlar.length;
+
+
+        /* SON 5 BAŞVURU */
+
+        const son =
+            ilanlar.slice(0,5);
+
+
+        const liste =
+            document.getElementById(
+                "sonBasvurular"
+            );
+
+
+        if(son.length === 0){
+
+            liste.innerHTML = `
+
+                <tr>
+
+                    <td
+                        colspan="6"
+                        class="empty"
+                    >
+                        Henüz başvuru bulunmuyor.
+                    </td>
+
+                </tr>
+
+            `;
+
+            return;
+
+        }
+
+
+        liste.innerHTML = "";
+
+
+        son.forEach(function(ilan){
+
+            const fiyat =
+                ilan.fiyat
+                ? Number(
+                    ilan.fiyat
+                  ).toLocaleString(
+                    "tr-TR"
+                  ) + " TL"
+                : "-";
+
+
+            const durum =
+                ilan.durum ||
+                "beklemede";
+
+
+            liste.innerHTML += `
+
+                <tr>
+
+                    <td>
+
+                        <div class="person">
+                            ${guvenliMetin(
+                                ilan.ad_soyad
+                            )}
+                        </div>
+
+                        <div class="muted">
+                            #${ilan.id}
+                        </div>
+
+                    </td>
+
+
+                    <td>
+                        ${guvenliMetin(
+                            ilan.ilan_turu
+                        )}
+                    </td>
+
+
+                    <td>
+                        ${guvenliMetin(
+                            ilan.ilce || "-"
+                        )}
+                    </td>
+
+
+                    <td>
+                        ${fiyat}
+                    </td>
+
+
+                    <td>
+
+                        <span
+                            class="status status-${durum}"
+                        >
+                            ${durumMetni(durum)}
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <button
+                            class="detail-btn"
+                            onclick="basvuruyaGit()"
+                        >
+                            Detay
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        });
+
+    }
+    catch(hata){
+
+        document.getElementById(
+            "sonBasvurular"
+        ).innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="6"
+                    class="empty"
+                >
+                    Veriler yüklenemedi.
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+/* BAŞVURULAR SAYFASINA GİT */
+
+function basvuruyaGit(){
+
+    window.location.href =
+        "basvurular.html";
+
+}
+
+
+/* BAŞLAT */
+
+dashboardVerileriniGetir();
+
+
+</script>
 
 </body>
 </html>
