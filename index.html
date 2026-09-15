@@ -48,15 +48,6 @@ body{
     height:auto;
 }
 
-
-/* =====================================================
-   GÖRSELLER
-===================================================== */
-
-.tasarim-masaustu{
-    display:block;
-}
-
 .tasarim-mobil{
     display:none !important;
 }
@@ -68,7 +59,7 @@ body{
 
 .hero-link{
     position:absolute;
-    z-index:50;
+    z-index:20;
     display:block;
     background:transparent;
     border:0;
@@ -79,7 +70,11 @@ body{
 
 /* =====================================================
    MASAÜSTÜ
-   MASAÜSTÜ ÇALIŞAN KONUM KORUNDU
+
+   Üstteki:
+   İLAN VERMEK İSTİYORUM
+
+   SATIN ALMAK İSTİYORUM
 ===================================================== */
 
 .desktop-ilan{
@@ -312,52 +307,36 @@ body{
 
     .desktop-ilan,
     .desktop-satin{
-        display:none !important;
+        display:none;
     }
 
 
     /* =================================================
-       MOBİL İLAN VER
-       
-       SADECE ORTA BÖLÜM
-       FORM'A GİDER
+       MOBİLDE TURUNCU
+       İLAN VERMEK İSTİYORUM
     ================================================= */
 
     .mobile-ilan{
-
         display:block;
-
-        left:7%;
-
-        top:46%;
-
-        width:86%;
-
+        left:8%;
+        top:45%;
+        width:84%;
         height:15%;
-
         z-index:100;
     }
 
 
     /* =================================================
-       MOBİL SATIN AL
-       
-       SADECE ALT BÖLÜM
-       WHATSAPP'A GİDER
-    ================================================= */
+        MOBİLDE YEŞİL
+        SATIN ALMAK İSTİYORUM
+     ================================================= */
 
     .mobile-satin{
-
         display:block;
-
-        left:7%;
-
-        top:64%;
-
-        width:86%;
-
+        left:8%;
+        top:63%;
+        width:84%;
         height:15%;
-
         z-index:100;
     }
 
@@ -418,7 +397,7 @@ body{
 
 
     /* =================================================
-       MOBİL SABİT WHATSAPP
+       SADECE KODLA OLUŞAN WHATSAPP
     ================================================= */
 
     .mobile-whatsapp{
@@ -446,7 +425,6 @@ body{
         text-decoration:none;
 
         font-size:17px;
-
         font-weight:900;
 
         box-shadow:
@@ -490,25 +468,23 @@ body{
 
 
     <!-- MASAÜSTÜ -->
-
     <img
-        src="/assets/tasarim.png"
+        src="tasarim.png"
         class="tasarim-masaustu"
         alt="EmlakSatışım.com"
     >
 
 
     <!-- MOBİL -->
-
     <img
-        src="/assets/tasarim-mobil.png"
+        src="tasarim-mobil.png"
         class="tasarim-mobil"
         alt="Dükkan Ev Arsa - EmlakSatışım.com"
     >
 
 
     <!-- =================================================
-         MASAÜSTÜ İLAN VER
+         MASAÜSTÜ İLAN
     ================================================== -->
 
     <a
@@ -525,15 +501,14 @@ body{
     <a
         href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20gayrimenkuller%20hakkında%20bilgi%20almak%20istiyorum."
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener"
         class="hero-link desktop-satin"
         aria-label="Satın Almak İstiyorum"
     ></a>
 
 
     <!-- =================================================
-         MOBİL İLAN VER
-         FORM'A GİDER
+         MOBİL İLAN
     ================================================== -->
 
     <a
@@ -545,17 +520,15 @@ body{
 
     <!-- =================================================
          MOBİL SATIN AL
-         WHATSAPP'A GİDER
     ================================================== -->
 
     <a
         href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20gayrimenkuller%20hakkında%20bilgi%20almak%20istiyorum."
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener"
         class="hero-link mobile-satin"
         aria-label="Satın Almak İstiyorum"
     ></a>
-
 
 </section>
 
@@ -609,7 +582,6 @@ Ad Soyad *
 </div>
 
 
-
 <div class="field">
 
 <label for="telefon">
@@ -628,7 +600,6 @@ Telefon *
 </div>
 
 
-
 <div class="field">
 
 <label for="email">
@@ -643,7 +614,6 @@ E-posta
 >
 
 </div>
-
 
 
 <div class="field">
@@ -695,7 +665,6 @@ Turistik Tesis
 </div>
 
 
-
 <div class="field">
 
 <label for="islem_turu">
@@ -721,7 +690,6 @@ Satılık
 </div>
 
 
-
 <div class="field">
 
 <label for="il">
@@ -745,7 +713,6 @@ Seçiniz
 </select>
 
 </div>
-
 
 
 <div class="field">
@@ -793,7 +760,6 @@ Diğer
 </div>
 
 
-
 <div class="field">
 
 <label for="mahalle">
@@ -808,7 +774,6 @@ Mahalle
 >
 
 </div>
-
 
 
 <div class="field">
@@ -828,7 +793,6 @@ Fiyat (TL)
 </div>
 
 
-
 <div class="field">
 
 <label for="metrekare">
@@ -844,7 +808,6 @@ m²
 >
 
 </div>
-
 
 
 <div class="field">
@@ -875,7 +838,6 @@ Seçiniz
 </div>
 
 
-
 <div class="field">
 
 <label for="bina_yasi">
@@ -891,26 +853,14 @@ Bina Yaşı
 Seçiniz
 </option>
 
-<option value="0-5">
-0-5
-</option>
-
-<option value="6-10">
-6-10
-</option>
-
-<option value="11-20">
-11-20
-</option>
-
-<option value="21+">
-21+
-</option>
+<option value="0-5">0-5</option>
+<option value="6-10">6-10</option>
+<option value="11-20">11-20</option>
+<option value="21+">21+</option>
 
 </select>
 
 </div>
-
 
 
 <div class="field full">
@@ -926,7 +876,6 @@ Açıklama
 ></textarea>
 
 </div>
-
 
 
 <div class="field full">
@@ -969,7 +918,6 @@ En kısa sürede sizinle iletişime geçeceğiz.
 
 </form>
 
-
 </div>
 
 </div>
@@ -999,12 +947,15 @@ Emlakınızı bize gönderin, satış sürecinizde size destek olalım.
 
 <!-- =====================================================
      MOBİL SABİT WHATSAPP
+
+     GÖRSELİN İÇİNDE DEĞİL.
+     SADECE KODLA OLUŞUYOR.
 ===================================================== -->
 
 <a
     href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20gayrimenkuller%20hakkında%20bilgi%20almak%20istiyorum."
     target="_blank"
-    rel="noopener noreferrer"
+    rel="noopener"
     class="mobile-whatsapp"
 >
 💬 WhatsApp'tan Hemen İletişime Geç →
@@ -1029,116 +980,116 @@ document.getElementById("successBox");
 
 
 form.addEventListener(
-"submit",
-async function(event){
+    "submit",
+    async function(event){
 
-    event.preventDefault();
+        event.preventDefault();
 
-    submitButton.disabled = true;
+        submitButton.disabled = true;
 
-    submitButton.textContent =
-    "Başvurunuz gönderiliyor...";
-
-
-    const formData =
-    new FormData(form);
+        submitButton.textContent =
+        "Başvurunuz gönderiliyor...";
 
 
-    const veri =
-    Object.fromEntries(
-        formData.entries()
-    );
+        const formData =
+        new FormData(form);
 
-
-    try{
-
-        const cevap =
-        await fetch(
-            "/api/ilanlar",
-            {
-                method:"POST",
-
-                headers:{
-                    "Content-Type":
-                    "application/json"
-                },
-
-                body:
-                JSON.stringify(veri)
-            }
+        const veri =
+        Object.fromEntries(
+            formData.entries()
         );
 
 
-        const sonuc =
-        await cevap.json();
+        try{
 
+            const cevap =
+            await fetch(
+                "/api/ilanlar",
+                {
+                    method:"POST",
 
-        if(
-            !cevap.ok ||
-            !sonuc.basarili
-        ){
+                    headers:{
+                        "Content-Type":
+                        "application/json"
+                    },
 
-            throw new Error(
-                sonuc.hata ||
-                "Başvuru gönderilemedi."
+                    body:
+                    JSON.stringify(veri)
+                }
             );
 
-        }
+
+            const sonuc =
+            await cevap.json();
 
 
-        form.reset();
+            if(
+                !cevap.ok ||
+                !sonuc.basarili
+            ){
+
+                throw new Error(
+                    sonuc.hata ||
+                    "Başvuru gönderilemedi."
+                );
+
+            }
 
 
-        successBox.style.display =
-        "block";
+            form.reset();
 
-
-        submitButton.textContent =
-        "✓ Başvurunuz Gönderildi";
-
-
-        successBox.scrollIntoView({
-            behavior:"smooth",
-            block:"center"
-        });
-
-
-        setTimeout(
-        function(){
 
             successBox.style.display =
-            "none";
+            "block";
+
+
+            submitButton.textContent =
+            "✓ Başvurunuz Gönderildi";
+
+
+            successBox.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+
+            setTimeout(
+                function(){
+
+                    successBox.style.display =
+                    "none";
+
+                    submitButton.disabled =
+                    false;
+
+                    submitButton.textContent =
+                    "✈ Ücretsiz İlan Başvurumu Gönder →";
+
+                },
+                7000
+            );
+
+
+        }
+        catch(hata){
+
+            alert(
+                "Başvuru gönderilemedi:\n\n" +
+                hata.message
+            );
+
 
             submitButton.disabled =
             false;
 
+
             submitButton.textContent =
             "✈ Ücretsiz İlan Başvurumu Gönder →";
 
-        },
-        7000
-        );
-
+        }
 
     }
-    catch(hata){
-
-        alert(
-            "Başvuru gönderilemedi:\n\n" +
-            hata.message
-        );
-
-
-        submitButton.disabled =
-        false;
-
-
-        submitButton.textContent =
-        "✈ Ücretsiz İlan Başvurumu Gönder →";
-
-    }
-
-});
+);
 
 </script>
 
