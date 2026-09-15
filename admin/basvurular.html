@@ -875,6 +875,56 @@ async function durumDegistir(id, durum){
 
 }
 
+    async function durumDegistir(id, durum){
+
+    const onay = confirm(
+        "Bu başvurunun durumunu değiştirmek istediğinize emin misiniz?"
+    );
+
+    if(!onay){
+        return;
+    }
+
+    try{
+
+        const cevap = await fetch(
+            "/api/ilanlar/" + id,
+            {
+                method:"PATCH",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    durum:durum
+                })
+            }
+        );
+
+        const sonuc = await cevap.json();
+
+        if(!cevap.ok || !sonuc.basarili){
+            throw new Error(
+                sonuc.hata || "Durum değiştirilemedi."
+            );
+        }
+
+        alert("İlan durumu başarıyla değiştirildi.");
+
+        modalKapat();
+
+        basvurulariGetir();
+
+    }catch(hata){
+
+        alert(
+            "İşlem başarısız:\n\n" +
+            hata.message
+        );
+
+    }
+
+}
+    
 function modalKapat(){
 
     document.getElementById(
