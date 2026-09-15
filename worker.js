@@ -5,7 +5,9 @@ export default {
 
     // D1 bağlantı testi
     if (url.pathname === "/api/test") {
+
       try {
+
         const sonuc = await env.DB
           .prepare("SELECT name FROM sqlite_master WHERE type='table'")
           .all();
@@ -16,19 +18,58 @@ export default {
         });
 
       } catch (hata) {
+
         return Response.json({
           basarili: false,
           hata: hata.message
         }, { status: 500 });
+
       }
     }
 
-    // İlan başvurusu kaydet
+
+    // İlanları görüntüleme / kayıt sayısını kontrol
+    if (url.pathname === "/api/ilanlar" && request.method === "GET") {
+
+      try {
+
+        const sonuc = await env.DB
+          .prepare("SELECT * FROM ilanlar ORDER BY id DESC")
+          .all();
+
+        return Response.json({
+          basarili: true,
+          toplam: sonuc.results.length,
+          ilanlar: sonuc.results
+        });
+
+      } catch (hata) {
+
+        return Response.json({
+          basarili: false,
+          hata: hata.message
+        }, { status: 500 });
+
+      }
+    }
+
+
+    // Yeni ilan başvurusu
     if (url.pathname === "/api/ilanlar" && request.method === "POST") {
 
       try {
 
         const veri = await request.json();
+
+        const fiyat =
+          veri.fiyat
+            ? Number(String(veri.fiyat).replace(/\./g, "").replace(",", "."))
+            : null;
+
+        const metrekare =
+          veri.metrekare
+            ? Number(String(veri.metrekare).replace(/\./g, "").replace(",", "."))
+            : null;
 
         const sonuc = await env.DB.prepare(`
           INSERT INTO ilanlar (
@@ -56,8 +97,8 @@ export default {
           veri.il || "",
           veri.ilce || "",
           veri.mahalle || "",
-          veri.fiyat ? Number(veri.fiyat.replace(/\./g, "").replace(",", ".")) : null,
-          veri.metrekare ? Number(veri.metrekare.replace(/\./g, "").replace(",", ".")) : null,
+          fiyat,
+          metrekare,
           veri.oda_sayisi || "",
           veri.bina_yasi || "",
           veri.aciklama || ""
@@ -65,6 +106,7 @@ export default {
 
         return Response.json({
           basarili: true,
+          mesaj: "İlan başvurusu D1'e kaydedildi.",
           id: sonuc.meta.last_row_id
         });
 
@@ -78,7 +120,9 @@ export default {
       }
     }
 
-    // Normal site dosyalarını göster
+
+    // Normal site dosyaları
     return env.ASSETS.fetch(request);
+
   }
 };
