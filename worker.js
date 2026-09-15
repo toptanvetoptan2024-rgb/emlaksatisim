@@ -26,7 +26,40 @@ export default {
 
       }
     }
+// D1 kayıt testi
+if (url.pathname === "/api/test-kayit") {
 
+  try {
+
+    const sonuc = await env.DB.prepare(`
+      INSERT INTO ilanlar (
+        ad_soyad,
+        telefon,
+        ilan_turu,
+        islem_turu
+      )
+      VALUES (?, ?, ?, ?)
+    `).bind(
+      "TEST KULLANICI",
+      "05550000000",
+      "Daire",
+      "Satılık"
+    ).run();
+
+    return Response.json({
+      basarili: true,
+      id: sonuc.meta.last_row_id
+    });
+
+  } catch (hata) {
+
+    return Response.json({
+      basarili: false,
+      hata: hata.message
+    }, { status: 500 });
+
+  }
+}
 
     // İlanları görüntüleme / kayıt sayısını kontrol
     if (url.pathname === "/api/ilanlar" && request.method === "GET") {
