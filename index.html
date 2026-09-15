@@ -6,9 +6,11 @@
 
 <title>EmlakSatışım.com | Gayrimenkulde Doğru Adres</title>
 
-<meta name="description" content="Dükkan, ev ve arsa satışlarınız için EmlakSatışım.com. Ücretsiz ilan verin, doğru alıcılara ulaşın.">
+<meta name="description"
+content="Dükkan, ev ve arsa satışlarınız için EmlakSatışım.com. Ücretsiz ilan verin, doğru alıcılara ulaşın.">
 
 <style>
+
 *{
     box-sizing:border-box;
 }
@@ -25,16 +27,15 @@ body{
     font-family:Arial,Helvetica,sans-serif;
 }
 
-/* ==============================
+/* ========================================
    ANA GÖRSEL
-============================== */
+======================================== */
 
 .hero{
     position:relative;
     width:100%;
     overflow:hidden;
     line-height:0;
-    background:#f4f7fb;
 }
 
 .hero img{
@@ -43,54 +44,52 @@ body{
     height:auto;
 }
 
-.tasarim-mobil{
+.mobil-gorsel{
     display:none !important;
 }
 
-/* ==============================
-   TIKLANABİLİR ALANLAR
-============================== */
+/* ========================================
+   TIKLAMA ALANLARI
+======================================== */
 
 .hero-link{
     position:absolute;
-    z-index:20;
+    z-index:50;
     display:block;
-    background:transparent;
-    border:0;
-    outline:0;
     cursor:pointer;
+    background:transparent;
 }
 
-/* ==============================
-   MASAÜSTÜ
-============================== */
+/* ========================================
+   MASAÜSTÜ BUTONLARI
+======================================== */
 
-.desktop-ilan{
-    left:14%;
+.masa-ilan{
+    left:10%;
     top:4%;
-    width:36%;
-    height:13%;
+    width:38%;
+    height:18%;
 }
 
-.desktop-satin{
-    left:50%;
+.masa-satin{
+    left:52%;
     top:4%;
-    width:36%;
-    height:13%;
+    width:38%;
+    height:18%;
 }
 
-/* ==============================
-   MOBİL
-============================== */
+/* ========================================
+   MOBİL BUTONLARI
+======================================== */
 
-.mobile-ilan,
-.mobile-satin{
+.mobil-ilan,
+.mobil-satin{
     display:none;
 }
 
-/* ==============================
-   FORM
-============================== */
+/* ========================================
+   İLAN FORMU
+======================================== */
 
 .form-section{
     padding:60px 20px 80px;
@@ -99,7 +98,7 @@ body{
 .form-container{
     width:100%;
     max-width:1100px;
-    margin:0 auto;
+    margin:auto;
 }
 
 .form-card{
@@ -176,9 +175,9 @@ body{
     resize:vertical;
 }
 
-/* ==============================
-   GÖNDER BUTONU
-============================== */
+/* ========================================
+   GÖNDER
+======================================== */
 
 .submit-button{
     width:100%;
@@ -188,7 +187,6 @@ body{
     border-radius:11px;
     background:#ff7800;
     color:#fff;
-    font-family:inherit;
     font-size:18px;
     font-weight:900;
     cursor:pointer;
@@ -199,9 +197,9 @@ body{
     cursor:not-allowed;
 }
 
-/* ==============================
+/* ========================================
    BAŞARI
-============================== */
+======================================== */
 
 .success-box{
     display:none;
@@ -225,9 +223,9 @@ body{
     line-height:1.5;
 }
 
-/* ==============================
+/* ========================================
    ALT ALAN
-============================== */
+======================================== */
 
 .bottom-section{
     padding:60px 20px;
@@ -243,23 +241,23 @@ body{
 
 .bottom-section p{
     max-width:750px;
-    margin:0 auto;
+    margin:auto;
     color:#dce6ef;
     font-size:16px;
     line-height:1.7;
 }
 
-/* ==============================
+/* ========================================
    MOBİL WHATSAPP
-============================== */
+======================================== */
 
 .mobile-whatsapp{
     display:none;
 }
 
-/* ==============================
+/* ========================================
    MOBİL
-============================== */
+======================================== */
 
 @media(max-width:600px){
 
@@ -267,26 +265,32 @@ body{
         padding-bottom:65px;
     }
 
-    /* Masaüstü görselini gizle */
-    .tasarim-masaustu{
+    /* Masaüstü görselini kapat */
+    .masa-gorsel{
         display:none !important;
     }
 
-    /* Mobil görselini göster */
-    .tasarim-mobil{
+    /* Mobil görselini aç */
+    .mobil-gorsel{
         display:block !important;
         width:100%;
         height:auto;
     }
 
-    /* Masaüstü tıklama alanlarını kapat */
-    .desktop-ilan,
-    .desktop-satin{
+    /* Masaüstü linklerini kapat */
+    .masa-ilan,
+    .masa-satin{
         display:none;
     }
 
-    /* Mobil İlan Ver */
-    .mobile-ilan{
+    /*
+       MOBİL GÖRSEL:
+       ÜST = Dükkan Ev Arsa
+       ORTA = İlan Vermek
+       ALT = Satın Almak
+    */
+
+    .mobil-ilan{
         display:block;
         left:3%;
         top:38%;
@@ -294,8 +298,7 @@ body{
         height:22%;
     }
 
-    /* Mobil Satın Al */
-    .mobile-satin{
+    .mobil-satin{
         display:block;
         left:3%;
         top:60%;
@@ -303,7 +306,10 @@ body{
         height:24%;
     }
 
-    /* Form */
+    /* ====================================
+       FORM
+    ==================================== */
+
     .form-section{
         padding:35px 12px 45px;
     }
@@ -337,7 +343,10 @@ body{
         min-height:55px;
     }
 
-    /* Alt alan */
+    /* ====================================
+       ALT
+    ==================================== */
+
     .bottom-section{
         padding:45px 20px 80px;
     }
@@ -350,12 +359,16 @@ body{
         font-size:14px;
     }
 
-    /* Sabit WhatsApp */
+    /* ====================================
+       SABİT WHATSAPP
+    ==================================== */
+
     .mobile-whatsapp{
         position:fixed;
         left:0;
         right:0;
         bottom:0;
+
         z-index:999999;
 
         display:flex;
@@ -377,7 +390,10 @@ body{
     }
 }
 
-/* Küçük telefon */
+/* ========================================
+   KÜÇÜK TELEFON
+======================================== */
+
 @media(max-width:390px){
 
     .mobile-whatsapp{
@@ -389,451 +405,652 @@ body{
         font-size:25px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- ==================================================
+
+<!-- ========================================
      ANA GÖRSELLER
-================================================== -->
+======================================== -->
 
 <section class="hero">
 
-    <!-- MASAÜSTÜ GÖRSEL -->
+    <!-- MASAÜSTÜ -->
     <img
-        src="https://raw.githubusercontent.com/toptanvetoptan2024-rgb/emlaksatisim/main/tasarim.png"
-        class="tasarim-masaustu"
+        src="/assets/tasarim.png"
+        class="masa-gorsel"
         alt="EmlakSatışım.com"
     >
 
-    <!-- MOBİL GÖRSEL -->
+    <!-- MOBİL -->
     <img
-        src="https://raw.githubusercontent.com/toptanvetoptan2024-rgb/emlaksatisim/main/tasarim-mobil.png"
-        class="tasarim-mobil"
+        src="/assets/tasarim-mobil.png"
+        class="mobil-gorsel"
         alt="Dükkan Ev Arsa - EmlakSatışım.com"
     >
 
-    <!-- MASAÜSTÜ İLAN VER -->
+
+    <!-- ====================================
+         MASAÜSTÜ İLAN VER
+    ===================================== -->
+
     <a
         href="#ilan-formu"
-        class="hero-link desktop-ilan"
+        class="hero-link masa-ilan"
         aria-label="İlan Vermek İstiyorum"
     ></a>
 
-    <!-- MASAÜSTÜ SATIN AL -->
+
+    <!-- ====================================
+         MASAÜSTÜ SATIN AL
+    ===================================== -->
+
     <a
         href="https://wa.me/905300316127?text=Merhaba%2C%20sat%C4%B1l%C4%B1k%20gayrimenkuller%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
         target="_blank"
         rel="noopener noreferrer"
-        class="hero-link desktop-satin"
+        class="hero-link masa-satin"
         aria-label="Satın Almak İstiyorum"
     ></a>
 
-    <!-- MOBİL İLAN VER -->
+
+    <!-- ====================================
+         MOBİL İLAN VER
+    ===================================== -->
+
     <a
         href="#ilan-formu"
-        class="hero-link mobile-ilan"
+        class="hero-link mobil-ilan"
         aria-label="İlan Vermek İstiyorum"
     ></a>
 
-    <!-- MOBİL SATIN AL -->
+
+    <!-- ====================================
+         MOBİL SATIN AL
+    ===================================== -->
+
     <a
         href="https://wa.me/905300316127?text=Merhaba%2C%20sat%C4%B1l%C4%B1k%20gayrimenkuller%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
         target="_blank"
         rel="noopener noreferrer"
-        class="hero-link mobile-satin"
+        class="hero-link mobil-satin"
         aria-label="Satın Almak İstiyorum"
     ></a>
 
 </section>
 
 
-<!-- ==================================================
+<!-- ========================================
      İLAN FORMU
-================================================== -->
+======================================== -->
 
 <section id="ilan-formu" class="form-section">
 
-    <div class="form-container">
+<div class="form-container">
 
-        <div class="form-card">
+<div class="form-card">
 
-            <h1 class="form-title">
-                Ücretsiz İlan Ver Başvuru Formu
-            </h1>
+<h1 class="form-title">
+Ücretsiz İlan Ver Başvuru Formu
+</h1>
 
-            <p class="form-subtitle">
-                Aşağıdaki bilgileri doldurun, ilanınızı bizimle paylaşın.
-                En kısa sürede sizinle iletişime geçeceğiz.
-            </p>
-
-            <form id="listingForm">
-
-                <div class="form-grid">
-
-                    <div class="field">
-                        <label for="ad_soyad">
-                            Ad Soyad *
-                        </label>
-
-                        <input
-                            id="ad_soyad"
-                            type="text"
-                            name="ad_soyad"
-                            placeholder="Adınız ve soyadınız"
-                            required
-                        >
-                    </div>
+<p class="form-subtitle">
+Aşağıdaki bilgileri doldurun, ilanınızı bizimle paylaşın.
+En kısa sürede sizinle iletişime geçeceğiz.
+</p>
 
 
-                    <div class="field">
-                        <label for="telefon">
-                            Telefon *
-                        </label>
+<form id="listingForm">
 
-                        <input
-                            id="telefon"
-                            type="tel"
-                            name="telefon"
-                            placeholder="05XX XXX XX XX"
-                            inputmode="tel"
-                            required
-                        >
-                    </div>
+<div class="form-grid">
 
 
-                    <div class="field">
-                        <label for="email">
-                            E-posta
-                        </label>
+<!-- AD SOYAD -->
 
-                        <input
-                            id="email"
-                            type="email"
-                            name="email"
-                            placeholder="ornek@mail.com"
-                        >
-                    </div>
+<div class="field">
 
+<label for="ad_soyad">
+Ad Soyad *
+</label>
 
-                    <div class="field">
-                        <label for="ilan_turu">
-                            Gayrimenkul Türü *
-                        </label>
+<input
+id="ad_soyad"
+type="text"
+name="ad_soyad"
+placeholder="Adınız ve soyadınız"
+required
+>
 
-                        <select
-                            id="ilan_turu"
-                            name="ilan_turu"
-                            required
-                        >
-                            <option value="">Seçiniz</option>
-                            <option value="Daire">Daire</option>
-                            <option value="Villa">Villa</option>
-                            <option value="Müstakil Ev">Müstakil Ev</option>
-                            <option value="Dükkan">Dükkan</option>
-                            <option value="Ofis">Ofis</option>
-                            <option value="Arsa">Arsa</option>
-                            <option value="Turistik Tesis">Turistik Tesis</option>
-                        </select>
-                    </div>
+</div>
 
 
-                    <div class="field">
-                        <label for="islem_turu">
-                            İşlem Türü *
-                        </label>
+<!-- TELEFON -->
 
-                        <select
-                            id="islem_turu"
-                            name="islem_turu"
-                            required
-                        >
-                            <option value="">Seçiniz</option>
-                            <option value="Satılık">Satılık</option>
-                        </select>
-                    </div>
+<div class="field">
 
+<label for="telefon">
+Telefon *
+</label>
 
-                    <div class="field">
-                        <label for="il">
-                            İl *
-                        </label>
+<input
+id="telefon"
+type="tel"
+name="telefon"
+placeholder="05XX XXX XX XX"
+inputmode="tel"
+required
+>
 
-                        <select
-                            id="il"
-                            name="il"
-                            required
-                        >
-                            <option value="">Seçiniz</option>
-                            <option value="İstanbul">İstanbul</option>
-                        </select>
-                    </div>
+</div>
 
 
-                    <div class="field">
-                        <label for="ilce">
-                            İlçe *
-                        </label>
+<!-- EMAIL -->
 
-                        <select
-                            id="ilce"
-                            name="ilce"
-                            required
-                        >
-                            <option value="">Seçiniz</option>
-                            <option value="Sultangazi">Sultangazi</option>
-                            <option value="Arnavutköy">Arnavutköy</option>
-                            <option value="Başakşehir">Başakşehir</option>
-                            <option value="Gaziosmanpaşa">Gaziosmanpaşa</option>
-                            <option value="Eyüpsultan">Eyüpsultan</option>
-                            <option value="Diğer">Diğer</option>
-                        </select>
-                    </div>
+<div class="field">
+
+<label for="email">
+E-posta
+</label>
+
+<input
+id="email"
+type="email"
+name="email"
+placeholder="ornek@mail.com"
+>
+
+</div>
 
 
-                    <div class="field">
-                        <label for="mahalle">
-                            Mahalle
-                        </label>
+<!-- GAYRİMENKUL -->
 
-                        <input
-                            id="mahalle"
-                            type="text"
-                            name="mahalle"
-                            placeholder="Mahalle adı"
-                        >
-                    </div>
+<div class="field">
 
+<label for="ilan_turu">
+Gayrimenkul Türü *
+</label>
 
-                    <div class="field">
-                        <label for="fiyat">
-                            Fiyat (TL)
-                        </label>
+<select
+id="ilan_turu"
+name="ilan_turu"
+required
+>
 
-                        <input
-                            id="fiyat"
-                            type="text"
-                            name="fiyat"
-                            placeholder="Örnek: 2.500.000"
-                            inputmode="decimal"
-                        >
-                    </div>
+<option value="">
+Seçiniz
+</option>
 
+<option value="Daire">
+Daire
+</option>
 
-                    <div class="field">
-                        <label for="metrekare">
-                            m²
-                        </label>
+<option value="Villa">
+Villa
+</option>
 
-                        <input
-                            id="metrekare"
-                            type="text"
-                            name="metrekare"
-                            placeholder="Örnek: 120"
-                            inputmode="decimal"
-                        >
-                    </div>
+<option value="Müstakil Ev">
+Müstakil Ev
+</option>
 
+<option value="Dükkan">
+Dükkan
+</option>
 
-                    <div class="field">
-                        <label for="oda_sayisi">
-                            Oda Sayısı
-                        </label>
+<option value="Ofis">
+Ofis
+</option>
 
-                        <select
-                            id="oda_sayisi"
-                            name="oda_sayisi"
-                        >
-                            <option value="">Seçiniz</option>
-                            <option value="1+0">1+0</option>
-                            <option value="1+1">1+1</option>
-                            <option value="2+1">2+1</option>
-                            <option value="3+1">3+1</option>
-                            <option value="4+1">4+1</option>
-                            <option value="5+1">5+1</option>
-                            <option value="Diğer">Diğer</option>
-                        </select>
-                    </div>
+<option value="Arsa">
+Arsa
+</option>
+
+<option value="Turistik Tesis">
+Turistik Tesis
+</option>
+
+</select>
+
+</div>
 
 
-                    <div class="field">
-                        <label for="bina_yasi">
-                            Bina Yaşı
-                        </label>
+<!-- İŞLEM -->
 
-                        <select
-                            id="bina_yasi"
-                            name="bina_yasi"
-                        >
-                            <option value="">Seçiniz</option>
-                            <option value="0-5">0-5</option>
-                            <option value="6-10">6-10</option>
-                            <option value="11-20">11-20</option>
-                            <option value="21+">21+</option>
-                        </select>
-                    </div>
+<div class="field">
 
+<label for="islem_turu">
+İşlem Türü *
+</label>
 
-                    <div class="field full">
-                        <label for="aciklama">
-                            Açıklama
-                        </label>
+<select
+id="islem_turu"
+name="islem_turu"
+required
+>
 
-                        <textarea
-                            id="aciklama"
-                            name="aciklama"
-                            placeholder="Gayrimenkulünüz hakkında eklemek istediğiniz bilgileri yazabilirsiniz..."
-                        ></textarea>
-                    </div>
+<option value="">
+Seçiniz
+</option>
+
+<option value="Satılık">
+Satılık
+</option>
+
+</select>
+
+</div>
 
 
-                    <div class="field full">
+<!-- İL -->
 
-                        <button
-                            type="submit"
-                            id="submitButton"
-                            class="submit-button"
-                        >
-                            ✈ Ücretsiz İlan Başvurumu Gönder →
-                        </button>
+<div class="field">
 
-                    </div>
+<label for="il">
+İl *
+</label>
 
-                </div>
+<select
+id="il"
+name="il"
+required
+>
+
+<option value="">
+Seçiniz
+</option>
+
+<option value="İstanbul">
+İstanbul
+</option>
+
+</select>
+
+</div>
 
 
-                <div class="privacy">
-                    🔒 Kişisel bilgileriniz gizli tutulur ve yalnızca
-                    başvurunuzun değerlendirilmesi amacıyla kullanılır.
-                </div>
+<!-- İLÇE -->
+
+<div class="field">
+
+<label for="ilce">
+İlçe *
+</label>
+
+<select
+id="ilce"
+name="ilce"
+required
+>
+
+<option value="">
+Seçiniz
+</option>
+
+<option value="Sultangazi">
+Sultangazi
+</option>
+
+<option value="Arnavutköy">
+Arnavutköy
+</option>
+
+<option value="Başakşehir">
+Başakşehir
+</option>
+
+<option value="Gaziosmanpaşa">
+Gaziosmanpaşa
+</option>
+
+<option value="Eyüpsultan">
+Eyüpsultan
+</option>
+
+<option value="Diğer">
+Diğer
+</option>
+
+</select>
+
+</div>
 
 
-                <div
-                    id="successBox"
-                    class="success-box"
-                >
-                    ✅ Başvurunuz başarıyla gönderildi!
-                    <br>
-                    En kısa sürede sizinle iletişime geçeceğiz.
-                </div>
+<!-- MAHALLE -->
 
-            </form>
+<div class="field">
 
-        </div>
+<label for="mahalle">
+Mahalle
+</label>
 
-    </div>
+<input
+id="mahalle"
+type="text"
+name="mahalle"
+placeholder="Mahalle adı"
+>
+
+</div>
+
+
+<!-- FİYAT -->
+
+<div class="field">
+
+<label for="fiyat">
+Fiyat (TL)
+</label>
+
+<input
+id="fiyat"
+type="text"
+name="fiyat"
+placeholder="Örnek: 2.500.000"
+inputmode="decimal"
+>
+
+</div>
+
+
+<!-- METREKARE -->
+
+<div class="field">
+
+<label for="metrekare">
+m²
+</label>
+
+<input
+id="metrekare"
+type="text"
+name="metrekare"
+placeholder="Örnek: 120"
+inputmode="decimal"
+>
+
+</div>
+
+
+<!-- ODA -->
+
+<div class="field">
+
+<label for="oda_sayisi">
+Oda Sayısı
+</label>
+
+<select
+id="oda_sayisi"
+name="oda_sayisi"
+>
+
+<option value="">
+Seçiniz
+</option>
+
+<option value="1+0">1+0</option>
+<option value="1+1">1+1</option>
+<option value="2+1">2+1</option>
+<option value="3+1">3+1</option>
+<option value="4+1">4+1</option>
+<option value="5+1">5+1</option>
+<option value="Diğer">Diğer</option>
+
+</select>
+
+</div>
+
+
+<!-- BİNA YAŞI -->
+
+<div class="field">
+
+<label for="bina_yasi">
+Bina Yaşı
+</label>
+
+<select
+id="bina_yasi"
+name="bina_yasi"
+>
+
+<option value="">
+Seçiniz
+</option>
+
+<option value="0-5">0-5</option>
+<option value="6-10">6-10</option>
+<option value="11-20">11-20</option>
+<option value="21+">21+</option>
+
+</select>
+
+</div>
+
+
+<!-- AÇIKLAMA -->
+
+<div class="field full">
+
+<label for="aciklama">
+Açıklama
+</label>
+
+<textarea
+id="aciklama"
+name="aciklama"
+placeholder="Gayrimenkulünüz hakkında eklemek istediğiniz bilgileri yazabilirsiniz..."
+></textarea>
+
+</div>
+
+
+<!-- GÖNDER -->
+
+<div class="field full">
+
+<button
+type="submit"
+id="submitButton"
+class="submit-button"
+>
+
+✈ Ücretsiz İlan Başvurumu Gönder →
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="privacy">
+
+🔒 Kişisel bilgileriniz gizli tutulur ve yalnızca
+başvurunuzun değerlendirilmesi amacıyla kullanılır.
+
+</div>
+
+
+<div
+id="successBox"
+class="success-box"
+>
+
+✅ Başvurunuz başarıyla gönderildi!
+
+<br>
+
+En kısa sürede sizinle iletişime geçeceğiz.
+
+</div>
+
+</form>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ==================================================
+<!-- ========================================
      ALT ALAN
-================================================== -->
+======================================== -->
 
 <section class="bottom-section">
 
-    <h2>
-        Gayrimenkulde Doğru Adres
-    </h2>
+<h2>
+Gayrimenkulde Doğru Adres
+</h2>
 
-    <p>
-        Dükkan, ev ve arsanızı doğru alıcılarla buluşturalım.
-        Emlakınızı bize gönderin, satış sürecinizde size destek olalım.
-    </p>
+<p>
+Dükkan, ev ve arsanızı doğru alıcılarla buluşturalım.
+Emlakınızı bize gönderin, satış sürecinizde size destek olalım.
+</p>
 
 </section>
 
 
-<!-- ==================================================
-     MOBİL SABİT WHATSAPP
-================================================== -->
+<!-- ========================================
+     MOBİL WHATSAPP
+======================================== -->
 
 <a
-    href="https://wa.me/905300316127?text=Merhaba%2C%20sat%C4%B1l%C4%B1k%20gayrimenkuller%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-    target="_blank"
-    rel="noopener noreferrer"
-    class="mobile-whatsapp"
+href="https://wa.me/905300316127?text=Merhaba%2C%20sat%C4%B1l%C4%B1k%20gayrimenkuller%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+target="_blank"
+rel="noopener noreferrer"
+class="mobile-whatsapp"
 >
-    💬 WhatsApp'tan Hemen İletişime Geç →
+
+💬 WhatsApp'tan Hemen İletişime Geç →
+
 </a>
 
 
-<!-- ==================================================
-     D1 FORM KAYDI
-================================================== -->
+<!-- ========================================
+     D1
+======================================== -->
 
 <script>
 
-const form = document.getElementById("listingForm");
-const submitButton = document.getElementById("submitButton");
-const successBox = document.getElementById("successBox");
+const form =
+document.getElementById("listingForm");
 
-form.addEventListener("submit", async function(event){
+const submitButton =
+document.getElementById("submitButton");
 
-    event.preventDefault();
+const successBox =
+document.getElementById("successBox");
 
-    submitButton.disabled = true;
-    submitButton.textContent = "Başvurunuz gönderiliyor...";
 
-    const formData = new FormData(form);
-    const veri = Object.fromEntries(formData.entries());
+form.addEventListener(
+"submit",
+async function(event){
 
-    try{
+event.preventDefault();
 
-        const cevap = await fetch("/api/ilanlar", {
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify(veri)
-        });
+submitButton.disabled = true;
 
-        const sonuc = await cevap.json();
+submitButton.textContent =
+"Başvurunuz gönderiliyor...";
 
-        if(!cevap.ok || !sonuc.basarili){
-            throw new Error(
-                sonuc.hata || "Başvuru gönderilemedi."
-            );
-        }
 
-        form.reset();
+const formData =
+new FormData(form);
 
-        successBox.style.display = "block";
+const veri =
+Object.fromEntries(
+formData.entries()
+);
 
-        submitButton.textContent =
-            "✓ Başvurunuz Gönderildi";
 
-        successBox.scrollIntoView({
-            behavior:"smooth",
-            block:"center"
-        });
+try{
 
-        setTimeout(function(){
+const cevap =
+await fetch(
+"/api/ilanlar",
+{
+method:"POST",
 
-            successBox.style.display = "none";
+headers:{
+"Content-Type":
+"application/json"
+},
 
-            submitButton.disabled = false;
+body:
+JSON.stringify(veri)
+}
+);
 
-            submitButton.textContent =
-                "✈ Ücretsiz İlan Başvurumu Gönder →";
 
-        },7000);
+const sonuc =
+await cevap.json();
 
-    }
 
-    catch(hata){
+if(
+!cevap.ok ||
+!sonuc.basarili
+){
 
-        alert(
-            "Başvuru gönderilemedi:\n\n" +
-            hata.message
-        );
+throw new Error(
+sonuc.hata ||
+"Başvuru gönderilemedi."
+);
 
-        submitButton.disabled = false;
+}
 
-        submitButton.textContent =
-            "✈ Ücretsiz İlan Başvurumu Gönder →";
-    }
+
+form.reset();
+
+successBox.style.display =
+"block";
+
+submitButton.textContent =
+"✓ Başvurunuz Gönderildi";
+
+
+successBox.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+
+setTimeout(
+function(){
+
+successBox.style.display =
+"none";
+
+submitButton.disabled =
+false;
+
+submitButton.textContent =
+"✈ Ücretsiz İlan Başvurumu Gönder →";
+
+},
+7000
+);
+
+
+}
+
+catch(hata){
+
+alert(
+"Başvuru gönderilemedi:\n\n" +
+hata.message
+);
+
+submitButton.disabled =
+false;
+
+submitButton.textContent =
+"✈ Ücretsiz İlan Başvurumu Gönder →";
+
+}
 
 });
 
