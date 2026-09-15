@@ -1187,15 +1187,47 @@ body{
    FORM TESTİ
 ===================================================== */
 
-document
-.getElementById("ilanForm")
-.addEventListener("submit", function(event){
+document.getElementById('listingForm').addEventListener('submit', async function(e){
 
-    event.preventDefault();
+  e.preventDefault();
 
-    alert(
-        "Başvurunuz alındı. EmlakSatışım.com ekibimiz en kısa sürede sizinle iletişime geçecektir."
-    );
+  const form = e.target;
+  const formData = new FormData(form);
+
+  const veri = Object.fromEntries(formData.entries());
+
+  try {
+
+    const cevap = await fetch('/api/ilanlar', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(veri)
+    });
+
+    const sonuc = await cevap.json();
+
+    if (!cevap.ok) {
+      throw new Error(sonuc.hata || 'Başvuru gönderilemedi.');
+    }
+
+    const toast = document.getElementById('toast');
+
+    toast.textContent = 'Başvurunuz başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.';
+    toast.style.display = 'block';
+
+    form.reset();
+
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, 5000);
+
+  } catch (hata) {
+
+    alert('Başvuru gönderilemedi: ' + hata.message);
+
+  }
 
 });
 
