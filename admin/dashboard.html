@@ -3,33 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EmlakSatışım.com - Panel</title>
+    <title>EmlakSatışım.com - Yönetim Paneli</title>
 </head>
+
 <body>
 
     <h1>EmlakSatışım.com</h1>
-
     <h2>Yönetim Paneli</h2>
-
-    <p>Panel başarıyla çalışıyor.</p>
 
     <h3>İlan Durumları</h3>
 
     <ul>
-        <li>Onay Bekliyor</li>
-        <li>Yayında</li>
-        <li>Satıldı</li>
-        <li>İptal Edildi</li>
+        <li>
+            <a href="basvurular.html">Onay Bekleyen İlanlar</a>
+        </li>
+
+        <li>
+            <a href="ilanlar.html">Yayındaki İlanlar</a>
+        </li>
+
+        <li>
+            <a href="ilanlar.html">Satılan İlanlar</a>
+        </li>
+
+        <li>
+            <a href="ilanlar.html">İptal Edilen İlanlar</a>
+        </li>
     </ul>
 
     <h3>Yönetim</h3>
 
     <ul>
-        <li>İlan Başvuruları</li>
-        <li>Tüm İlanlar</li>
-        <li>Yeni İlan Ekle</li>
-        <li>Fotoğraflar</li>
+        <li>
+            <a href="basvurular.html">İlan Başvuruları</a>
+        </li>
+
+        <li>
+            <a href="ilanlar.html">İlan Yönetimi</a>
+        </li>
+
+        <li>
+            <a href="fotograflar.html">Fotoğraf Yönetimi</a>
+        </li>
+
+        <li>
+            <a href="musteriler.html">Müşteriler</a>
+        </li>
+
+        <li>
+            <a href="ayarlar.html">Ayarlar</a>
+        </li>
     </ul>
+
+    <br>
+
+    <button onclick="cikisYap()">Çıkış Yap</button>
+
+    <script>
+        function cikisYap() {
+            window.location.href = "index.html";
+        }
+    </script>
 
 </body>
 </html>
