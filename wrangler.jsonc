@@ -1,7 +1,16 @@
 {
   "name": "emlaksatisim",
   "compatibility_date": "2026-09-14",
+
   "assets": {
     "directory": "."
-  }
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "emlaksatisim",
+      "database_id": "505a25d7-2f9e-4d73-b28d-e2ef278602b8"
+    }
+  ]
 }
