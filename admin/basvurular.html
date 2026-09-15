@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EmlakSatışım.com - İlan Başvuruları</title>
+<title>Başvurular | EmlakSatisim</title>
 
 <style>
 
@@ -18,17 +15,17 @@
 body{
     margin:0;
     font-family:Arial,Helvetica,sans-serif;
-    background:#f4f7fb;
-    color:#14263d;
+    background:#f4f6f8;
+    color:#172033;
 }
 
 .header{
-    background:#0b2746;
-    color:#fff;
-    padding:20px 30px;
+    background:#111827;
+    color:white;
+    padding:22px 30px;
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
 }
 
 .header h1{
@@ -37,202 +34,238 @@ body{
 }
 
 .header a{
-    color:#fff;
+    color:white;
     text-decoration:none;
-    font-weight:700;
+    background:#d89b32;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:bold;
 }
 
 .container{
-    width:min(1400px,94%);
+    max-width:1400px;
     margin:30px auto;
+    padding:0 20px;
 }
 
-.top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:20px;
-}
-
-.top h2{
-    margin:0;
-    color:#0b2746;
-}
-
-.yenile{
-    border:0;
-    background:#ff7800;
-    color:#fff;
-    padding:11px 18px;
-    border-radius:8px;
-    font-weight:800;
-    cursor:pointer;
-}
-
-.stats{
+.cards{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:18px;
+    gap:20px;
     margin-bottom:25px;
 }
 
-.stat{
-    background:#fff;
-    padding:22px;
+.card{
+    background:white;
     border-radius:14px;
-    box-shadow:0 5px 20px rgba(0,0,0,.06);
+    padding:24px;
+    box-shadow:0 3px 15px rgba(0,0,0,.06);
 }
 
-.stat span{
-    display:block;
-    color:#66758a;
-    font-size:13px;
-    margin-bottom:8px;
+.card-title{
+    color:#6b7280;
+    font-size:14px;
+    margin-bottom:10px;
 }
 
-.stat strong{
+.card-value{
     font-size:30px;
-    color:#0b2746;
+    font-weight:800;
 }
 
 .table-box{
-    background:#fff;
-    border-radius:16px;
-    overflow:auto;
-    box-shadow:0 5px 25px rgba(0,0,0,.07);
+    background:white;
+    border-radius:14px;
+    padding:20px;
+    box-shadow:0 3px 15px rgba(0,0,0,.06);
+    overflow-x:auto;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:1100px;
+    min-width:950px;
 }
 
 th{
-    background:#0b2746;
-    color:#fff;
+    background:#f8fafc;
     text-align:left;
     padding:14px;
     font-size:13px;
+    color:#64748b;
 }
 
 td{
-    padding:14px;
-    border-bottom:1px solid #edf1f5;
-    font-size:13px;
-}
-
-tr:hover td{
-    background:#fafbfd;
+    padding:15px 14px;
+    border-top:1px solid #eef2f7;
+    font-size:14px;
 }
 
 .durum{
     display:inline-block;
     padding:6px 10px;
     border-radius:20px;
-    background:#fff3df;
-    color:#d86b00;
-    font-weight:800;
-    font-size:11px;
+    font-size:12px;
+    font-weight:bold;
 }
 
-.detay{
+.beklemede{
+    background:#fff3cd;
+    color:#946200;
+}
+
+.yayinda{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.satildi{
+    background:#dbeafe;
+    color:#1d4ed8;
+}
+
+.iptal{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.detay-btn{
     border:0;
-    background:#0b2746;
-    color:#fff;
-    padding:7px 11px;
-    border-radius:6px;
+    background:#111827;
+    color:white;
+    padding:8px 13px;
+    border-radius:7px;
     cursor:pointer;
-    font-weight:700;
+    font-weight:bold;
 }
 
-.bos{
-    padding:50px;
-    text-align:center;
-    color:#66758a;
+.detay-btn:hover{
+    opacity:.85;
 }
 
-.hata{
-    padding:30px;
-    text-align:center;
-    color:#c62828;
-    font-weight:700;
-}
+/* MODAL */
 
-.modal{
+#modal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.55);
+    background:rgba(0,0,0,.65);
     z-index:9999;
-    padding:30px;
+    padding:30px 15px;
     overflow:auto;
 }
 
 .modal-box{
-    width:min(800px,100%);
-    margin:30px auto;
-    background:#fff;
-    border-radius:18px;
-    padding:30px;
+    background:white;
+    max-width:800px;
+    margin:20px auto;
+    border-radius:16px;
+    padding:28px;
+    position:relative;
 }
 
-.modal-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:25px;
-}
-
-.modal-head h3{
-    margin:0;
-    color:#0b2746;
-}
-
-.kapat{
-    border:0;
-    background:#eee;
+.modal-close{
+    position:absolute;
+    right:20px;
+    top:18px;
     width:35px;
     height:35px;
+    border:0;
     border-radius:50%;
+    background:#f1f5f9;
+    font-size:20px;
     cursor:pointer;
-    font-size:18px;
 }
 
-.detay-grid{
+.modal-title{
+    margin:0 45px 25px 0;
+    font-size:24px;
+}
+
+.detail-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    gap:14px;
 }
 
-.detay-item{
+.detail{
+    background:#f8fafc;
     padding:14px;
-    background:#f6f8fb;
     border-radius:9px;
 }
 
-.detay-item small{
+.detail strong{
     display:block;
-    color:#66758a;
+    color:#64748b;
+    font-size:12px;
     margin-bottom:5px;
 }
 
-.detay-item strong{
-    color:#0b2746;
+.detail span{
+    font-weight:bold;
+    word-break:break-word;
 }
 
-.detay-aciklama{
+.description{
     margin-top:15px;
+    background:#f8fafc;
     padding:15px;
-    background:#f6f8fb;
     border-radius:9px;
     line-height:1.6;
 }
 
-@media(max-width:700px){
+.actions{
+    margin-top:22px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.actions button{
+    border:0;
+    color:white;
+    padding:12px 18px;
+    border-radius:8px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.btn-yayinda{
+    background:#16a34a;
+}
+
+.btn-satildi{
+    background:#2563eb;
+}
+
+.btn-iptal{
+    background:#dc2626;
+}
+
+.btn-beklemede{
+    background:#f59e0b;
+}
+
+.loading{
+    text-align:center;
+    padding:40px;
+    color:#64748b;
+}
+
+.error{
+    background:#fee2e2;
+    color:#991b1b;
+    padding:18px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+/* MOBİL */
+
+@media(max-width:800px){
 
     .header{
-        padding:16px;
+        padding:18px;
     }
 
     .header h1{
@@ -240,48 +273,56 @@ tr:hover td{
     }
 
     .container{
-        width:94%;
         margin:20px auto;
+        padding:0 12px;
     }
 
-    .stats{
+    .cards{
         grid-template-columns:1fr;
+        gap:12px;
     }
 
-    .top{
-        gap:15px;
-        align-items:flex-start;
-        flex-direction:column;
+    .card{
+        padding:18px;
     }
 
-    .detay-grid{
-        grid-template-columns:1fr;
+    .card-value{
+        font-size:25px;
     }
 
-    .modal{
+    .table-box{
         padding:10px;
     }
 
     .modal-box{
-        margin:10px auto;
         padding:20px;
+    }
+
+    .detail-grid{
+        grid-template-columns:1fr;
+    }
+
+    .actions{
+        flex-direction:column;
+    }
+
+    .actions button{
+        width:100%;
     }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-
 <div class="header">
 
-    <h1>EmlakSatışım.com</h1>
+    <h1>📋 İlan Başvuruları</h1>
 
     <a href="dashboard.html">
-        ← Yönetim Paneline Dön
+        ← Panele Dön
     </a>
 
 </div>
@@ -289,179 +330,685 @@ tr:hover td{
 
 <div class="container">
 
+    <div class="cards">
 
-<div class="top">
+        <div class="card">
+            <div class="card-title">
+                Toplam Başvuru
+            </div>
 
-    <h2>İlan Başvuruları</h2>
+            <div
+                class="card-value"
+                id="toplamBasvuru"
+            >
+                0
+            </div>
+        </div>
 
-    <button
-        class="yenile"
-        onclick="basvurulariGetir()"
-    >
-        ↻ Yenile
-    </button>
+
+        <div class="card">
+            <div class="card-title">
+                Onay Bekleyen
+            </div>
+
+            <div
+                class="card-value"
+                id="bekleyenBasvuru"
+            >
+                0
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-title">
+                Son Başvuru
+            </div>
+
+            <div
+                class="card-value"
+                id="sonBasvuru"
+                style="font-size:18px;"
+            >
+                -
+            </div>
+        </div>
+
+    </div>
+
+
+    <div
+        id="hata"
+        class="error"
+        style="display:none;"
+    ></div>
+
+
+    <div class="table-box">
+
+        <div id="yukleniyor" class="loading">
+            Başvurular yükleniyor...
+        </div>
+
+
+        <table id="basvuruTablosu" style="display:none;">
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Ad Soyad</th>
+
+                    <th>Telefon</th>
+
+                    <th>Gayrimenkul</th>
+
+                    <th>İlçe</th>
+
+                    <th>Fiyat</th>
+
+                    <th>Durum</th>
+
+                    <th>Tarih</th>
+
+                    <th>İşlem</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="basvuruListesi">
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </div>
 
 
-<div class="stats">
+<!-- DETAY MODALI -->
 
-    <div class="stat">
+<div id="modal">
 
-        <span>Toplam Başvuru</span>
+    <div class="modal-box">
 
-        <strong id="toplam">
-            0
-        </strong>
-
-    </div>
-
-
-    <div class="stat">
-
-        <span>Onay Bekliyor</span>
-
-        <strong id="bekleyen">
-            0
-        </strong>
-
-    </div>
-
-
-    <div class="stat">
-
-        <span>Son Başvuru</span>
-
-        <strong
-            id="sonBasvuru"
-            style="font-size:18px"
+        <button
+            class="modal-close"
+            onclick="modalKapat()"
         >
-            -
-        </strong>
+            ×
+        </button>
+
+        <h2
+            class="modal-title"
+            id="modalBaslik"
+        >
+            İlan Detayı
+        </h2>
+
+        <div id="modalIcerik"></div>
 
     </div>
 
 </div>
-
-
-<div class="table-box">
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>ID</th>
-
-<th>Ad Soyad</th>
-
-<th>Telefon</th>
-
-<th>Gayrimenkul</th>
-
-<th>İlçe</th>
-
-<th>Fiyat</th>
-
-<th>Durum</th>
-
-<th>Tarih</th>
-
-<th>İşlem</th>
-
-</tr>
-
-</thead>
-
-
-<tbody id="basvuruListesi">
-
-<tr>
-
-<td
-    colspan="9"
-    class="bos"
->
-    Başvurular yükleniyor...
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-
-</div>
-
-
-
-<!-- DETAY PENCERESİ -->
-
-<div
-    id="modal"
-    class="modal"
->
-
-<div class="modal-box">
-
-
-<div class="modal-head">
-
-<h3>
-Başvuru Detayı
-</h3>
-
-<button
-    class="kapat"
-    onclick="modalKapat()"
->
-×
-</button>
-
-</div>
-
-
-<div
-    id="detayIcerik"
->
-</div>
-
-
-</div>
-
-</div>
-
 
 
 <script>
 
-let basvurular = [];
+let ilanlar = [];
 
+
+/* BAŞVURULARI GETİR */
 
 async function basvurulariGetir(){
+
+    const yukleniyor =
+        document.getElementById("yukleniyor");
+
+    const tablo =
+        document.getElementById("basvuruTablosu");
+
+    const hata =
+        document.getElementById("hata");
+
+    try{
+
+        hata.style.display = "none";
+
+        const cevap =
+            await fetch("/api/ilanlar");
+
+        const sonuc =
+            await cevap.json();
+
+        if(
+            !cevap.ok ||
+            !sonuc.basarili
+        ){
+            throw new Error(
+                sonuc.hata ||
+                "Başvurular alınamadı."
+            );
+        }
+
+        ilanlar =
+            sonuc.ilanlar || [];
+
+        tablo.style.display = "table";
+
+        yukleniyor.style.display = "none";
+
+        tabloyuDoldur();
+
+        istatistikleriGuncelle();
+
+    }
+    catch(err){
+
+        yukleniyor.style.display = "none";
+
+        hata.style.display = "block";
+
+        hata.textContent =
+            "Başvurular yüklenemedi: " +
+            err.message;
+
+    }
+
+}
+
+
+/* TABLOYU DOLDUR */
+
+function tabloyuDoldur(){
 
     const liste =
         document.getElementById(
             "basvuruListesi"
         );
 
-    liste.innerHTML = `
-        <tr>
-            <td colspan="9" class="bos">
-                Başvurular yükleniyor...
-            </td>
-        </tr>
+    liste.innerHTML = "";
+
+
+    if(ilanlar.length === 0){
+
+        liste.innerHTML = `
+            <tr>
+                <td colspan="9"
+                    style="text-align:center;padding:40px;">
+                    Henüz başvuru bulunmuyor.
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+
+    ilanlar.forEach(function(ilan){
+
+        const fiyat =
+            ilan.fiyat
+            ? Number(ilan.fiyat)
+                .toLocaleString("tr-TR") + " TL"
+            : "-";
+
+
+        const tarih =
+            ilan.olusturma_tarihi
+            ? new Date(
+                ilan.olusturma_tarihi
+              ).toLocaleString(
+                "tr-TR"
+              )
+            : "-";
+
+
+        const durum =
+            ilan.durum || "beklemede";
+
+
+        const durumYazi =
+            durumMetni(durum);
+
+
+        liste.innerHTML += `
+
+            <tr>
+
+                <td>
+                    #${ilan.id}
+                </td>
+
+                <td>
+                    <strong>
+                        ${guvenliMetin(ilan.ad_soyad)}
+                    </strong>
+                </td>
+
+                <td>
+                    ${guvenliMetin(ilan.telefon)}
+                </td>
+
+                <td>
+                    ${guvenliMetin(ilan.ilan_turu)}
+                </td>
+
+                <td>
+                    ${guvenliMetin(ilan.ilce || "-")}
+                </td>
+
+                <td>
+                    ${fiyat}
+                </td>
+
+                <td>
+
+                    <span class="durum ${durum}">
+                        ${durumYazi}
+                    </span>
+
+                </td>
+
+                <td>
+                    ${tarih}
+                </td>
+
+                <td>
+
+                    <button
+                        class="detay-btn"
+                        onclick="detayGoster(${ilan.id})"
+                    >
+                        Detay
+                    </button>
+
+                </td>
+
+            </tr>
+
+        `;
+
+    });
+
+}
+
+
+/* DURUM YAZISI */
+
+function durumMetni(durum){
+
+    const durumlar = {
+
+        beklemede:
+            "Onay Bekliyor",
+
+        yayinda:
+            "Yayında",
+
+        satildi:
+            "Satıldı",
+
+        iptal:
+            "İptal Edildi"
+
+    };
+
+    return durumlar[durum] || durum;
+
+}
+
+
+/* GÜVENLİ METİN */
+
+function guvenliMetin(metin){
+
+    if(
+        metin === null ||
+        metin === undefined
+    ){
+        return "-";
+    }
+
+    return String(metin)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* İSTATİSTİKLER */
+
+function istatistikleriGuncelle(){
+
+    document.getElementById(
+        "toplamBasvuru"
+    ).textContent =
+        ilanlar.length;
+
+
+    const bekleyen =
+        ilanlar.filter(function(ilan){
+
+            return (
+                ilan.durum === "beklemede" ||
+                !ilan.durum
+            );
+
+        }).length;
+
+
+    document.getElementById(
+        "bekleyenBasvuru"
+    ).textContent =
+        bekleyen;
+
+
+    if(ilanlar.length > 0){
+
+        document.getElementById(
+            "sonBasvuru"
+        ).textContent =
+            ilanlar[0].olusturma_tarihi
+            ? new Date(
+                ilanlar[0].olusturma_tarihi
+              ).toLocaleDateString(
+                "tr-TR"
+              )
+            : "-";
+
+    }
+
+}
+
+
+/* DETAY GÖSTER */
+
+function detayGoster(id){
+
+    const ilan =
+        ilanlar.find(function(item){
+
+            return Number(item.id) === Number(id);
+
+        });
+
+
+    if(!ilan){
+        return;
+    }
+
+
+    document.getElementById(
+        "modalBaslik"
+    ).textContent =
+        "#" + ilan.id +
+        " - " +
+        (ilan.ad_soyad || "İlan Detayı");
+
+
+    const fiyat =
+        ilan.fiyat
+        ? Number(ilan.fiyat)
+            .toLocaleString("tr-TR") +
+            " TL"
+        : "-";
+
+
+    document.getElementById(
+        "modalIcerik"
+    ).innerHTML = `
+
+        <div class="detail-grid">
+
+            <div class="detail">
+                <strong>Ad Soyad</strong>
+                <span>
+                    ${guvenliMetin(ilan.ad_soyad)}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>Telefon</strong>
+                <span>
+                    ${guvenliMetin(ilan.telefon)}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>E-posta</strong>
+                <span>
+                    ${guvenliMetin(ilan.email || "-")}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>Gayrimenkul Türü</strong>
+                <span>
+                    ${guvenliMetin(ilan.ilan_turu)}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>İşlem Türü</strong>
+                <span>
+                    ${guvenliMetin(ilan.islem_turu)}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>İl</strong>
+                <span>
+                    ${guvenliMetin(ilan.il || "-")}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>İlçe</strong>
+                <span>
+                    ${guvenliMetin(ilan.ilce || "-")}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>Mahalle</strong>
+                <span>
+                    ${guvenliMetin(ilan.mahalle || "-")}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>Fiyat</strong>
+                <span>
+                    ${fiyat}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>m²</strong>
+                <span>
+                    ${guvenliMetin(ilan.metrekare || "-")}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>Oda Sayısı</strong>
+                <span>
+                    ${guvenliMetin(ilan.oda_sayisi || "-")}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>Bina Yaşı</strong>
+                <span>
+                    ${guvenliMetin(ilan.bina_yasi || "-")}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>Kat</strong>
+                <span>
+                    ${guvenliMetin(ilan.kat || "-")}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>Toplam Kat</strong>
+                <span>
+                    ${guvenliMetin(ilan.toplam_kat || "-")}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>Isıtma</strong>
+                <span>
+                    ${guvenliMetin(ilan.isitma || "-")}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>Balkon</strong>
+                <span>
+                    ${guvenliMetin(ilan.balkon || "-")}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>Otopark</strong>
+                <span>
+                    ${guvenliMetin(ilan.otopark || "-")}
+                </span>
+            </div>
+
+
+            <div class="detail">
+                <strong>Mevcut Durum</strong>
+                <span>
+                    ${durumMetni(
+                        ilan.durum || "beklemede"
+                    )}
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="description">
+
+            <strong>Açıklama</strong>
+
+            <div style="margin-top:8px;">
+                ${guvenliMetin(
+                    ilan.aciklama || "Açıklama girilmemiş."
+                )}
+            </div>
+
+        </div>
+
+
+        <div class="actions">
+
+            <button
+                class="btn-yayinda"
+                onclick="durumDegistir(${ilan.id}, 'yayinda')"
+            >
+                ✓ Yayına Al
+            </button>
+
+
+            <button
+                class="btn-satildi"
+                onclick="durumDegistir(${ilan.id}, 'satildi')"
+            >
+                ✓ Satıldı
+            </button>
+
+
+            <button
+                class="btn-iptal"
+                onclick="durumDegistir(${ilan.id}, 'iptal')"
+            >
+                ✕ İptal Et
+            </button>
+
+
+            <button
+                class="btn-beklemede"
+                onclick="durumDegistir(${ilan.id}, 'beklemede')"
+            >
+                ↻ Beklemeye Al
+            </button>
+
+        </div>
+
     `;
+
+
+    document.getElementById(
+        "modal"
+    ).style.display =
+        "block";
+
+}
+
+
+/* DURUM DEĞİŞTİR */
+
+async function durumDegistir(id, durum){
+
+    const onay =
+        confirm(
+            "Bu başvurunun durumunu değiştirmek istediğinize emin misiniz?"
+        );
+
+
+    if(!onay){
+        return;
+    }
 
 
     try{
 
         const cevap =
             await fetch(
-                "/api/ilanlar"
+                "/api/ilanlar/" + id,
+                {
+                    method:"PATCH",
+
+                    headers:{
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify({
+                            durum:durum
+                        })
+                }
             );
 
 
@@ -476,392 +1023,21 @@ async function basvurulariGetir(){
 
             throw new Error(
                 sonuc.hata ||
-                "Başvurular alınamadı."
+                "Durum değiştirilemedi."
             );
 
         }
 
 
-        basvurular =
-            sonuc.ilanlar || [];
-
-
-        document.getElementById(
-            "toplam"
-        ).textContent =
-            basvurular.length;
-
-
-        const bekleyen =
-            basvurular.filter(
-                function(ilan){
-
-                    return ilan.durum ===
-                        "beklemede";
-
-                }
-            ).length;
-
-
-        document.getElementById(
-            "bekleyen"
-        ).textContent =
-            bekleyen;
-
-
-        if(
-            basvurular.length > 0
-        ){
-
-            document.getElementById(
-                "sonBasvuru"
-            ).textContent =
-                basvurular[0].olusturma_tarihi || "-";
-
-        }
-        else{
-
-            document.getElementById(
-                "sonBasvuru"
-            ).textContent =
-                "-";
-
-        }
-
-
-        tabloyuOlustur();
-
-
-    }
-    catch(hata){
-
-        liste.innerHTML = `
-            <tr>
-                <td colspan="9" class="hata">
-                    Başvurular alınamadı:
-                    ${hata.message}
-                </td>
-            </tr>
-        `;
-
-    }
-
-}
-
-
-
-function tabloyuOlustur(){
-
-    const liste =
-        document.getElementById(
-            "basvuruListesi"
+        alert(
+            "İlan durumu başarıyla değiştirildi."
         );
 
-
-    if(
-        basvurular.length === 0
-    ){
-
-        liste.innerHTML = `
-            <tr>
-                <td colspan="9" class="bos">
-                    Henüz başvuru bulunmuyor.
-                </td>
-            </tr>
-        `;
-
-        return;
-
-    }
-
-
-    liste.innerHTML =
-        basvurular.map(
-            function(ilan){
-
-                return `
-
-                <tr>
-
-                    <td>
-                        #${ilan.id}
-                    </td>
-
-                    <td>
-                        <strong>
-                            ${guvenli(
-                                ilan.ad_soyad
-                            )}
-                        </strong>
-                    </td>
-
-                    <td>
-                        ${guvenli(
-                            ilan.telefon
-                        )}
-                    </td>
-
-                    <td>
-                        ${guvenli(
-                            ilan.ilan_turu
-                        )}
-                    </td>
-
-                    <td>
-                        ${guvenli(
-                            ilan.ilce
-                        )}
-                    </td>
-
-                    <td>
-                        ${formatFiyat(
-                            ilan.fiyat
-                        )}
-                    </td>
-
-                    <td>
-                        <span class="durum">
-                            ${guvenli(
-                                ilan.durum ||
-                                "beklemede"
-                            )}
-                        </span>
-                    </td>
-
-                    <td>
-                        ${guvenli(
-                            ilan.olusturma_tarihi
-                        )}
-                    </td>
-
-                    <td>
-
-                        <button
-                            class="detay"
-                            onclick="detayGoster(${ilan.id})"
-                        >
-                            Detay
-                        </button>
-
-                    </td>
-
-                </tr>
-
-                `;
-
-            }
-        ).join("");
-
-}
-
-
-
-function detayGoster(id){
-
-    const ilan =
-        basvurular.find(
-            function(item){
-                return item.id === id;
-            }
-        );
-
-
-    if(!ilan){
-        return;
-    }
-
-
-    document.getElementById(
-        "detayIcerik"
-    ).innerHTML = `
-
-        <div class="detay-grid">
-
-            <div class="detay-item">
-                <small>Ad Soyad</small>
-                <strong>
-                    ${guvenli(ilan.ad_soyad)}
-                </strong>
-            </div>
-
-            <div class="detay-item">
-                <small>Telefon</small>
-                <strong>
-                    ${guvenli(ilan.telefon)}
-                </strong>
-            </div>
-
-            <div class="detay-item">
-                <small>E-posta</small>
-                <strong>
-                    ${guvenli(ilan.email || "-")}
-                </strong>
-            </div>
-
-            <div class="detay-item">
-                <small>Gayrimenkul Türü</small>
-                <strong>
-                    ${guvenli(ilan.ilan_turu)}
-                </strong>
-            </div>
-
-            <div class="detay-item">
-                <small>İşlem Türü</small>
-                <strong>
-                    ${guvenli(ilan.islem_turu)}
-                </strong>
-            </div>
-
-            <div class="detay-item">
-                <small>İl</small>
-                <strong>
-                    ${guvenli(ilan.il || "-")}
-                </strong>
-            </div>
-
-            <div class="detay-item">
-                <small>İlçe</small>
-                <strong>
-                    ${guvenli(ilan.ilce || "-")}
-                </strong>
-            </div>
-
-            <div class="detay-item">
-                <small>Mahalle</small>
-                <strong>
-                    ${guvenli(ilan.mahalle || "-")}
-                </strong>
-            </div>
-
-            <div class="detay-item">
-                <small>Fiyat</small>
-                <strong>
-                    ${formatFiyat(ilan.fiyat)}
-                </strong>
-            </div>
-
-            <div class="detay-item">
-                <small>m²</small>
-                <strong>
-                    ${guvenli(ilan.metrekare || "-")}
-                </strong>
-            </div>
-
-            <div class="detay-item">
-                <small>Oda Sayısı</small>
-                <strong>
-                    ${guvenli(ilan.oda_sayisi || "-")}
-                </strong>
-            </div>
-
-            <div class="detay-item">
-                <small>Bina Yaşı</small>
-                <strong>
-                    ${guvenli(ilan.bina_yasi || "-")}
-                </strong>
-            </div>
-
-        </div>
-
-
-        <div class="detay-aciklama">
-
-            <strong>
-                Açıklama
-            </strong>
-
-            <br><br>
-
-            ${guvenli(
-                ilan.aciklama ||
-                "Açıklama girilmemiş."
-            )}
-
-        </div>
-<div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
-
-    <button
-        onclick="durumDegistir(${ilan.id}, 'yayinda')"
-        style="background:#16a34a;color:white;border:0;padding:12px 18px;border-radius:8px;font-weight:800;cursor:pointer;"
-    >
-        ✓ Yayına Al
-    </button>
-
-    <button
-        onclick="durumDegistir(${ilan.id}, 'satildi')"
-        style="background:#2563eb;color:white;border:0;padding:12px 18px;border-radius:8px;font-weight:800;cursor:pointer;"
-    >
-        ✓ Satıldı
-    </button>
-
-    <button
-        onclick="durumDegistir(${ilan.id}, 'iptal')"
-        style="background:#dc2626;color:white;border:0;padding:12px 18px;border-radius:8px;font-weight:800;cursor:pointer;"
-    >
-        ✕ İptal Et
-    </button>
-
-    <button
-        onclick="durumDegistir(${ilan.id}, 'beklemede')"
-        style="background:#f59e0b;color:white;border:0;padding:12px 18px;border-radius:8px;font-weight:800;cursor:pointer;"
-    >
-        ↻ Beklemeye Al
-    </button>
-
-</div>
-
-    `;
-
-
-    document.getElementById(
-        "modal"
-    ).style.display =
-        "block";
-
-}
-
-async function durumDegistir(id, durum){
-
-    const onay = confirm(
-        "Bu başvurunun durumunu değiştirmek istediğinize emin misiniz?"
-    );
-
-    if(!onay){
-        return;
-    }
-
-    try{
-
-        const cevap = await fetch(
-            "/api/ilanlar/" + id,
-            {
-                method:"PATCH",
-
-                headers:{
-                    "Content-Type":"application/json"
-                },
-
-                body:JSON.stringify({
-                    durum:durum
-                })
-            }
-        );
-
-        const sonuc = await cevap.json();
-
-        if(!cevap.ok || !sonuc.basarili){
-
-            throw new Error(
-                sonuc.hata || "Durum değiştirilemedi."
-            );
-
-        }
-
-        alert("İlan durumu başarıyla değiştirildi.");
 
         modalKapat();
 
-        basvurulariGetir();
+
+        await basvurulariGetir();
 
     }
     catch(hata){
@@ -875,56 +1051,9 @@ async function durumDegistir(id, durum){
 
 }
 
-    async function durumDegistir(id, durum){
 
-    const onay = confirm(
-        "Bu başvurunun durumunu değiştirmek istediğinize emin misiniz?"
-    );
+/* MODAL KAPAT */
 
-    if(!onay){
-        return;
-    }
-
-    try{
-
-        const cevap = await fetch(
-            "/api/ilanlar/" + id,
-            {
-                method:"PATCH",
-                headers:{
-                    "Content-Type":"application/json"
-                },
-                body:JSON.stringify({
-                    durum:durum
-                })
-            }
-        );
-
-        const sonuc = await cevap.json();
-
-        if(!cevap.ok || !sonuc.basarili){
-            throw new Error(
-                sonuc.hata || "Durum değiştirilemedi."
-            );
-        }
-
-        alert("İlan durumu başarıyla değiştirildi.");
-
-        modalKapat();
-
-        basvurulariGetir();
-
-    }catch(hata){
-
-        alert(
-            "İşlem başarısız:\n\n" +
-            hata.message
-        );
-
-    }
-
-}
-    
 function modalKapat(){
 
     document.getElementById(
@@ -935,62 +1064,16 @@ function modalKapat(){
 }
 
 
+/* MODAL DIŞINA TIKLAYINCA KAPAT */
 
-function formatFiyat(fiyat){
-
-    if(
-        fiyat === null ||
-        fiyat === undefined ||
-        fiyat === ""
-    ){
-
-        return "-";
-
-    }
-
-    return Number(fiyat)
-        .toLocaleString(
-            "tr-TR"
-        ) + " TL";
-
-}
-
-
-
-function guvenli(deger){
-
-    if(
-        deger === null ||
-        deger === undefined
-    ){
-
-        return "";
-
-    }
-
-
-    return String(deger)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
-
-}
-
-
-
-window.addEventListener(
+document.getElementById(
+    "modal"
+).addEventListener(
     "click",
     function(event){
 
-        const modal =
-            document.getElementById(
-                "modal"
-            );
-
         if(
-            event.target === modal
+            event.target === this
         ){
 
             modalKapat();
@@ -1001,11 +1084,11 @@ window.addEventListener(
 );
 
 
+/* SAYFA AÇILINCA */
+
 basvurulariGetir();
 
 </script>
 
-
 </body>
-
 </html>
