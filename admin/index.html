@@ -1,54 +1,1028 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EmlakSatışım.com - Yönetim Paneli</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yönetim Paneli | EmlakSatisim</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(216,155,50,.12),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(216,155,50,.08),
+            transparent 30%
+        ),
+        #0b0f17;
+
+    color:#fff;
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:25px;
+}
+
+
+/* ANA ALAN */
+
+.login-wrapper{
+    width:100%;
+    max-width:1050px;
+
+    min-height:650px;
+
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+
+    background:#111722;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55);
+}
+
+
+/* SOL TARAF */
+
+.login-left{
+    position:relative;
+
+    padding:55px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151c28 0%,
+            #0e141e 55%,
+            #0b1018 100%
+        );
+
+    border-right:1px solid rgba(255,255,255,.06);
+
+    overflow:hidden;
+}
+
+
+/* DEKORATİF DAİRELER */
+
+.login-left::before{
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border:1px solid rgba(216,155,50,.12);
+
+    border-radius:50%;
+
+    right:-180px;
+    top:-130px;
+}
+
+.login-left::after{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border:1px solid rgba(216,155,50,.06);
+
+    border-radius:50%;
+
+    left:-280px;
+    bottom:-300px;
+}
+
+
+/* LOGO */
+
+.logo-area{
+    position:relative;
+    z-index:2;
+}
+
+.logo-mark{
+    width:58px;
+    height:58px;
+
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e6b455,
+            #b77a18
+        );
+
+    color:#111;
+
+    font-size:27px;
+
+    font-weight:900;
+
+    box-shadow:
+        0 10px 30px rgba(216,155,50,.18);
+}
+
+.logo-text{
+    margin-top:22px;
+
+    font-size:29px;
+
+    font-weight:900;
+
+    letter-spacing:-1px;
+}
+
+.logo-text span{
+    color:#d89b32;
+}
+
+.tagline{
+    margin-top:7px;
+
+    color:#8f99a8;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    font-weight:600;
+}
+
+
+/* SOL ALT */
+
+.left-bottom{
+    position:relative;
+    z-index:2;
+}
+
+.left-title{
+    font-size:38px;
+
+    line-height:1.12;
+
+    font-weight:800;
+
+    max-width:470px;
+
+    letter-spacing:-1.2px;
+}
+
+.left-title span{
+    color:#d89b32;
+}
+
+.left-description{
+    max-width:430px;
+
+    color:#8993a2;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+    margin-top:20px;
+}
+
+.security{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:35px;
+
+    color:#687383;
+
+    font-size:12px;
+}
+
+.security-icon{
+    width:28px;
+    height:28px;
+
+    border-radius:8px;
+
+    background:rgba(216,155,50,.1);
+
+    color:#d89b32;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:14px;
+}
+
+
+/* SAĞ TARAF */
+
+.login-right{
+    background:#f8f9fb;
+
+    color:#172033;
+
+    padding:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.login-form{
+    width:100%;
+    max-width:390px;
+}
+
+
+/* FORM BAŞLIK */
+
+.form-title{
+    font-size:30px;
+
+    font-weight:800;
+
+    margin:0;
+}
+
+.form-subtitle{
+    color:#778091;
+
+    font-size:14px;
+
+    margin-top:9px;
+
+    line-height:1.5;
+}
+
+
+/* INPUT */
+
+.form-group{
+    margin-top:24px;
+}
+
+.form-group label{
+    display:block;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#303949;
+
+    margin-bottom:9px;
+}
+
+.input-wrapper{
+    position:relative;
+}
+
+.input-icon{
+    position:absolute;
+
+    left:15px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#929baa;
+
+    font-size:17px;
+
+    pointer-events:none;
+}
+
+.form-input{
+    width:100%;
+
+    height:54px;
+
+    border:1px solid #dfe3e8;
+
+    border-radius:10px;
+
+    background:white;
+
+    padding:
+        0 16px 0 45px;
+
+    font-size:15px;
+
+    color:#172033;
+
+    outline:none;
+
+    transition:.2s;
+}
+
+.form-input:focus{
+    border-color:#d89b32;
+
+    box-shadow:
+        0 0 0 3px rgba(216,155,50,.12);
+}
+
+
+/* ŞİFRE GÖSTER */
+
+.password-toggle{
+    position:absolute;
+
+    right:13px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border:0;
+
+    background:none;
+
+    color:#7b8492;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    padding:5px;
+}
+
+
+/* HATIRLA */
+
+.form-options{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:15px;
+
+    font-size:13px;
+}
+
+.remember{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#6d7684;
+
+    cursor:pointer;
+}
+
+.remember input{
+    accent-color:#d89b32;
+
+    width:15px;
+    height:15px;
+}
+
+.forgot{
+    color:#b27a20;
+
+    text-decoration:none;
+
+    font-weight:600;
+}
+
+
+/* GİRİŞ BUTONU */
+
+.login-button{
+    width:100%;
+
+    height:55px;
+
+    margin-top:27px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e1aa4b,
+            #bd801e
+        );
+
+    color:#111;
+
+    font-size:15px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    box-shadow:
+        0 10px 25px rgba(190,128,30,.18);
+}
+
+.login-button:hover{
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 13px 30px rgba(190,128,30,.25);
+}
+
+.login-button:active{
+    transform:translateY(0);
+}
+
+.login-button:disabled{
+    opacity:.65;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+
+/* HATA */
+
+.error-box{
+    display:none;
+
+    margin-top:18px;
+
+    padding:12px 14px;
+
+    border-radius:9px;
+
+    background:#fff0f0;
+
+    border:1px solid #ffd4d4;
+
+    color:#c62828;
+
+    font-size:13px;
+
+    line-height:1.5;
+}
+
+
+/* ALT BİLGİ */
+
+.form-footer{
+    margin-top:28px;
+
+    padding-top:22px;
+
+    border-top:1px solid #e7e9ed;
+
+    text-align:center;
+
+    color:#929aa6;
+
+    font-size:12px;
+
+    line-height:1.6;
+}
+
+.form-footer strong{
+    color:#667080;
+}
+
+
+/* MOBİL */
+
+@media(max-width:800px){
+
+    body{
+        padding:15px;
+    }
+
+    .login-wrapper{
+        display:block;
+
+        min-height:auto;
+
+        max-width:500px;
+
+        border-radius:20px;
+    }
+
+    .login-left{
+        min-height:300px;
+
+        padding:32px;
+
+        border-right:0;
+
+        border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .logo-mark{
+        width:50px;
+        height:50px;
+
+        font-size:23px;
+    }
+
+    .logo-text{
+        font-size:24px;
+
+        margin-top:15px;
+    }
+
+    .left-bottom{
+        margin-top:55px;
+    }
+
+    .left-title{
+        font-size:27px;
+    }
+
+    .left-description{
+        display:none;
+    }
+
+    .security{
+        margin-top:20px;
+    }
+
+    .login-right{
+        padding:35px 25px;
+    }
+
+    .form-title{
+        font-size:26px;
+    }
+
+}
+
+
+/* KÜÇÜK TELEFON */
+
+@media(max-width:420px){
+
+    .login-left{
+        padding:25px;
+    }
+
+    .login-right{
+        padding:30px 20px;
+    }
+
+    .left-title{
+        font-size:24px;
+    }
+
+    .form-title{
+        font-size:24px;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-    <h1>EmlakSatışım.com</h1>
-    <h2>Yönetim Paneli Girişi</h2>
 
-    <form onsubmit="girisYap(event)">
+<div class="login-wrapper">
 
-        <label>Kullanıcı Adı</label><br>
-        <input type="text" id="kullaniciAdi" required>
 
-        <br><br>
+    <!-- SOL ALAN -->
 
-        <label>Şifre</label><br>
-        <input type="password" id="sifre" required>
+    <div class="login-left">
 
-        <br><br>
 
-        <button type="submit">Giriş Yap</button>
+        <div class="logo-area">
 
-    </form>
+            <div class="logo-mark">
+                E
+            </div>
 
-    <script>
-        function girisYap(event) {
+            <div class="logo-text">
+                Emlak<span>Satisim</span>
+            </div>
 
-            event.preventDefault();
+            <div class="tagline">
+                EMLAKTA DOĞRU ADRES
+            </div>
 
-            const kullaniciAdi =
-                document.getElementById("kullaniciAdi").value;
+        </div>
 
-            const sifre =
-                document.getElementById("sifre").value;
 
-            if (kullaniciAdi === "admin" && sifre === "123456") {
+        <div class="left-bottom">
 
-                window.location.href = "dashboard.html";
+            <div class="left-title">
 
-            } else {
+                Gayrimenkul
+                <span>yönetiminizin</span>
+                merkezi.
 
-                alert("Kullanıcı adı veya şifre yanlış.");
+            </div>
 
-            }
+
+            <div class="left-description">
+
+                EmlakSatisim yönetim panelinden
+                ilanlarınızı, başvurularınızı ve
+                gayrimenkul süreçlerinizi kolayca
+                yönetin.
+
+            </div>
+
+
+            <div class="security">
+
+                <div class="security-icon">
+                    🔒
+                </div>
+
+                Güvenli yönetici erişimi
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- SAĞ FORM -->
+
+    <div class="login-right">
+
+
+        <div class="login-form">
+
+
+            <h1 class="form-title">
+                Yönetici Girişi
+            </h1>
+
+
+            <div class="form-subtitle">
+
+                EmlakSatisim yönetim paneline
+                erişmek için giriş yapın.
+
+            </div>
+
+
+
+            <!-- KULLANICI ADI -->
+
+            <div class="form-group">
+
+                <label for="username">
+                    Kullanıcı Adı
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        👤
+                    </span>
+
+                    <input
+                        id="username"
+                        class="form-input"
+                        type="text"
+                        placeholder="Kullanıcı adınızı girin"
+                        autocomplete="username"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ŞİFRE -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Şifre
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        🔒
+                    </span>
+
+                    <input
+                        id="password"
+                        class="form-input"
+                        type="password"
+                        placeholder="Şifrenizi girin"
+                        autocomplete="current-password"
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        id="passwordToggle"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SEÇENEKLER -->
+
+            <div class="form-options">
+
+                <label class="remember">
+
+                    <input
+                        type="checkbox"
+                        id="remember"
+                    >
+
+                    Beni hatırla
+
+                </label>
+
+
+                <a
+                    href="#"
+                    class="forgot"
+                    onclick="sifreUnuttum(event)"
+                >
+                    Şifremi unuttum
+                </a>
+
+            </div>
+
+
+
+            <!-- HATA -->
+
+            <div
+                class="error-box"
+                id="errorBox"
+            ></div>
+
+
+
+            <!-- GİRİŞ -->
+
+            <button
+                class="login-button"
+                id="loginButton"
+                onclick="girisYap()"
+            >
+
+                Yönetim Paneline Giriş →
+                
+            </button>
+
+
+
+            <div class="form-footer">
+
+                <strong>EmlakSatisim.com</strong><br>
+
+                Yönetim paneli · Güvenli erişim
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* GİRİŞ */
+
+function girisYap(){
+
+    const username =
+        document.getElementById(
+            "username"
+        ).value.trim();
+
+    const password =
+        document.getElementById(
+            "password"
+        ).value;
+
+    const errorBox =
+        document.getElementById(
+            "errorBox"
+        );
+
+    const button =
+        document.getElementById(
+            "loginButton"
+        );
+
+
+    errorBox.style.display = "none";
+
+
+    if(
+        username === "" ||
+        password === ""
+    ){
+
+        errorBox.textContent =
+            "Lütfen kullanıcı adı ve şifrenizi girin.";
+
+        errorBox.style.display = "block";
+
+        return;
+
+    }
+
+
+    button.disabled = true;
+
+    button.textContent =
+        "Giriş yapılıyor...";
+
+
+    /*
+       ŞİMDİLİK MEVCUT TEST GİRİŞİ
+    */
+
+    setTimeout(function(){
+
+        if(
+            username === "admin" &&
+            password === "123456"
+        ){
+
+            sessionStorage.setItem(
+                "adminGiris",
+                "true"
+            );
+
+            window.location.href =
+                "dashboard.html";
+
         }
-    </script>
+        else{
+
+            errorBox.textContent =
+                "Kullanıcı adı veya şifre hatalı.";
+
+            errorBox.style.display =
+                "block";
+
+            button.disabled =
+                false;
+
+            button.textContent =
+                "Yönetim Paneline Giriş →";
+
+        }
+
+    },500);
+
+}
+
+
+
+/* ŞİFRE GÖSTER / GİZLE */
+
+document.getElementById(
+    "passwordToggle"
+).addEventListener(
+    "click",
+    function(){
+
+        const password =
+            document.getElementById(
+                "password"
+            );
+
+        if(
+            password.type === "password"
+        ){
+
+            password.type = "text";
+
+            this.textContent = "🙈";
+
+        }
+        else{
+
+            password.type = "password";
+
+            this.textContent = "👁";
+
+        }
+
+    }
+);
+
+
+
+/* ENTER İLE GİRİŞ */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Enter"
+        ){
+
+            girisYap();
+
+        }
+
+    }
+);
+
+
+
+/* ŞİFREMİ UNUTTUM */
+
+function sifreUnuttum(event){
+
+    event.preventDefault();
+
+    alert(
+        "Şifre yenileme sistemi sonraki aşamada eklenecek."
+    );
+
+}
+
+
+</script>
 
 </body>
 </html>
