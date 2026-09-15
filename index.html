@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -10,13 +9,13 @@
 <title>EmlakSatışım.com | Gayrimenkulde Doğru Adres</title>
 
 <meta name="description"
-      content="Gayrimenkulünüzü ücretsiz ilan verin. EmlakSatışım.com ile gayrimenkulünüzü doğru alıcılarla buluşturun.">
+content="Dükkan, ev ve arsa satışlarınız için EmlakSatışım.com. Ücretsiz ilan verin, doğru alıcılara ulaşın.">
 
 <style>
 
-/* =========================================================
+/* =====================================================
    GENEL
-========================================================= */
+===================================================== */
 
 *{
     box-sizing:border-box;
@@ -34,10 +33,7 @@ body{
 
     color:#102b49;
 
-    font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 a{
@@ -45,9 +41,9 @@ a{
 }
 
 
-/* =========================================================
+/* =====================================================
    HERO
-========================================================= */
+===================================================== */
 
 .hero{
     position:relative;
@@ -76,16 +72,16 @@ a{
 }
 
 
-/* =========================================================
-   GÖRSEL ÜZERİNDEKİ GÖRÜNMEZ TIKLAMA ALANLARI
-========================================================= */
+/* =====================================================
+   GÖRÜNMEZ LINK ALANLARI
+===================================================== */
 
 .hero-link{
     position:absolute;
 
     display:block;
 
-    z-index:30;
+    z-index:50;
 
     background:transparent;
 
@@ -99,35 +95,38 @@ a{
 }
 
 
-/* =========================================================
+/* =====================================================
    MASAÜSTÜ
-   Görseldeki üst iki buton
-========================================================= */
+   ÖNCEKİ GÖRSELDEKİ İKİ BUTON
+===================================================== */
 
 .desktop-ilan-link{
+
     left:14.8%;
 
-    top:5.8%;
+    top:5.7%;
 
-    width:34%;
+    width:34.2%;
 
-    height:9.8%;
+    height:10%;
 }
+
 
 .desktop-satin-link{
+
     left:50.2%;
 
-    top:5.8%;
+    top:5.7%;
 
-    width:34%;
+    width:34.2%;
 
-    height:9.8%;
+    height:10%;
 }
 
 
-/* =========================================================
-   MOBİL TIKLAMA ALANLARI
-========================================================= */
+/* =====================================================
+   MOBİLDE MASAÜSTÜ LINKLERİ KAPALI
+===================================================== */
 
 .mobile-ilan-link,
 .mobile-satin-link{
@@ -135,17 +134,19 @@ a{
 }
 
 
-/* =========================================================
-   FORM ALANI
-========================================================= */
+/* =====================================================
+   FORM
+===================================================== */
 
 .form-section{
+
     width:100%;
 
     padding:60px 20px 80px;
 }
 
 .form-container{
+
     width:100%;
 
     max-width:1100px;
@@ -154,25 +155,26 @@ a{
 }
 
 .form-card{
+
     width:100%;
+
+    padding:45px;
 
     background:#fff;
 
     border-radius:22px;
 
-    padding:45px;
-
     box-shadow:
-    0 10px 40px
-    rgba(16,43,73,.10);
+    0 10px 40px rgba(16,43,73,.10);
 }
 
 
-/* =========================================================
+/* =====================================================
    FORM BAŞLIK
-========================================================= */
+===================================================== */
 
 .form-title{
+
     margin:0;
 
     text-align:center;
@@ -187,6 +189,7 @@ a{
 }
 
 .form-subtitle{
+
     max-width:800px;
 
     margin:15px auto 35px;
@@ -201,11 +204,12 @@ a{
 }
 
 
-/* =========================================================
+/* =====================================================
    FORM GRID
-========================================================= */
+===================================================== */
 
 .form-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -215,6 +219,7 @@ a{
 }
 
 .field{
+
     display:flex;
 
     flex-direction:column;
@@ -223,16 +228,19 @@ a{
 }
 
 .full{
+
     grid-column:1 / -1;
 }
 
 .field label{
+
     color:#102b49;
 
     font-size:14px;
 
     font-weight:800;
 }
+
 
 .field input,
 .field select,
@@ -257,9 +265,8 @@ a{
     font-family:inherit;
 
     font-size:15px;
-
-    transition:.2s;
 }
+
 
 .field input:focus,
 .field select:focus,
@@ -272,6 +279,7 @@ a{
     rgba(255,120,0,.10);
 }
 
+
 .field textarea{
 
     min-height:140px;
@@ -280,9 +288,9 @@ a{
 }
 
 
-/* =========================================================
-   GÖNDER BUTONU
-========================================================= */
+/* =====================================================
+   GÖNDER
+===================================================== */
 
 .submit-button{
 
@@ -307,24 +315,19 @@ a{
     font-weight:900;
 
     cursor:pointer;
-
-    transition:.2s;
-}
-
-.submit-button:hover{
-    opacity:.92;
 }
 
 .submit-button:disabled{
+
     opacity:.60;
 
     cursor:not-allowed;
 }
 
 
-/* =========================================================
-   BAŞARILI MESAJI
-========================================================= */
+/* =====================================================
+   BAŞARI
+===================================================== */
 
 .success-box{
 
@@ -351,6 +354,7 @@ a{
     line-height:1.6;
 }
 
+
 .privacy{
 
     margin-top:16px;
@@ -365,9 +369,9 @@ a{
 }
 
 
-/* =========================================================
-   ALT BİLGİ ALANI
-========================================================= */
+/* =====================================================
+   ALT ALAN
+===================================================== */
 
 .bottom-section{
 
@@ -405,9 +409,9 @@ a{
 }
 
 
-/* =========================================================
-   MOBİL SABİT WHATSAPP
-========================================================= */
+/* =====================================================
+   MOBİL WHATSAPP
+===================================================== */
 
 .mobile-whatsapp{
 
@@ -415,32 +419,45 @@ a{
 }
 
 
-/* =========================================================
+/* =====================================================
    MOBİL
-========================================================= */
+===================================================== */
 
 @media(max-width:600px){
 
     body{
+
         padding-bottom:65px;
     }
 
 
-    /* MASAÜSTÜ GÖRSEL KAPALI */
+    /* ---------------------------------------------
+       MASAÜSTÜ GÖRSELİ GİZLE
+    --------------------------------------------- */
 
     .desktop-image{
+
         display:none;
     }
 
 
-    /* MOBİL GÖRSEL AÇIK */
+    /* ---------------------------------------------
+       YENİ MOBİL GÖRSELİ GÖSTER
+    --------------------------------------------- */
 
     .mobile-image{
+
         display:block;
+
+        width:100%;
+
+        height:auto;
     }
 
 
-    /* MASAÜSTÜ TIKLAMA ALANLARI KAPALI */
+    /* ---------------------------------------------
+       MASAÜSTÜ LINKLERİ KAPAT
+    --------------------------------------------- */
 
     .desktop-ilan-link,
     .desktop-satin-link{
@@ -449,40 +466,50 @@ a{
     }
 
 
-    /* =====================================================
-       MOBİL GÖRSEL BUTONLARI
-    ===================================================== */
+    /* =================================================
+       MOBİL İLAN VERME ALANI
+
+       Yeni mobil görselde:
+       turuncu kart yaklaşık orta bölümde
+    ================================================= */
 
     .mobile-ilan-link{
 
         display:block;
 
-        left:5%;
+        left:4%;
 
-        top:14%;
+        top:46%;
 
-        width:90%;
+        width:92%;
 
-        height:9.5%;
+        height:25%;
     }
+
+
+    /* =================================================
+       MOBİL SATIN ALMA ALANI
+
+       Yeşil kartın tamamı tıklanabilir
+    ================================================= */
 
     .mobile-satin-link{
 
         display:block;
 
-        left:5%;
+        left:4%;
 
-        top:23%;
+        top:71%;
 
-        width:90%;
+        width:92%;
 
-        height:9.5%;
+        height:25%;
     }
 
 
-    /* =====================================================
+    /* =================================================
        FORM
-    ===================================================== */
+    ================================================= */
 
     .form-section{
 
@@ -537,9 +564,9 @@ a{
     }
 
 
-    /* =====================================================
+    /* =================================================
        ALT ALAN
-    ===================================================== */
+    ================================================= */
 
     .bottom-section{
 
@@ -557,9 +584,12 @@ a{
     }
 
 
-    /* =====================================================
+    /* =================================================
        SABİT WHATSAPP
-    ===================================================== */
+
+       MOBİL GÖRSELİNDE YOK.
+       SADECE BURADA VAR.
+    ================================================= */
 
     .mobile-whatsapp{
 
@@ -601,9 +631,9 @@ a{
 }
 
 
-/* =========================================================
+/* =====================================================
    KÜÇÜK TELEFON
-========================================================= */
+===================================================== */
 
 @media(max-width:390px){
 
@@ -622,23 +652,23 @@ a{
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =========================================================
-     HERO
-========================================================= -->
+<!-- =====================================================
+     ANA GÖRSEL
+===================================================== -->
 
 <section class="hero">
 
 
-    <!-- =====================================================
-         MASAÜSTÜ GÖRSEL
-    ====================================================== -->
+    <!-- ================================================
+         MASAÜSTÜ
+         MEVCUT ESKİ GÖRSEL
+    ================================================= -->
 
     <img
         src="design.png"
@@ -647,22 +677,22 @@ a{
     >
 
 
-    <!-- =====================================================
-         MOBİL GÖRSEL
-    ====================================================== -->
+    <!-- ================================================
+         MOBİL
+         YENİ DÜKKAN - EV - ARSA GÖRSELİ
+    ================================================= -->
 
     <img
-        id="mobileHeroImage"
         src="design-mobile.png"
         class="hero-image mobile-image"
-        alt="EmlakSatışım.com"
+        alt="Dükkan Ev Arsa - EmlakSatışım.com"
     >
 
 
-    <!-- =====================================================
-         MASAÜSTÜ İLAN VER BUTONU
-         GÖRÜNMEZ ALAN
-    ====================================================== -->
+    <!-- =================================================
+         MASAÜSTÜ:
+         İLAN VERMEK İSTİYORUM
+    ================================================= -->
 
     <a
         href="#ilan-formu"
@@ -671,13 +701,13 @@ a{
     ></a>
 
 
-    <!-- =====================================================
-         MASAÜSTÜ SATIN AL BUTONU
-         GÖRÜNMEZ ALAN
-    ====================================================== -->
+    <!-- =================================================
+         MASAÜSTÜ:
+         SATIN ALMAK İSTİYORUM
+    ================================================= -->
 
     <a
-        href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20bir%20gayrimenkul%20hakkında%20bilgi%20almak%20istiyorum."
+        href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20gayrimenkuller%20hakkında%20bilgi%20almak%20istiyorum."
         target="_blank"
         rel="noopener"
         class="hero-link desktop-satin-link"
@@ -685,9 +715,12 @@ a{
     ></a>
 
 
-    <!-- =====================================================
-         MOBİL İLAN VER
-    ====================================================== -->
+    <!-- =================================================
+         MOBİL:
+         İLAN VERMEK İSTİYORUM
+
+         Turuncu kartın tamamı tıklanabilir.
+    ================================================= -->
 
     <a
         href="#ilan-formu"
@@ -696,12 +729,15 @@ a{
     ></a>
 
 
-    <!-- =====================================================
-         MOBİL SATIN AL
-    ====================================================== -->
+    <!-- =================================================
+         MOBİL:
+         SATIN ALMAK İSTİYORUM
+
+         Yeşil kartın tamamı WhatsApp'a gider.
+    ================================================= -->
 
     <a
-        href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20bir%20gayrimenkul%20hakkında%20bilgi%20almak%20istiyorum."
+        href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20gayrimenkuller%20hakkında%20bilgi%20almak%20istiyorum."
         target="_blank"
         rel="noopener"
         class="hero-link mobile-satin-link"
@@ -712,9 +748,9 @@ a{
 
 
 
-<!-- =========================================================
-     FORM
-========================================================= -->
+<!-- =====================================================
+     İLAN FORMU
+===================================================== -->
 
 <section
     id="ilan-formu"
@@ -782,7 +818,7 @@ Telefon *
 </div>
 
 
-<!-- E-POSTA -->
+<!-- EMAIL -->
 
 <div class="field">
 
@@ -800,7 +836,7 @@ E-posta
 </div>
 
 
-<!-- GAYRİMENKUL -->
+<!-- GAYRİMENKUL TÜRÜ -->
 
 <div class="field">
 
@@ -851,7 +887,7 @@ Turistik Tesis
 </div>
 
 
-<!-- İŞLEM -->
+<!-- İŞLEM TÜRÜ -->
 
 <div class="field">
 
@@ -1025,13 +1061,33 @@ Oda Sayısı
 Seçiniz
 </option>
 
-<option value="1+0">1+0</option>
-<option value="1+1">1+1</option>
-<option value="2+1">2+1</option>
-<option value="3+1">3+1</option>
-<option value="4+1">4+1</option>
-<option value="5+1">5+1</option>
-<option value="Diğer">Diğer</option>
+<option value="1+0">
+1+0
+</option>
+
+<option value="1+1">
+1+1
+</option>
+
+<option value="2+1">
+2+1
+</option>
+
+<option value="3+1">
+3+1
+</option>
+
+<option value="4+1">
+4+1
+</option>
+
+<option value="5+1">
+5+1
+</option>
+
+<option value="Diğer">
+Diğer
+</option>
 
 </select>
 
@@ -1055,10 +1111,21 @@ Bina Yaşı
 Seçiniz
 </option>
 
-<option value="0-5">0-5</option>
-<option value="6-10">6-10</option>
-<option value="11-20">11-20</option>
-<option value="21+">21+</option>
+<option value="0-5">
+0-5
+</option>
+
+<option value="6-10">
+6-10
+</option>
+
+<option value="11-20">
+11-20
+</option>
+
+<option value="21+">
+21+
+</option>
 
 </select>
 
@@ -1132,9 +1199,9 @@ En kısa sürede sizinle iletişime geçeceğiz.
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      ALT ALAN
-========================================================= -->
+===================================================== -->
 
 <section class="bottom-section">
 
@@ -1143,21 +1210,23 @@ Gayrimenkulde Doğru Adres
 </h2>
 
 <p>
-Gayrimenkulünüzü bize gönderin,
-doğru alıcılara ulaştıralım.
-Ücretsiz, hızlı ve güvenilir.
+Dükkan, ev ve arsanızı doğru alıcılarla buluşturalım.
+Emlakınızı bize gönderin, satış sürecinizde size destek olalım.
 </p>
 
 </section>
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      MOBİL SABİT WHATSAPP
-========================================================= -->
+     
+     GÖRSELDE YOK.
+     SADECE KODLA OLUŞTURULUYOR.
+===================================================== -->
 
 <a
-    href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20bir%20gayrimenkul%20hakkında%20bilgi%20almak%20istiyorum."
+    href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20gayrimenkuller%20hakkında%20bilgi%20almak%20istiyorum."
     target="_blank"
     rel="noopener"
     class="mobile-whatsapp"
@@ -1167,9 +1236,9 @@ doğru alıcılara ulaştıralım.
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      FORM JAVASCRIPT
-========================================================= -->
+===================================================== -->
 
 <script>
 
@@ -1296,64 +1365,6 @@ form.addEventListener(
 
     }
 );
-
-
-/* =========================================================
-   MOBİL GÖRSEL DOSYA KONTROLÜ
-
-   Farklı isimlerden hangisi GitHub'da varsa
-   otomatik olarak onu kullanır.
-========================================================= */
-
-const mobileHeroImage =
-document.getElementById("mobileHeroImage");
-
-
-const mobileImages = [
-
-    "design-mobile.png",
-
-    "design-mobil.png",
-
-    "tasarım-mobil.png",
-
-    "tasarim-mobil.png",
-
-    "tasarım.png",
-
-    "tasarim.png",
-
-    "design-mobile.webp",
-
-    "design-mobil.webp",
-
-    "tasarım-mobil.webp",
-
-    "tasarim-mobil.webp"
-
-];
-
-
-let mobileImageIndex = 0;
-
-
-mobileHeroImage.onerror =
-function(){
-
-    mobileImageIndex++;
-
-
-    if(
-        mobileImageIndex <
-        mobileImages.length
-    ){
-
-        mobileHeroImage.src =
-        mobileImages[mobileImageIndex];
-
-    }
-
-};
 
 </script>
 
