@@ -5,20 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EmlakSatışım.com - Yönetim Paneli</title>
 </head>
+
 <body>
 
     <h1>EmlakSatışım.com</h1>
     <h2>Yönetim Paneli Girişi</h2>
 
-    <form>
+    <form onsubmit="girisYap(event)">
+
         <label>Kullanıcı Adı</label><br>
-        <input type="text" name="kullanici_adi"><br><br>
+        <input type="text" id="kullaniciAdi" required>
+
+        <br><br>
 
         <label>Şifre</label><br>
-        <input type="password" name="sifre"><br><br>
+        <input type="password" id="sifre" required>
+
+        <br><br>
 
         <button type="submit">Giriş Yap</button>
+
     </form>
+
+    <script>
+        function girisYap(event) {
+
+            event.preventDefault();
+
+            const kullaniciAdi =
+                document.getElementById("kullaniciAdi").value;
+
+            const sifre =
+                document.getElementById("sifre").value;
+
+            if (kullaniciAdi === "admin" && sifre === "123456") {
+
+                window.location.href = "dashboard.html";
+
+            } else {
+
+                alert("Kullanıcı adı veya şifre yanlış.");
+
+            }
+        }
+    </script>
 
 </body>
 </html>
