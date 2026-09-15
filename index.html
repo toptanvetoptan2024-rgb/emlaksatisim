@@ -3,16 +3,20 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EmlakSatışım.com</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-<meta
-name="description"
-content="Gayrimenkulünüzü ücretsiz ilan verin veya satılık gayrimenkuller hakkında WhatsApp üzerinden bilgi alın."
->
+<title>EmlakSatışım.com | Gayrimenkulde Doğru Adres</title>
+
+<meta name="description"
+      content="Gayrimenkulünüzü ücretsiz ilan verin. EmlakSatışım.com ile gayrimenkulünüzü doğru alıcılarla buluşturun.">
 
 <style>
+
+/* =========================================================
+   GENEL
+========================================================= */
 
 *{
     box-sizing:border-box;
@@ -24,27 +28,47 @@ html{
 
 body{
     margin:0;
-    font-family:Arial,Helvetica,sans-serif;
+    padding:0;
+
     background:#f4f7fb;
-    color:#14263d;
+
+    color:#102b49;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+a{
+    -webkit-tap-highlight-color:transparent;
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .hero{
     position:relative;
+
     width:100%;
+
     overflow:hidden;
+
     line-height:0;
+
+    background:#f4f7fb;
 }
 
 .hero-image{
-    width:100%;
-    height:auto;
     display:block;
+
+    width:100%;
+
+    height:auto;
+
+    max-width:100%;
 }
 
 .mobile-image{
@@ -52,100 +76,134 @@ body{
 }
 
 
-/* =====================================================
-   HERO BUTONLARI
-===================================================== */
+/* =========================================================
+   GÖRSEL ÜZERİNDEKİ GÖRÜNMEZ TIKLAMA ALANLARI
+========================================================= */
 
-.hero-buttons{
+.hero-link{
     position:absolute;
-    left:50%;
-    top:7%;
-    transform:translateX(-50%);
 
-    width:70%;
+    display:block;
 
-    display:flex;
-    gap:20px;
+    z-index:30;
 
-    z-index:10;
-}
+    background:transparent;
 
-.hero-button{
-    flex:1;
+    border:0;
 
-    height:70px;
+    padding:0;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    margin:0;
 
-    border-radius:50px;
-
-    text-decoration:none;
-
-    font-size:22px;
-    font-weight:900;
-
-    color:#fff;
-
-    pointer-events:auto;
-}
-
-.ilan-button{
-    background:#ff7800;
-}
-
-.satin-button{
-    background:#16c957;
+    cursor:pointer;
 }
 
 
-/* =====================================================
-   FORM
-===================================================== */
+/* =========================================================
+   MASAÜSTÜ
+   Görseldeki üst iki buton
+========================================================= */
+
+.desktop-ilan-link{
+    left:14.8%;
+
+    top:5.8%;
+
+    width:34%;
+
+    height:9.8%;
+}
+
+.desktop-satin-link{
+    left:50.2%;
+
+    top:5.8%;
+
+    width:34%;
+
+    height:9.8%;
+}
+
+
+/* =========================================================
+   MOBİL TIKLAMA ALANLARI
+========================================================= */
+
+.mobile-ilan-link,
+.mobile-satin-link{
+    display:none;
+}
+
+
+/* =========================================================
+   FORM ALANI
+========================================================= */
 
 .form-section{
-    padding:50px 15px 80px;
+    width:100%;
+
+    padding:60px 20px 80px;
 }
 
 .form-container{
-    width:min(1100px,100%);
-    margin:auto;
+    width:100%;
+
+    max-width:1100px;
+
+    margin:0 auto;
 }
 
 .form-card{
-    background:#fff;
-    border-radius:20px;
-    padding:40px;
+    width:100%;
 
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:45px;
+
+    box-shadow:
+    0 10px 40px
+    rgba(16,43,73,.10);
 }
 
+
+/* =========================================================
+   FORM BAŞLIK
+========================================================= */
+
 .form-title{
-    margin:0 0 10px;
+    margin:0;
 
     text-align:center;
 
-    color:#0b2746;
+    color:#102b49;
 
-    font-size:34px;
+    font-size:36px;
 
     font-weight:900;
+
+    line-height:1.2;
 }
 
 .form-subtitle{
-    margin:0 auto 30px;
+    max-width:800px;
 
-    max-width:750px;
+    margin:15px auto 35px;
 
     text-align:center;
 
-    color:#66758a;
+    color:#6c7b8d;
 
-    font-size:15px;
+    font-size:16px;
 
-    line-height:1.5;
+    line-height:1.6;
 }
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
 
 .form-grid{
     display:grid;
@@ -153,50 +211,60 @@ body{
     grid-template-columns:
     repeat(3,1fr);
 
-    gap:18px 20px;
+    gap:20px;
 }
 
 .field{
     display:flex;
+
     flex-direction:column;
-    gap:7px;
+
+    gap:8px;
 }
 
 .full{
     grid-column:1 / -1;
 }
 
-label{
-    color:#0b2746;
+.field label{
+    color:#102b49;
+
     font-size:14px;
+
     font-weight:800;
 }
 
-input,
-select,
-textarea{
+.field input,
+.field select,
+.field textarea{
+
     width:100%;
+
+    min-height:48px;
+
+    padding:13px 15px;
 
     border:1px solid #d7e0e9;
 
-    border-radius:9px;
+    border-radius:10px;
 
-    padding:13px 14px;
+    outline:none;
 
     background:#fff;
 
-    color:#14263d;
+    color:#102b49;
 
     font-family:inherit;
 
     font-size:15px;
 
-    outline:none;
+    transition:.2s;
 }
 
-input:focus,
-select:focus,
-textarea:focus{
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+
     border-color:#ff7800;
 
     box-shadow:
@@ -204,48 +272,73 @@ textarea:focus{
     rgba(255,120,0,.10);
 }
 
-textarea{
-    min-height:130px;
+.field textarea{
+
+    min-height:140px;
+
     resize:vertical;
 }
 
+
+/* =========================================================
+   GÖNDER BUTONU
+========================================================= */
+
 .submit-button{
+
     width:100%;
+
+    min-height:58px;
+
+    padding:15px 20px;
 
     border:0;
 
-    border-radius:10px;
-
-    padding:18px;
+    border-radius:11px;
 
     background:#ff7800;
 
     color:#fff;
+
+    font-family:inherit;
 
     font-size:18px;
 
     font-weight:900;
 
     cursor:pointer;
+
+    transition:.2s;
+}
+
+.submit-button:hover{
+    opacity:.92;
 }
 
 .submit-button:disabled{
-    opacity:.6;
+    opacity:.60;
+
     cursor:not-allowed;
 }
 
+
+/* =========================================================
+   BAŞARILI MESAJI
+========================================================= */
+
 .success-box{
+
     display:none;
 
     margin-top:20px;
 
     padding:18px;
 
-    border-radius:10px;
-
-    background:#e8fff2;
+    border-radius:11px;
 
     border:1px solid #16b85c;
+
+    background:#eafff2;
 
     color:#08743c;
 
@@ -255,15 +348,16 @@ textarea{
 
     font-weight:800;
 
-    line-height:1.5;
+    line-height:1.6;
 }
 
 .privacy{
-    margin-top:15px;
+
+    margin-top:16px;
+
+    color:#7b8795;
 
     text-align:center;
-
-    color:#66758a;
 
     font-size:12px;
 
@@ -271,14 +365,17 @@ textarea{
 }
 
 
-/* =====================================================
-   ALT
-===================================================== */
+/* =========================================================
+   ALT BİLGİ ALANI
+========================================================= */
 
 .bottom-section{
-    padding:55px 20px;
 
-    background:#0b2746;
+    width:100%;
+
+    padding:60px 20px;
+
+    background:#102b49;
 
     color:#fff;
 
@@ -286,187 +383,240 @@ textarea{
 }
 
 .bottom-section h2{
-    margin:0 0 12px;
+
+    margin:0 0 15px;
+
     font-size:32px;
+
+    line-height:1.25;
 }
 
 .bottom-section p{
-    max-width:700px;
 
-    margin:auto;
+    max-width:750px;
 
-    color:#dce7f1;
+    margin:0 auto;
 
-    line-height:1.6;
+    color:#dce6ef;
+
+    font-size:16px;
+
+    line-height:1.7;
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBİL SABİT WHATSAPP
-===================================================== */
+========================================================= */
 
 .mobile-whatsapp{
+
     display:none;
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBİL
-===================================================== */
+========================================================= */
 
 @media(max-width:600px){
+
+    body{
+        padding-bottom:65px;
+    }
+
+
+    /* MASAÜSTÜ GÖRSEL KAPALI */
 
     .desktop-image{
         display:none;
     }
+
+
+    /* MOBİL GÖRSEL AÇIK */
 
     .mobile-image{
         display:block;
     }
 
 
-    /*
-       MOBİL GÖRSELİN İÇİNDEKİ WHATSAPP
-       TIKLANABİLİR DEĞİL.
-       SADECE AŞAĞIDAKİ SABİT WHATSAPP AKTİF.
-    */
+    /* MASAÜSTÜ TIKLAMA ALANLARI KAPALI */
 
+    .desktop-ilan-link,
+    .desktop-satin-link{
 
-    .hero-buttons{
-
-        top:7%;
-
-        width:88%;
-
-        flex-direction:column;
-
-        gap:12px;
-
-    }
-
-    .hero-button{
-
-        flex:none;
-
-        width:100%;
-
-        height:58px;
-
-        font-size:17px;
-
+        display:none;
     }
 
 
-    /* FORM */
+    /* =====================================================
+       MOBİL GÖRSEL BUTONLARI
+    ===================================================== */
+
+    .mobile-ilan-link{
+
+        display:block;
+
+        left:5%;
+
+        top:14%;
+
+        width:90%;
+
+        height:9.5%;
+    }
+
+    .mobile-satin-link{
+
+        display:block;
+
+        left:5%;
+
+        top:23%;
+
+        width:90%;
+
+        height:9.5%;
+    }
+
+
+    /* =====================================================
+       FORM
+    ===================================================== */
 
     .form-section{
-        padding:35px 12px 90px;
+
+        padding:35px 12px 45px;
     }
 
     .form-card{
-        padding:24px 16px;
 
-        border-radius:16px;
+        padding:28px 16px;
+
+        border-radius:18px;
     }
 
     .form-title{
-        font-size:24px;
+
+        font-size:28px;
     }
 
     .form-subtitle{
-        font-size:13px;
-    }
 
-    .form-grid{
-        grid-template-columns:1fr;
+        margin-top:14px;
 
-        gap:15px;
-    }
+        margin-bottom:28px;
 
-    .full{
-        grid-column:auto;
-    }
-
-    input,
-    select,
-    textarea{
         font-size:14px;
     }
 
+    .form-grid{
+
+        grid-template-columns:1fr;
+
+        gap:16px;
+    }
+
+    .full{
+
+        grid-column:auto;
+    }
+
+    .field input,
+    .field select,
+    .field textarea{
+
+        font-size:15px;
+    }
+
     .submit-button{
+
         font-size:16px;
+
+        min-height:55px;
     }
 
 
-    /* ALT */
+    /* =====================================================
+       ALT ALAN
+    ===================================================== */
 
     .bottom-section{
-        padding:40px 20px 90px;
+
+        padding:45px 20px 80px;
     }
 
     .bottom-section h2{
+
         font-size:25px;
     }
 
+    .bottom-section p{
 
-    /* SADECE SABİT WHATSAPP */
+        font-size:14px;
+    }
+
+
+    /* =====================================================
+       SABİT WHATSAPP
+    ===================================================== */
 
     .mobile-whatsapp{
 
         position:fixed;
 
         left:0;
+
         right:0;
+
         bottom:0;
+
+        z-index:999999;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
 
         width:100%;
 
         height:65px;
 
-        display:flex;
-
-        align-items:center;
-        justify-content:center;
-
         background:#16c957;
 
         color:#fff;
 
-        font-size:16px;
+        text-decoration:none;
+
+        font-size:17px;
 
         font-weight:900;
 
-        text-decoration:none;
-
-        z-index:999999;
-
         box-shadow:
-        0 -3px 15px
-        rgba(0,0,0,.15);
+        0 -4px 18px
+        rgba(0,0,0,.18);
     }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    KÜÇÜK TELEFON
-===================================================== */
+========================================================= */
 
-@media(max-width:400px){
-
-    .hero-buttons{
-        top:7%;
-        width:88%;
-    }
-
-    .hero-button{
-        height:52px;
-        font-size:15px;
-    }
+@media(max-width:390px){
 
     .mobile-whatsapp{
+
         height:62px;
+
         font-size:15px;
+    }
+
+    .form-title{
+
+        font-size:25px;
     }
 
 }
@@ -479,14 +629,16 @@ textarea{
 <body>
 
 
-<!-- =====================================================
+<!-- =========================================================
      HERO
-===================================================== -->
+========================================================= -->
 
 <section class="hero">
 
 
-    <!-- MASAÜSTÜ GÖRSEL -->
+    <!-- =====================================================
+         MASAÜSTÜ GÖRSEL
+    ====================================================== -->
 
     <img
         src="design.png"
@@ -495,51 +647,74 @@ textarea{
     >
 
 
-    <!-- MOBİL GÖRSEL -->
+    <!-- =====================================================
+         MOBİL GÖRSEL
+    ====================================================== -->
 
     <img
+        id="mobileHeroImage"
         src="design-mobile.png"
         class="hero-image mobile-image"
         alt="EmlakSatışım.com"
     >
 
 
-    <!-- BUTONLAR -->
+    <!-- =====================================================
+         MASAÜSTÜ İLAN VER BUTONU
+         GÖRÜNMEZ ALAN
+    ====================================================== -->
 
-    <div class="hero-buttons">
-
-
-        <!-- İLAN VERMEK -->
-
-        <a
-            href="#ilan-formu"
-            class="hero-button ilan-button"
-        >
-            🏠 İLAN VERMEK İSTİYORUM
-        </a>
+    <a
+        href="#ilan-formu"
+        class="hero-link desktop-ilan-link"
+        aria-label="İlan Vermek İstiyorum"
+    ></a>
 
 
-        <!-- SATIN ALMAK -->
+    <!-- =====================================================
+         MASAÜSTÜ SATIN AL BUTONU
+         GÖRÜNMEZ ALAN
+    ====================================================== -->
 
-        <a
-            href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20bir%20gayrimenkul%20hakkında%20bilgi%20almak%20istiyorum."
-            target="_blank"
-            rel="noopener"
-            class="hero-button satin-button"
-        >
-            💬 SATIN ALMAK İSTİYORUM
-        </a>
+    <a
+        href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20bir%20gayrimenkul%20hakkında%20bilgi%20almak%20istiyorum."
+        target="_blank"
+        rel="noopener"
+        class="hero-link desktop-satin-link"
+        aria-label="Satın Almak İstiyorum"
+    ></a>
 
 
-    </div>
+    <!-- =====================================================
+         MOBİL İLAN VER
+    ====================================================== -->
+
+    <a
+        href="#ilan-formu"
+        class="hero-link mobile-ilan-link"
+        aria-label="İlan Vermek İstiyorum"
+    ></a>
+
+
+    <!-- =====================================================
+         MOBİL SATIN AL
+    ====================================================== -->
+
+    <a
+        href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20bir%20gayrimenkul%20hakkında%20bilgi%20almak%20istiyorum."
+        target="_blank"
+        rel="noopener"
+        class="hero-link mobile-satin-link"
+        aria-label="Satın Almak İstiyorum"
+    ></a>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      FORM
-===================================================== -->
+========================================================= -->
 
 <section
     id="ilan-formu"
@@ -568,271 +743,353 @@ En kısa sürede sizinle iletişime geçeceğiz.
 <div class="form-grid">
 
 
+<!-- AD SOYAD -->
+
 <div class="field">
 
-<label>
+<label for="ad_soyad">
 Ad Soyad *
 </label>
 
 <input
-type="text"
-name="ad_soyad"
-required
-placeholder="Adınız ve soyadınız"
+    id="ad_soyad"
+    type="text"
+    name="ad_soyad"
+    placeholder="Adınız ve soyadınız"
+    required
 >
 
 </div>
 
 
+<!-- TELEFON -->
+
 <div class="field">
 
-<label>
+<label for="telefon">
 Telefon *
 </label>
 
 <input
-type="tel"
-name="telefon"
-required
-inputmode="tel"
-placeholder="05XX XXX XX XX"
+    id="telefon"
+    type="tel"
+    name="telefon"
+    placeholder="05XX XXX XX XX"
+    inputmode="tel"
+    required
 >
 
 </div>
 
 
+<!-- E-POSTA -->
+
 <div class="field">
 
-<label>
+<label for="email">
 E-posta
 </label>
 
 <input
-type="email"
-name="email"
-placeholder="ornek@mail.com"
+    id="email"
+    type="email"
+    name="email"
+    placeholder="ornek@mail.com"
 >
 
 </div>
 
 
+<!-- GAYRİMENKUL -->
+
 <div class="field">
 
-<label>
+<label for="ilan_turu">
 Gayrimenkul Türü *
 </label>
 
 <select
-name="ilan_turu"
-required
+    id="ilan_turu"
+    name="ilan_turu"
+    required
 >
 
 <option value="">
 Seçiniz
 </option>
 
-<option>Daire</option>
-<option>Villa</option>
-<option>Müstakil Ev</option>
-<option>Dükkan</option>
-<option>Ofis</option>
-<option>Arsa</option>
-<option>Turistik Tesis</option>
+<option value="Daire">
+Daire
+</option>
+
+<option value="Villa">
+Villa
+</option>
+
+<option value="Müstakil Ev">
+Müstakil Ev
+</option>
+
+<option value="Dükkan">
+Dükkan
+</option>
+
+<option value="Ofis">
+Ofis
+</option>
+
+<option value="Arsa">
+Arsa
+</option>
+
+<option value="Turistik Tesis">
+Turistik Tesis
+</option>
 
 </select>
 
 </div>
 
 
+<!-- İŞLEM -->
+
 <div class="field">
 
-<label>
+<label for="islem_turu">
 İşlem Türü *
 </label>
 
 <select
-name="islem_turu"
-required
+    id="islem_turu"
+    name="islem_turu"
+    required
 >
 
 <option value="">
 Seçiniz
 </option>
 
-<option>Satılık</option>
+<option value="Satılık">
+Satılık
+</option>
 
 </select>
 
 </div>
 
 
+<!-- İL -->
+
 <div class="field">
 
-<label>
+<label for="il">
 İl *
 </label>
 
 <select
-name="il"
-required
+    id="il"
+    name="il"
+    required
 >
 
 <option value="">
 Seçiniz
 </option>
 
-<option>İstanbul</option>
+<option value="İstanbul">
+İstanbul
+</option>
 
 </select>
 
 </div>
 
 
+<!-- İLÇE -->
+
 <div class="field">
 
-<label>
+<label for="ilce">
 İlçe *
 </label>
 
 <select
-name="ilce"
-required
+    id="ilce"
+    name="ilce"
+    required
 >
 
 <option value="">
 Seçiniz
 </option>
 
-<option>Sultangazi</option>
-<option>Arnavutköy</option>
-<option>Başakşehir</option>
-<option>Gaziosmanpaşa</option>
-<option>Eyüpsultan</option>
-<option>Diğer</option>
+<option value="Sultangazi">
+Sultangazi
+</option>
+
+<option value="Arnavutköy">
+Arnavutköy
+</option>
+
+<option value="Başakşehir">
+Başakşehir
+</option>
+
+<option value="Gaziosmanpaşa">
+Gaziosmanpaşa
+</option>
+
+<option value="Eyüpsultan">
+Eyüpsultan
+</option>
+
+<option value="Diğer">
+Diğer
+</option>
 
 </select>
 
 </div>
 
 
+<!-- MAHALLE -->
+
 <div class="field">
 
-<label>
+<label for="mahalle">
 Mahalle
 </label>
 
 <input
-type="text"
-name="mahalle"
-placeholder="Mahalle adı"
+    id="mahalle"
+    type="text"
+    name="mahalle"
+    placeholder="Mahalle adı"
 >
 
 </div>
 
 
+<!-- FİYAT -->
+
 <div class="field">
 
-<label>
+<label for="fiyat">
 Fiyat (TL)
 </label>
 
 <input
-type="text"
-name="fiyat"
-inputmode="decimal"
-placeholder="Örnek: 2.500.000"
+    id="fiyat"
+    type="text"
+    name="fiyat"
+    placeholder="Örnek: 2.500.000"
+    inputmode="decimal"
 >
 
 </div>
 
 
+<!-- METREKARE -->
+
 <div class="field">
 
-<label>
+<label for="metrekare">
 m²
 </label>
 
 <input
-type="text"
-name="metrekare"
-inputmode="decimal"
-placeholder="Örnek: 120"
+    id="metrekare"
+    type="text"
+    name="metrekare"
+    placeholder="Örnek: 120"
+    inputmode="decimal"
 >
 
 </div>
 
 
+<!-- ODA -->
+
 <div class="field">
 
-<label>
+<label for="oda_sayisi">
 Oda Sayısı
 </label>
 
 <select
-name="oda_sayisi"
+    id="oda_sayisi"
+    name="oda_sayisi"
 >
 
 <option value="">
 Seçiniz
 </option>
 
-<option>1+0</option>
-<option>1+1</option>
-<option>2+1</option>
-<option>3+1</option>
-<option>4+1</option>
-<option>5+1</option>
-<option>Diğer</option>
+<option value="1+0">1+0</option>
+<option value="1+1">1+1</option>
+<option value="2+1">2+1</option>
+<option value="3+1">3+1</option>
+<option value="4+1">4+1</option>
+<option value="5+1">5+1</option>
+<option value="Diğer">Diğer</option>
 
 </select>
 
 </div>
 
 
+<!-- BİNA YAŞI -->
+
 <div class="field">
 
-<label>
+<label for="bina_yasi">
 Bina Yaşı
 </label>
 
 <select
-name="bina_yasi"
+    id="bina_yasi"
+    name="bina_yasi"
 >
 
 <option value="">
 Seçiniz
 </option>
 
-<option>0-5</option>
-<option>6-10</option>
-<option>11-20</option>
-<option>21+</option>
+<option value="0-5">0-5</option>
+<option value="6-10">6-10</option>
+<option value="11-20">11-20</option>
+<option value="21+">21+</option>
 
 </select>
 
 </div>
 
 
+<!-- AÇIKLAMA -->
+
 <div class="field full">
 
-<label>
+<label for="aciklama">
 Açıklama
 </label>
 
 <textarea
-name="aciklama"
-placeholder="Gayrimenkulünüz ile ilgili detayları yazabilirsiniz..."
+    id="aciklama"
+    name="aciklama"
+    placeholder="Gayrimenkulünüz hakkında eklemek istediğiniz bilgileri yazabilirsiniz..."
 ></textarea>
 
 </div>
 
 
+<!-- GÖNDER -->
+
 <div class="field full">
 
 <button
-type="submit"
-class="submit-button"
-id="submitButton"
+    type="submit"
+    id="submitButton"
+    class="submit-button"
 >
 ✈ Ücretsiz İlan Başvurumu Gönder →
 </button>
@@ -852,8 +1109,8 @@ başvurunuzun değerlendirilmesi amacıyla kullanılır.
 
 
 <div
-id="successBox"
-class="success-box"
+    id="successBox"
+    class="success-box"
 >
 
 ✅ Başvurunuz başarıyla gönderildi!
@@ -875,41 +1132,44 @@ En kısa sürede sizinle iletişime geçeceğiz.
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      ALT ALAN
-===================================================== -->
+========================================================= -->
 
 <section class="bottom-section">
 
 <h2>
-Gayrimenkulünüzü Doğru Alıcıyla Buluşturalım
+Gayrimenkulde Doğru Adres
 </h2>
 
 <p>
-Eviniz, dükkânınız veya arsanız için
-ilanınızı bize gönderin.
-Başvurunuzu değerlendirelim ve satış sürecinizde
-size destek olalım.
+Gayrimenkulünüzü bize gönderin,
+doğru alıcılara ulaştıralım.
+Ücretsiz, hızlı ve güvenilir.
 </p>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      MOBİL SABİT WHATSAPP
-===================================================== -->
+========================================================= -->
 
 <a
-href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20bir%20gayrimenkul%20hakkında%20bilgi%20almak%20istiyorum."
-target="_blank"
-rel="noopener"
-class="mobile-whatsapp"
+    href="https://wa.me/905300316127?text=Merhaba%2C%20satılık%20bir%20gayrimenkul%20hakkında%20bilgi%20almak%20istiyorum."
+    target="_blank"
+    rel="noopener"
+    class="mobile-whatsapp"
 >
 💬 WhatsApp'tan Hemen İletişime Geç →
 </a>
 
 
+
+<!-- =========================================================
+     FORM JAVASCRIPT
+========================================================= -->
 
 <script>
 
@@ -924,111 +1184,176 @@ document.getElementById("successBox");
 
 
 form.addEventListener(
-"submit",
-async function(event){
+    "submit",
+    async function(event){
 
-    event.preventDefault();
-
-    submitButton.disabled = true;
-
-    submitButton.textContent =
-    "Başvurunuz gönderiliyor...";
+        event.preventDefault();
 
 
-    const formData =
-    new FormData(form);
+        submitButton.disabled = true;
 
-    const veri =
-    Object.fromEntries(
-        formData.entries()
-    );
+        submitButton.textContent =
+        "Başvurunuz gönderiliyor...";
 
 
-    try{
+        const formData =
+        new FormData(form);
 
-        const cevap =
-        await fetch(
-            "/api/ilanlar",
-            {
-                method:"POST",
 
-                headers:{
-                    "Content-Type":
-                    "application/json"
-                },
-
-                body:
-                JSON.stringify(veri)
-            }
+        const veri =
+        Object.fromEntries(
+            formData.entries()
         );
 
 
-        const sonuc =
-        await cevap.json();
+        try{
 
+            const cevap =
+            await fetch(
+                "/api/ilanlar",
+                {
+                    method:"POST",
 
-        if(
-            !cevap.ok ||
-            !sonuc.basarili
-        ){
+                    headers:{
+                        "Content-Type":
+                        "application/json"
+                    },
 
-            throw new Error(
-                sonuc.hata ||
-                "Başvuru gönderilemedi."
+                    body:
+                    JSON.stringify(veri)
+                }
             );
+
+
+            const sonuc =
+            await cevap.json();
+
+
+            if(
+                !cevap.ok ||
+                !sonuc.basarili
+            ){
+
+                throw new Error(
+                    sonuc.hata ||
+                    "Başvuru gönderilemedi."
+                );
+
+            }
+
+
+            form.reset();
+
+
+            successBox.style.display =
+            "block";
+
+
+            submitButton.textContent =
+            "✓ Başvurunuz Gönderildi";
+
+
+            successBox.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+
+            setTimeout(
+                function(){
+
+                    successBox.style.display =
+                    "none";
+
+                    submitButton.disabled =
+                    false;
+
+                    submitButton.textContent =
+                    "✈ Ücretsiz İlan Başvurumu Gönder →";
+
+                },
+                7000
+            );
+
+
+        }
+        catch(hata){
+
+            alert(
+                "Başvuru gönderilemedi:\n\n" +
+                hata.message
+            );
+
+
+            submitButton.disabled =
+            false;
+
+
+            submitButton.textContent =
+            "✈ Ücretsiz İlan Başvurumu Gönder →";
 
         }
 
-
-        form.reset();
-
-        successBox.style.display =
-        "block";
-
-        submitButton.textContent =
-        "✓ Başvurunuz Gönderildi";
+    }
+);
 
 
-        successBox.scrollIntoView({
-            behavior:"smooth",
-            block:"center"
-        });
+/* =========================================================
+   MOBİL GÖRSEL DOSYA KONTROLÜ
+
+   Farklı isimlerden hangisi GitHub'da varsa
+   otomatik olarak onu kullanır.
+========================================================= */
+
+const mobileHeroImage =
+document.getElementById("mobileHeroImage");
 
 
-        setTimeout(
-            function(){
+const mobileImages = [
 
-                successBox.style.display =
-                "none";
+    "design-mobile.png",
 
-                submitButton.disabled =
-                false;
+    "design-mobil.png",
 
-                submitButton.textContent =
-                "✈ Ücretsiz İlan Başvurumu Gönder →";
+    "tasarım-mobil.png",
 
-            },
-            7000
-        );
+    "tasarim-mobil.png",
 
+    "tasarım.png",
+
+    "tasarim.png",
+
+    "design-mobile.webp",
+
+    "design-mobil.webp",
+
+    "tasarım-mobil.webp",
+
+    "tasarim-mobil.webp"
+
+];
+
+
+let mobileImageIndex = 0;
+
+
+mobileHeroImage.onerror =
+function(){
+
+    mobileImageIndex++;
+
+
+    if(
+        mobileImageIndex <
+        mobileImages.length
+    ){
+
+        mobileHeroImage.src =
+        mobileImages[mobileImageIndex];
 
     }
-    catch(hata){
 
-        alert(
-            "Başvuru gönderilemedi:\n\n" +
-            hata.message
-        );
-
-        submitButton.disabled =
-        false;
-
-        submitButton.textContent =
-        "✈ Ücretsiz İlan Başvurumu Gönder →";
-
-    }
-
-});
+};
 
 </script>
 
